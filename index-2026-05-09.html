@@ -572,19 +572,47 @@
     </div>
 
     <script>
+        // 页面加载时获取可用快照列表
+        window.addEventListener('DOMContentLoaded', function() {
+            loadAvailableDates();
+        });
+
+        // 加载可用日期
+        function loadAvailableDates() {
+            // 预定义的已知快照（可以从GitHub API动态获取，这里先硬编码）
+            const availableDates = [
+                { value: '2026-05-09', label: '2026年5月9日' }
+            ];
+
+            const dateSelect = document.getElementById('date-picker');
+
+            // 清空现有选项（保留第一个提示选项）
+            while (dateSelect.options.length > 1) {
+                dateSelect.remove(1);
+            }
+
+            // 添加可用日期
+            availableDates.forEach(date => {
+                const option = document.createElement('option');
+                option.value = date.value;
+                option.textContent = date.label;
+                dateSelect.appendChild(option);
+            });
+        }
+
         // 日期跳转功能
         function jumpToDate() {
             const dateSelect = document.getElementById('date-picker');
             const selectedDate = dateSelect.value;
-            
+
             if (!selectedDate) {
                 alert('请先选择日期！');
                 return;
             }
-            
+
             // 构建目标URL
             const targetUrl = `index-${selectedDate}.html`;
-            
+
             // 跳转到对应日期的页面
             window.location.href = targetUrl;
         }
