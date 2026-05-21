@@ -48,190 +48,178 @@
         .stats-bar {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             margin-bottom: 20px;
             flex-wrap: wrap;
         }
 
         .stat-item {
-            background: rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.95);
             border-radius: 12px;
-            padding: 12px 24px;
+            padding: 12px 20px;
             text-align: center;
-            color: white;
             min-width: 120px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
         .stat-number {
             font-size: 1.8em;
-            font-weight: 700;
-            display: block;
+            font-weight: bold;
+            color: #764ba2;
         }
 
         .stat-label {
-            font-size: 0.75em;
-            opacity: 0.9;
+            font-size: 0.8em;
+            color: #666;
+            margin-top: 2px;
         }
+
+        .stat-item.urgent .stat-number { color: #e74c3c; }
+        .stat-item.total .stat-number { color: #667eea; }
 
         /* 筛选面板 */
         .filter-panel {
             background: rgba(255,255,255,0.95);
             border-radius: 16px;
-            padding: 18px;
+            padding: 18px 20px;
             margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
         .filter-row {
             display: flex;
-            flex-wrap: wrap;
             align-items: center;
             margin-bottom: 10px;
-            gap: 8px;
+            flex-wrap: wrap;
+            gap: 6px;
         }
 
         .filter-row:last-child { margin-bottom: 0; }
 
         .filter-label {
-            font-weight: 600;
-            color: #555;
-            min-width: 70px;
             font-size: 0.85em;
+            color: #666;
+            min-width: 70px;
+            font-weight: 600;
         }
 
         .filter-btn {
             padding: 5px 14px;
-            border: 2px solid #764ba2;
-            background: white;
-            color: #764ba2;
+            border: 1.5px solid #ddd;
             border-radius: 20px;
+            background: white;
+            color: #555;
             cursor: pointer;
-            font-size: 0.8em;
-            transition: all 0.3s;
-            white-space: nowrap;
+            font-size: 0.82em;
+            transition: all 0.2s;
         }
 
-        .filter-btn:hover { background: #f0e6ff; }
+        .filter-btn:hover {
+            border-color: #764ba2;
+            color: #764ba2;
+        }
+
         .filter-btn.active {
-            background: #764ba2;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
+            border-color: transparent;
         }
 
         .filter-actions {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-top: 10px;
+            margin-top: 12px;
             padding-top: 10px;
             border-top: 1px solid #eee;
         }
 
         .reset-btn {
             padding: 5px 16px;
-            background: #f5f5f5;
-            border: 1px solid #ddd;
+            border: 1.5px solid #e74c3c;
             border-radius: 20px;
+            background: white;
+            color: #e74c3c;
             cursor: pointer;
-            font-size: 0.8em;
-            color: #666;
-            transition: all 0.3s;
+            font-size: 0.82em;
+            transition: all 0.2s;
         }
 
-        .reset-btn:hover { background: #eee; }
+        .reset-btn:hover {
+            background: #e74c3c;
+            color: white;
+        }
 
         .result-count {
             font-size: 0.85em;
+            color: #888;
+        }
+
+        .result-count span {
             color: #764ba2;
-            font-weight: 600;
+            font-weight: bold;
         }
 
         /* 岗位卡片 */
+        .job-list { display: flex; flex-direction: column; gap: 15px; }
+
         .job-card {
             background: white;
             border-radius: 16px;
             padding: 20px;
-            margin-bottom: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 5px solid #764ba2;
             position: relative;
             overflow: hidden;
         }
 
         .job-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
 
-        .job-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, #667eea, #764ba2);
-        }
+        .job-card.urgent { border-left-color: #e74c3c; }
+        .job-card.deadline-warning { border-left-color: #f39c12; }
+        .job-card.longterm { border-left-color: #3498db; }
 
-        .card-top {
+        .job-header {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .school-name {
             font-size: 1.15em;
-            font-weight: 700;
+            font-weight: bold;
             color: #333;
+        }
+
+        .school-tags {
             display: flex;
-            align-items: center;
-            gap: 8px;
+            gap: 5px;
             flex-wrap: wrap;
         }
 
-        .school-tag {
-            display: inline-block;
+        .tag {
             padding: 2px 8px;
             border-radius: 10px;
-            font-size: 0.65em;
+            font-size: 0.7em;
             font-weight: 600;
+        }
+
+        .tag-985 { background: #fff3e0; color: #e65100; }
+        .tag-211 { background: #e3f2fd; color: #1565c0; }
+        .tag-double-first { background: #f3e5f5; color: #7b1fa2; }
+        .tag-direct { background: #e8f5e9; color: #2e7d32; }
+        .tag-provincial { background: #fce4ec; color: #c62828; }
+        .tag-new {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
             color: white;
-        }
-
-        .tag-985 { background: #e74c3c; }
-        .tag-211 { background: #e67e22; }
-        .tag-double-first { background: #9b59b6; }
-        .tag-ministry { background: #3498db; }
-        .tag-province { background: #27ae60; }
-
-        .deadline-badge {
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.75em;
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .deadline-urgent {
-            background: #ffeaea;
-            color: #e74c3c;
             animation: pulse 2s infinite;
-        }
-
-        .deadline-warning {
-            background: #fff3e0;
-            color: #e67e22;
-        }
-
-        .deadline-normal {
-            background: #e8f5e9;
-            color: #27ae60;
-        }
-
-        .deadline-long {
-            background: #e3f2fd;
-            color: #1976d2;
         }
 
         @keyframes pulse {
@@ -239,70 +227,40 @@
             50% { opacity: 0.6; }
         }
 
-        .new-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-            color: white;
-            padding: 2px 8px;
-            border-radius: 10px;
-            font-size: 0.6em;
-            font-weight: 700;
-            animation: glow 1.5s ease-in-out infinite alternate;
-        }
-
-        @keyframes glow {
-            from { box-shadow: 0 0 5px rgba(255,107,107,0.5); }
-            to { box-shadow: 0 0 15px rgba(255,107,107,0.8); }
-        }
-
-        .job-title {
-            font-size: 1em;
+        .position-name {
+            font-size: 1.05em;
             color: #555;
-            margin-bottom: 10px;
-            font-weight: 500;
+            margin-bottom: 12px;
         }
 
         .job-details {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
             gap: 8px;
             margin-bottom: 12px;
         }
 
-        .detail-tag {
-            display: inline-flex;
+        .detail-item {
+            display: flex;
             align-items: center;
-            gap: 4px;
-            padding: 4px 10px;
-            background: #f5f0ff;
-            border-radius: 8px;
-            font-size: 0.8em;
-            color: #6a5acd;
+            gap: 5px;
+            font-size: 0.85em;
+            color: #666;
         }
 
-        .detail-tag i { font-size: 0.85em; }
-
-        .detail-tag.hire-type {
-            background: #fff3e0;
-            color: #e67e22;
+        .detail-item i {
+            color: #764ba2;
+            width: 16px;
+            text-align: center;
+            font-size: 0.85em;
         }
 
-        .detail-tag.education {
-            background: #e3f2fd;
-            color: #1976d2;
-        }
+        .deadline-urgent { color: #e74c3c; font-weight: bold; }
+        .deadline-warning { color: #f39c12; font-weight: bold; }
+        .deadline-normal { color: #27ae60; }
+        .deadline-longterm { color: #3498db; }
 
-        .detail-tag.count {
-            background: #fce4ec;
-            color: #c62828;
-        }
-
-        .detail-tag.salary {
-            background: #e8f5e9;
-            color: #2e7d32;
-        }
-
-        .job-meta {
+        .job-footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -310,89 +268,83 @@
             gap: 8px;
         }
 
-        .apply-btn {
+        .hire-type-badge {
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 0.78em;
+            font-weight: 600;
+        }
+
+        .hire-bianzhi { background: #e8f5e9; color: #2e7d32; }
+        .hire-pinyong { background: #e3f2fd; color: #1565c0; }
+        .hire-contract { background: #fff3e0; color: #e65100; }
+        .hire-dispatch { background: #fce4ec; color: #c62828; }
+
+        .apply-link {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
-            padding: 8px 18px;
+            gap: 5px;
+            padding: 6px 16px;
             background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.85em;
             text-decoration: none;
-            transition: all 0.3s;
+            border-radius: 20px;
+            font-size: 0.85em;
+            transition: opacity 0.2s;
         }
 
-        .apply-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 12px rgba(118,75,162,0.4);
-        }
+        .apply-link:hover { opacity: 0.85; }
 
-        .apply-info {
-            font-size: 0.8em;
-            color: #888;
-        }
-
-        .apply-info i { margin-right: 4px; }
-
-        .no-results {
+        .empty-state {
             text-align: center;
-            padding: 40px;
-            color: #999;
+            padding: 40px 20px;
+            color: white;
             font-size: 1.1em;
+            opacity: 0.9;
         }
 
-        /* 页脚 */
         .footer {
             text-align: center;
             color: rgba(255,255,255,0.7);
             margin-top: 30px;
-            padding: 20px;
-            font-size: 0.85em;
+            font-size: 0.8em;
+            padding: 15px;
         }
-
-        .footer a {
-            color: rgba(255,255,255,0.9);
-            text-decoration: none;
-        }
-
-        .footer a:hover { text-decoration: underline; }
 
         @media (max-width: 600px) {
+            body { padding: 10px; }
             .header h1 { font-size: 1.5em; }
-            .stats-bar { gap: 10px; }
-            .stat-item { min-width: 90px; padding: 8px 16px; }
-            .stat-number { font-size: 1.4em; }
             .job-card { padding: 15px; }
-            .card-top { flex-direction: column; gap: 6px; }
-            .job-meta { flex-direction: column; align-items: flex-start; }
+            .stats-bar { gap: 8px; }
+            .stat-item { min-width: 90px; padding: 8px 12px; }
+            .stat-number { font-size: 1.4em; }
+            .job-details { grid-template-columns: 1fr 1fr; }
+            .filter-row { gap: 4px; }
+            .filter-btn { padding: 4px 10px; font-size: 0.78em; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- 页头 -->
         <div class="header">
             <h1><i class="fas fa-graduation-cap"></i> 高校行政岗招聘信息</h1>
-            <p>全国高校行政管理、辅导员、教辅岗位每日更新</p>
-            <div class="update-time"><i class="fas fa-clock"></i> 更新于 2026年5月21日 08:56</div>
+            <p>每日更新 · 仅展示仍在报名中的岗位</p>
+            <div class="update-time"><i class="fas fa-clock"></i> 更新于 2026年5月21日 10:00</div>
         </div>
 
         <!-- 统计栏 -->
         <div class="stats-bar">
-            <div class="stat-item">
-                <span class="stat-number" id="stat-total">13</span>
-                <span class="stat-label">在招岗位</span>
+            <div class="stat-item total">
+                <div class="stat-number" id="totalCount">14</div>
+                <div class="stat-label">在招岗位</div>
+            </div>
+            <div class="stat-item urgent">
+                <div class="stat-number" id="urgentCount">3</div>
+                <div class="stat-label">即将截止</div>
             </div>
             <div class="stat-item">
-                <span class="stat-number" id="stat-urgent" style="color:#ffeaea">3</span>
-                <span class="stat-label">即将截止</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" id="stat-people">156+</span>
-                <span class="stat-label">招聘总人数</span>
+                <div class="stat-number" id="peopleCount">131+</div>
+                <div class="stat-label">招聘总人数</div>
             </div>
         </div>
 
@@ -401,383 +353,460 @@
             <div class="filter-row">
                 <span class="filter-label"><i class="fas fa-map-marker-alt"></i> 地区</span>
                 <button class="filter-btn active" data-filter="region" data-value="all">全部</button>
-                <button class="filter-btn" data-filter="region" data-value="安徽">安徽</button>
-                <button class="filter-btn" data-filter="region" data-value="广东">广东</button>
-                <button class="filter-btn" data-filter="region" data-value="江苏">江苏</button>
-                <button class="filter-btn" data-filter="region" data-value="湖北">湖北</button>
-                <button class="filter-btn" data-filter="region" data-value="山东">山东</button>
-                <button class="filter-btn" data-filter="region" data-value="上海">上海</button>
+                <button class="filter-btn" data-filter="region" data-value="华东">华东</button>
+                <button class="filter-btn" data-filter="region" data-value="华北">华北</button>
+                <button class="filter-btn" data-filter="region" data-value="华中">华中</button>
+                <button class="filter-btn" data-filter="region" data-value="华南">华南</button>
             </div>
             <div class="filter-row">
-                <span class="filter-label"><i class="fas fa-graduation-cap"></i> 学历</span>
+                <span class="filter-label"><i class="fas fa-education"></i> 学历</span>
                 <button class="filter-btn active" data-filter="education" data-value="all">全部</button>
                 <button class="filter-btn" data-filter="education" data-value="博士">博士</button>
-                <button class="filter-btn" data-filter="education" data-value="硕士">硕士及以上</button>
-                <button class="filter-btn" data-filter="education" data-value="本科">本科及以上</button>
+                <button class="filter-btn" data-filter="education" data-value="硕士">硕士</button>
+                <button class="filter-btn" data-filter="education" data-value="本科">本科</button>
             </div>
             <div class="filter-row">
-                <span class="filter-label"><i class="fas fa-briefcase"></i> 聘用方式</span>
+                <span class="filter-label"><i class="fas fa-briefcase"></i> 聘用</span>
                 <button class="filter-btn active" data-filter="hire-type" data-value="all">全部</button>
                 <button class="filter-btn" data-filter="hire-type" data-value="事业编制">事业编制</button>
                 <button class="filter-btn" data-filter="hire-type" data-value="聘用制">聘用制</button>
                 <button class="filter-btn" data-filter="hire-type" data-value="劳务派遣">劳务派遣</button>
-                <button class="filter-btn" data-filter="hire-type" data-value="人才派遣">人才派遣</button>
             </div>
             <div class="filter-row">
-                <span class="filter-label"><i class="fas fa-tag"></i> 岗位类别</span>
+                <span class="filter-label"><i class="fas fa-tag"></i> 类别</span>
                 <button class="filter-btn active" data-filter="position" data-value="all">全部</button>
-                <button class="filter-btn" data-filter="position" data-value="管理岗">管理岗</button>
+                <button class="filter-btn" data-filter="position" data-value="行政管理">行政管理</button>
                 <button class="filter-btn" data-filter="position" data-value="辅导员">辅导员</button>
-                <button class="filter-btn" data-filter="position" data-value="教辅岗">教辅岗</button>
+                <button class="filter-btn" data-filter="position" data-value="专业技术">专业技术</button>
             </div>
             <div class="filter-actions">
-                <button class="reset-btn" id="resetBtn"><i class="fas fa-redo"></i> 重置筛选</button>
-                <span class="result-count" id="resultCount">显示 13 个岗位</span>
+                <button class="reset-btn" onclick="resetFilters()"><i class="fas fa-redo"></i> 重置筛选</button>
+                <div class="result-count">显示 <span id="visibleCount">14</span> / <span id="totalJobCount">14</span> 个岗位</div>
             </div>
         </div>
 
         <!-- 岗位列表 -->
-        <div id="jobList">
+        <div class="job-list" id="jobList">
 
-            <!-- 1. 惠州城市职业学院 -->
-            <div class="job-card" data-region="广东" data-education="本科" data-hire-type="事业编制" data-position="教辅岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        惠州城市职业学院
-                        <span class="school-tag tag-province">省属公办</span>
+            <!-- 1. 惠州城市职业学院 - 今天截止 -->
+            <div class="job-card urgent"
+                 data-region="华南" data-education="硕士" data-hire-type="事业编制" data-position="专业技术">
+                <div class="job-header">
+                    <div class="school-name">惠州城市职业学院</div>
+                    <div class="school-tags">
+                        <span class="tag tag-provincial">省属公办</span>
+                        <span class="tag tag-new">紧急</span>
                     </div>
-                    <span class="deadline-badge deadline-urgent"><i class="fas fa-fire"></i> 今日截止！5月21日17:30</span>
                 </div>
-                <div class="job-title">事业编制专业技术人员（1名）</div>
+                <div class="position-name">事业编制专业技术人员</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 本科及以上</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 1人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 事业编制</span>
-                    <span class="detail-tag salary"><i class="fas fa-yen-sign"></i> 按事业单位标准</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士研究生</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：1人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：事业编制</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：事业单位薪酬</div>
+                    <div class="detail-item deadline-urgent"><i class="fas fa-calendar-times"></i> 截止：5月21日17:00（今天！）</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 广东惠州</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-envelope"></i> 邮箱报名：hr@tm.hzc.edu.cn</span>
-                    <a class="apply-btn" href="https://www.huizhou.gov.cn/zwgk/rsxx/sydwzp/content/post_5767911.html" target="_blank"><i class="fas fa-external-link-alt"></i> 查看公告</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-bianzhi">事业编制</span>
+                    <a href="https://www.huizhou.gov.cn/zwgk/rsxx/sydwzp/content/post_5767911.html" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
                 </div>
             </div>
 
-            <!-- 2. 山东大学 -->
-            <div class="job-card" data-region="山东" data-education="硕士" data-hire-type="劳务派遣" data-position="管理岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        山东大学（济南）
-                        <span class="school-tag tag-985">985</span>
-                        <span class="school-tag tag-double-first">双一流</span>
-                        <span class="school-tag tag-ministry">教育部直属</span>
+            <!-- 2. 山东大学（济南）- 明天截止 -->
+            <div class="job-card urgent"
+                 data-region="华东" data-education="硕士" data-hire-type="劳务派遣" data-position="行政管理">
+                <div class="job-header">
+                    <div class="school-name">山东大学（济南）</div>
+                    <div class="school-tags">
+                        <span class="tag tag-985">985</span>
+                        <span class="tag tag-double-first">双一流</span>
+                        <span class="tag tag-direct">教育部直属</span>
                     </div>
-                    <span class="deadline-badge deadline-urgent"><i class="fas fa-fire"></i> 明天截止！5月22日</span>
                 </div>
-                <div class="job-title">法治工作办公室综合管理岗（1名）</div>
+                <div class="position-name">法治工作办公室综合管理岗</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 硕士研究生及以上</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 1人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 劳务派遣</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士研究生及以上</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：1人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：劳务派遣</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：按相关规定执行</div>
+                    <div class="detail-item deadline-urgent"><i class="fas fa-calendar-times"></i> 截止：5月22日（明天！）</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 山东济南</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-envelope"></i> 邮箱报名：fwb@sdu.edu.cn</span>
-                    <a class="apply-btn" href="https://www.dbxb.sdu.edu.cn" target="_blank"><i class="fas fa-external-link-alt"></i> 查看公告</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-dispatch">劳务派遣</span>
+                    <a href="https://www.dbxb.sdu.edu.cn/info/1043/2156.htm" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
                 </div>
             </div>
 
-            <!-- 3. 广东行政职业学院 -->
-            <div class="job-card" data-region="广东" data-education="硕士" data-hire-type="事业编制" data-position="教辅岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        广东行政职业学院
-                        <span class="school-tag tag-province">省属公办</span>
+            <!-- 3. 广东行政职业学院 - 首批明天截止 -->
+            <div class="job-card urgent"
+                 data-region="华南" data-education="硕士" data-hire-type="事业编制" data-position="专业技术">
+                <div class="job-header">
+                    <div class="school-name">广东行政职业学院</div>
+                    <div class="school-tags">
+                        <span class="tag tag-provincial">省属公办</span>
+                        <span class="tag tag-new">首批即将截止</span>
                     </div>
-                    <span class="deadline-badge deadline-urgent"><i class="fas fa-fire"></i> 首批5月22日截止</span>
                 </div>
-                <div class="job-title">教学科研及管理人员（9名）</div>
+                <div class="position-name">教学科研及管理人员</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 硕士研究生及以上</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 9人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 事业编制</span>
-                    <span class="detail-tag salary"><i class="fas fa-yen-sign"></i> 按事业单位标准</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士研究生及以上</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：9人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：事业编制</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：事业单位薪酬</div>
+                    <div class="detail-item deadline-urgent"><i class="fas fa-calendar-times"></i> 首批截止：5月22日（明天！）</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 广东广州</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-info-circle"></i> 首批5月22日截止 / 长期滚动至12月31日</span>
-                    <a class="apply-btn" href="https://www.gdxzzy.edu.cn/info/1122/11592.htm" target="_blank"><i class="fas fa-external-link-alt"></i> 查看公告</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-bianzhi">事业编制</span>
+                    <a href="https://www.gdxzzy.edu.cn/info/1122/11592.htm" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
                 </div>
             </div>
 
             <!-- 4. 安徽大学 -->
-            <div class="job-card" data-region="安徽" data-education="硕士" data-hire-type="事业编制" data-position="辅导员">
-                <div class="card-top">
-                    <div class="school-name">
-                        安徽大学
-                        <span class="school-tag tag-211">211</span>
-                        <span class="school-tag tag-double-first">双一流</span>
+            <div class="job-card"
+                 data-region="华东" data-education="硕士" data-hire-type="事业编制" data-position="辅导员">
+                <div class="job-header">
+                    <div class="school-name">安徽大学</div>
+                    <div class="school-tags">
+                        <span class="tag tag-211">211</span>
+                        <span class="tag tag-double-first">双一流</span>
                     </div>
-                    <span class="deadline-badge deadline-normal"><i class="fas fa-clock"></i> 5月26日截止</span>
                 </div>
-                <div class="job-title">专职辅导员（16名）</div>
+                <div class="position-name">专职辅导员</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 硕士研究生及以上</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 16人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 事业编制</span>
-                    <span class="detail-tag salary"><i class="fas fa-yen-sign"></i> 按事业单位标准</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士研究生及以上</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：16人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：事业编制</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：事业单位薪酬</div>
+                    <div class="detail-item deadline-normal"><i class="fas fa-calendar-check"></i> 截止：5月26日17:00</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 安徽合肥</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-globe"></i> 网上报名</span>
-                    <a class="apply-btn" href="http://101.76.160.113/" target="_blank"><i class="fas fa-external-link-alt"></i> 立即报名</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-bianzhi">事业编制</span>
+                    <a href="https://rsc.ahu.edu.cn/2026/0511/c22577a391555/page.htm" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
                 </div>
             </div>
 
-            <!-- 5. 华中农业大学 -->
-            <div class="job-card" data-region="湖北" data-education="本科" data-hire-type="聘用制" data-position="管理岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        华中农业大学
-                        <span class="school-tag tag-211">211</span>
-                        <span class="school-tag tag-double-first">双一流</span>
-                        <span class="school-tag tag-ministry">教育部直属</span>
-                        <span class="new-badge">NEW</span>
+            <!-- 5. 淮南师范学院 -->
+            <div class="job-card"
+                 data-region="华东" data-education="硕士" data-hire-type="事业编制" data-position="辅导员">
+                <div class="job-header">
+                    <div class="school-name">淮南师范学院</div>
+                    <div class="school-tags">
+                        <span class="tag tag-provincial">省属公办</span>
                     </div>
-                    <span class="deadline-badge deadline-normal"><i class="fas fa-clock"></i> 5月29日截止</span>
                 </div>
-                <div class="job-title">党政管理岗（14名）</div>
+                <div class="position-name">专职辅导员</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 本科及以上（统招）</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 14人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 学校正式职工（聘用制）</span>
-                    <span class="detail-tag salary"><i class="fas fa-yen-sign"></i> 缴五险二金+企业年金</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士研究生及以上</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：10人（男5+女5）</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：事业编制</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：事业单位薪酬</div>
+                    <div class="detail-item deadline-normal"><i class="fas fa-calendar-check"></i> 截止：5月26日</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 安徽淮南</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-globe"></i> 网上报名系统</span>
-                    <a class="apply-btn" href="https://zhaopin.hzau.edu.cn" target="_blank"><i class="fas fa-external-link-alt"></i> 立即报名</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-bianzhi">事业编制</span>
+                    <a href="https://hrss.ah.gov.cn/zxzx/ztzl/ahsszsydwgkzpzl/ssgxgkzp/80788537.html" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
                 </div>
             </div>
 
-            <!-- 6. 东南大学（实验室与设备管理处） -->
-            <div class="job-card" data-region="江苏" data-education="硕士" data-hire-type="劳务派遣" data-position="管理岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        东南大学（实验室与设备管理处）
-                        <span class="school-tag tag-985">985</span>
-                        <span class="school-tag tag-double-first">双一流</span>
-                        <span class="school-tag tag-ministry">教育部直属</span>
+            <!-- 6. 华中农业大学 -->
+            <div class="job-card"
+                 data-region="华中" data-education="硕士" data-hire-type="聘用制" data-position="行政管理">
+                <div class="job-header">
+                    <div class="school-name">华中农业大学</div>
+                    <div class="school-tags">
+                        <span class="tag tag-985">985</span>
+                        <span class="tag tag-double-first">双一流</span>
+                        <span class="tag tag-direct">教育部直属</span>
+                        <span class="tag tag-new">NEW</span>
                     </div>
-                    <span class="deadline-badge deadline-normal"><i class="fas fa-clock"></i> 5月31日截止</span>
                 </div>
-                <div class="job-title">派遣制行政管理人员（1名）</div>
+                <div class="position-name">党政管理岗</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 硕士研究生及以上</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 1人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 劳务派遣</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士研究生及以上</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：14人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：学校正式职工（聘用制）</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：按学校薪酬标准</div>
+                    <div class="detail-item deadline-normal"><i class="fas fa-calendar-check"></i> 截止：5月29日</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 湖北武汉</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-envelope"></i> 邮箱报名：seusysysbglc@163.com</span>
-                    <a class="apply-btn" href="https://rsc.seu.edu.cn/54532/list.htm" target="_blank"><i class="fas fa-external-link-alt"></i> 查看公告</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-pinyong">聘用制</span>
+                    <a href="https://zhaopin.hzau.edu.cn" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
                 </div>
             </div>
 
-            <!-- 7. 东南大学 -->
-            <div class="job-card" data-region="江苏" data-education="硕士" data-hire-type="事业编制" data-position="管理岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        东南大学
-                        <span class="school-tag tag-985">985</span>
-                        <span class="school-tag tag-double-first">双一流</span>
-                        <span class="school-tag tag-ministry">教育部直属</span>
-                        <span class="new-badge">NEW</span>
+            <!-- 7. 北京航空航天大学 -->
+            <div class="job-card"
+                 data-region="华北" data-education="硕士" data-hire-type="聘用制" data-position="行政管理">
+                <div class="job-header">
+                    <div class="school-name">北京航空航天大学</div>
+                    <div class="school-tags">
+                        <span class="tag tag-985">985</span>
+                        <span class="tag tag-double-first">双一流</span>
+                        <span class="tag tag-direct">工信部直属</span>
+                        <span class="tag tag-new">NEW</span>
                     </div>
-                    <span class="deadline-badge deadline-normal"><i class="fas fa-clock"></i> 报名5月22日-6月4日</span>
                 </div>
-                <div class="job-title">管理和专技岗位（41名：管理岗36+专技5）</div>
+                <div class="position-name">人文社会科学学院·教务及行政管理岗</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 硕士/博士</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 41人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 事业编制（择优）/非在编人事代理</span>
-                    <span class="detail-tag salary"><i class="fas fa-yen-sign"></i> 按事业单位标准</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士研究生及以上</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：1-2人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：聘用编（劳动合同）</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：按聘用编标准（面议）</div>
+                    <div class="detail-item deadline-normal"><i class="fas fa-calendar-check"></i> 截止：5月29日</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 北京市</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-globe"></i> 5月22日起网上报名</span>
-                    <a class="apply-btn" href="http://zp.ehall.seu.edu.cn" target="_blank"><i class="fas fa-external-link-alt"></i> 报名系统</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-contract">聘用编（合同制）</span>
+                    <a href="mailto:lixinzhu@buaa.edu.cn" class="apply-link">
+                        <i class="fas fa-envelope"></i> 投递简历
+                    </a>
                 </div>
             </div>
 
-            <!-- 8. 中国科学技术大学 -->
-            <div class="job-card" data-region="安徽" data-education="硕士" data-hire-type="人才派遣" data-position="管理岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        中国科学技术大学
-                        <span class="school-tag tag-985">985</span>
-                        <span class="school-tag tag-double-first">双一流</span>
-                        <span class="school-tag tag-ministry">中科院直属</span>
+            <!-- 8. 东南大学（实验室与设备管理处）-->
+            <div class="job-card"
+                 data-region="华东" data-education="硕士" data-hire-type="劳务派遣" data-position="行政管理">
+                <div class="job-header">
+                    <div class="school-name">东南大学</div>
+                    <div class="school-tags">
+                        <span class="tag tag-985">985</span>
+                        <span class="tag tag-double-first">双一流</span>
+                        <span class="tag tag-direct">教育部直属</span>
                     </div>
-                    <span class="deadline-badge deadline-normal"><i class="fas fa-clock"></i> 6月6日截止</span>
                 </div>
-                <div class="job-title">管理岗位（35名，涵盖党政办、研究生院、教务处、科研部等）</div>
+                <div class="position-name">实验室与设备管理处·派遣制行政管理</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 硕士及以上（32岗）/博士（3岗）</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 35人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 人才派遣→事业编制</span>
-                    <span class="detail-tag salary"><i class="fas fa-yen-sign"></i> 首聘2年，考核合格转编</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士研究生（参考）</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：1人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：劳务派遣</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：按派遣制标准</div>
+                    <div class="detail-item deadline-normal"><i class="fas fa-calendar-check"></i> 截止：5月31日</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 江苏南京</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-globe"></i> 人才招聘网报名（限报1岗）</span>
-                    <a class="apply-btn" href="https://employment.ustc.edu.cn/cn/" target="_blank"><i class="fas fa-external-link-alt"></i> 立即报名</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-dispatch">劳务派遣</span>
+                    <a href="https://rsc.seu.edu.cn/2026/0518/c54532a567980/page.htm" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
                 </div>
             </div>
 
-            <!-- 9. 复旦大学（经济学院） -->
-            <div class="job-card" data-region="上海" data-education="硕士" data-hire-type="劳务派遣" data-position="管理岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        复旦大学（经济学院）
-                        <span class="school-tag tag-985">985</span>
-                        <span class="school-tag tag-double-first">双一流</span>
-                        <span class="school-tag tag-ministry">教育部直属</span>
+            <!-- 9. 中国科学技术大学 -->
+            <div class="job-card"
+                 data-region="华东" data-education="硕士" data-hire-type="聘用制" data-position="行政管理">
+                <div class="job-header">
+                    <div class="school-name">中国科学技术大学</div>
+                    <div class="school-tags">
+                        <span class="tag tag-985">985</span>
+                        <span class="tag tag-double-first">双一流</span>
+                        <span class="tag tag-direct">中科院直属</span>
                     </div>
-                    <span class="deadline-badge deadline-long"><i class="fas fa-clock"></i> 7月31日截止</span>
                 </div>
-                <div class="job-title">专业硕士研究生教育行政管理岗（1名）</div>
+                <div class="position-name">管理岗位（人才派遣→事业编制）</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 硕士研究生及以上</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 1人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 劳务派遣</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士研究生及以上</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：34人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：人才派遣→考核合格转事业编</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：首聘2年派遣，考核转编</div>
+                    <div class="detail-item deadline-normal"><i class="fas fa-calendar-check"></i> 截止：6月6日</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 安徽合肥</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-envelope"></i> 邮箱报名：jjxydb@fudan.edu.cn</span>
-                    <a class="apply-btn" href="https://hr.fudan.edu.cn/6e/94/c15370a749204/page.htm" target="_blank"><i class="fas fa-external-link-alt"></i> 查看公告</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-pinyong">派遣→事业编制</span>
+                    <a href="http://employment.ustc.edu.cn/cn/" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 报名系统
+                    </a>
                 </div>
             </div>
 
-            <!-- 10. 复旦大学（国际合作处） -->
-            <div class="job-card" data-region="上海" data-education="本科" data-hire-type="劳务派遣" data-position="管理岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        复旦大学（国际合作处）
-                        <span class="school-tag tag-985">985</span>
-                        <span class="school-tag tag-double-first">双一流</span>
-                        <span class="school-tag tag-ministry">教育部直属</span>
+            <!-- 10. 复旦大学（经济学院）-->
+            <div class="job-card"
+                 data-region="华东" data-education="硕士" data-hire-type="劳务派遣" data-position="行政管理">
+                <div class="job-header">
+                    <div class="school-name">复旦大学·经济学院</div>
+                    <div class="school-tags">
+                        <span class="tag tag-985">985</span>
+                        <span class="tag tag-double-first">双一流</span>
+                        <span class="tag tag-direct">教育部直属</span>
                     </div>
-                    <span class="deadline-badge deadline-long"><i class="fas fa-clock"></i> 9月30日截止</span>
                 </div>
-                <div class="job-title">出国出境服务中心行政助理（1名）</div>
+                <div class="position-name">专业硕士研究生教育行政管理岗</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 本科及以上</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 1人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 劳务派遣</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士研究生及以上</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：1人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：劳务派遣</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：按派遣标准</div>
+                    <div class="detail-item deadline-normal"><i class="fas fa-calendar-check"></i> 截止：7月31日</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 上海市</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-globe"></i> 人才招聘系统报名</span>
-                    <a class="apply-btn" href="http://zp.fudan.edu.cn" target="_blank"><i class="fas fa-external-link-alt"></i> 立即报名</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-dispatch">劳务派遣</span>
+                    <a href="mailto:jjxydb@fudan.edu.cn" class="apply-link">
+                        <i class="fas fa-envelope"></i> 投递简历
+                    </a>
                 </div>
             </div>
 
-            <!-- 11. 深圳大学 -->
-            <div class="job-card" data-region="广东" data-education="硕士" data-hire-type="聘用制" data-position="管理岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        深圳大学
-                        <span class="school-tag tag-province">省属重点</span>
+            <!-- 11. 复旦大学（国际合作处）-->
+            <div class="job-card longterm"
+                 data-region="华东" data-education="本科" data-hire-type="劳务派遣" data-position="行政管理">
+                <div class="job-header">
+                    <div class="school-name">复旦大学·国际合作处</div>
+                    <div class="school-tags">
+                        <span class="tag tag-985">985</span>
+                        <span class="tag tag-double-first">双一流</span>
+                        <span class="tag tag-direct">教育部直属</span>
                     </div>
-                    <span class="deadline-badge deadline-long"><i class="fas fa-infinity"></i> 招满即止</span>
                 </div>
-                <div class="job-title">聘任制人员（13名，多岗位）</div>
+                <div class="position-name">出国出境服务中心行政助理</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 硕士及以上（具体见岗位表）</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 13人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 聘用制</span>
-                    <span class="detail-tag salary"><i class="fas fa-yen-sign"></i> 按深大聘任制薪酬办法</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：本科及以上</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：1人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：劳务派遣</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：按派遣标准</div>
+                    <div class="detail-item deadline-longterm"><i class="fas fa-calendar-alt"></i> 截止：9月30日（长期）</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 上海市</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-envelope"></i> 邮箱报名（见岗位表联系人）</span>
-                    <a class="apply-btn" href="https://hr.szu.edu.cn/info/1014/23441.htm" target="_blank"><i class="fas fa-external-link-alt"></i> 查看公告</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-dispatch">劳务派遣</span>
+                    <a href="https://hr.fudan.edu.cn" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
                 </div>
             </div>
 
-            <!-- 12. 安徽师范大学 -->
-            <div class="job-card" data-region="安徽" data-education="硕士" data-hire-type="劳务派遣" data-position="管理岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        安徽师范大学
-                        <span class="school-tag tag-province">省属重点</span>
+            <!-- 12. 南通大学 -->
+            <div class="job-card longterm"
+                 data-region="华东" data-education="博士" data-hire-type="事业编制" data-position="行政管理">
+                <div class="job-header">
+                    <div class="school-name">南通大学</div>
+                    <div class="school-tags">
+                        <span class="tag tag-provincial">省属重点</span>
                     </div>
-                    <span class="deadline-badge deadline-long"><i class="fas fa-infinity"></i> 招满即止</span>
                 </div>
-                <div class="job-title">党政管理/专业技术岗（约28人，20个岗位）</div>
+                <div class="position-name">行政管理岗（博士/高层次人才）</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 本科/硕士/博士（各岗不同）</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 28人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 劳务派遣/人事代理</span>
-                    <span class="detail-tag salary"><i class="fas fa-yen-sign"></i> 硕士包干12万/年</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：博士研究生</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：若干人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：事业编制</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：事业单位薪酬+人才补贴</div>
+                    <div class="detail-item deadline-longterm"><i class="fas fa-calendar-alt"></i> 截止：12月23日（长期）</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 江苏南通</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-globe"></i> 人才招聘系统报名</span>
-                    <a class="apply-btn" href="https://hr.ahnu.edu.cn/zp.html" target="_blank"><i class="fas fa-external-link-alt"></i> 立即报名</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-bianzhi">事业编制</span>
+                    <a href="https://hr.ntu.edu.cn/2026/0412/c858a289043/page.htm" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
                 </div>
             </div>
 
-            <!-- 13. 南通大学 -->
-            <div class="job-card" data-region="江苏" data-education="博士" data-hire-type="事业编制" data-position="管理岗">
-                <div class="card-top">
-                    <div class="school-name">
-                        南通大学
-                        <span class="school-tag tag-province">省属重点</span>
+            <!-- 13. 深圳大学 -->
+            <div class="job-card longterm"
+                 data-region="华南" data-education="硕士" data-hire-type="聘用制" data-position="行政管理">
+                <div class="job-header">
+                    <div class="school-name">深圳大学</div>
+                    <div class="school-tags">
+                        <span class="tag tag-provincial">省属重点</span>
                     </div>
-                    <span class="deadline-badge deadline-long"><i class="fas fa-clock"></i> 12月23日截止</span>
                 </div>
-                <div class="job-title">行政管理/高层次人才岗（事业编制，博士）</div>
+                <div class="position-name">聘任制人员（多岗位）</div>
                 <div class="job-details">
-                    <span class="detail-tag education"><i class="fas fa-graduation-cap"></i> 博士研究生</span>
-                    <span class="detail-tag count"><i class="fas fa-users"></i> 若干人</span>
-                    <span class="detail-tag hire-type"><i class="fas fa-building"></i> 事业编制（全额拨款）</span>
-                    <span class="detail-tag salary"><i class="fas fa-yen-sign"></i> 按事业单位标准</span>
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士及以上（按岗位）</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：13人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：聘任制</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：按深大聘任制薪酬管理办法</div>
+                    <div class="detail-item deadline-longterm"><i class="fas fa-calendar-alt"></i> 截止：招满即止（长期）</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 广东深圳</div>
                 </div>
-                <div class="job-meta">
-                    <span class="apply-info"><i class="fas fa-globe"></i> 江苏省属事业单位公开招聘平台</span>
-                    <a class="apply-btn" href="https://rs.jshrss.jiangsu.gov.cn/index/f/RCRS_0056" target="_blank"><i class="fas fa-external-link-alt"></i> 立即报名</a>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-pinyong">聘用制</span>
+                    <a href="https://hr.szu.edu.cn/info/1014/23441.htm" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
+                </div>
+            </div>
+
+            <!-- 14. 安徽师范大学 -->
+            <div class="job-card longterm"
+                 data-region="华东" data-education="硕士" data-hire-type="劳务派遣" data-position="行政管理">
+                <div class="job-header">
+                    <div class="school-name">安徽师范大学</div>
+                    <div class="school-tags">
+                        <span class="tag tag-provincial">省属重点</span>
+                    </div>
+                </div>
+                <div class="position-name">党政管理及专业技术岗（多岗位）</div>
+                <div class="job-details">
+                    <div class="detail-item"><i class="fas fa-user-graduate"></i> 学历：硕士/本科（按岗位）</div>
+                    <div class="detail-item"><i class="fas fa-users"></i> 招聘：约29人</div>
+                    <div class="detail-item"><i class="fas fa-id-badge"></i> 编制：劳务派遣/人事代理</div>
+                    <div class="detail-item"><i class="fas fa-yen-sign"></i> 待遇：按学校标准</div>
+                    <div class="detail-item deadline-longterm"><i class="fas fa-calendar-alt"></i> 截止：招满即止（长期）</div>
+                    <div class="detail-item"><i class="fas fa-map-marker-alt"></i> 安徽芜湖</div>
+                </div>
+                <div class="job-footer">
+                    <span class="hire-type-badge hire-dispatch">劳务派遣/人事代理</span>
+                    <a href="https://rsc.ahnu.edu.cn/info/1061/5349.htm" target="_blank" class="apply-link">
+                        <i class="fas fa-external-link-alt"></i> 查看公告
+                    </a>
                 </div>
             </div>
 
         </div>
 
-        <!-- 无结果提示 -->
-        <div class="no-results" id="noResults" style="display:none;">
-            <i class="fas fa-search" style="font-size:2em;margin-bottom:10px;display:block;"></i>
-            没有符合条件的岗位，请调整筛选条件
+        <div class="empty-state" id="emptyState" style="display:none;">
+            <i class="fas fa-search" style="font-size:2em;margin-bottom:10px;"></i>
+            <p>没有匹配的岗位，请调整筛选条件</p>
         </div>
 
-        <!-- 页脚 -->
         <div class="footer">
-            <p>数据来源：高校人才网、各高校人事处、省市人社局 | 仅展示仍在报名中的岗位</p>
-            <p>每日自动更新 | <a href="https://zeroplus95.github.io/university-jobs/" target="_blank">GitHub Pages</a></p>
+            <p>💡 数据来源：各高校人事处、高校人才网、省市人社局 · 每日10:00自动更新</p>
+            <p>⚠️ 信息仅供参考，请以官方公告为准 · 发现过期信息请联系反馈</p>
         </div>
     </div>
 
     <script>
-        // 四维AND筛选逻辑
-        const filters = { region: 'all', education: 'all', 'hire-type': 'all', position: 'all' };
+        // 筛选逻辑
+        const filters = {
+            region: 'all',
+            education: 'all',
+            'hire-type': 'all',
+            position: 'all'
+        };
 
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', function() {
                 const filterType = this.dataset.filter;
                 const filterValue = this.dataset.value;
 
-                // 更新同组按钮状态
+                // 更新按钮状态
                 document.querySelectorAll(`.filter-btn[data-filter="${filterType}"]`).forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
 
+                // 更新筛选条件
                 filters[filterType] = filterValue;
+
                 applyFilters();
             });
-        });
-
-        document.getElementById('resetBtn').addEventListener('click', function() {
-            Object.keys(filters).forEach(key => filters[key] = 'all');
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-                if (btn.dataset.value === 'all') btn.classList.add('active');
-            });
-            applyFilters();
         });
 
         function applyFilters() {
@@ -786,29 +815,31 @@
 
             cards.forEach(card => {
                 let show = true;
-                Object.keys(filters).forEach(key => {
-                    if (filters[key] !== 'all') {
-                        const cardValue = card.dataset[key];
-                        if (key === 'education') {
-                            // 学历筛选：本科匹配包含本科的，硕士匹配硕士及以上，博士匹配博士
-                            if (filters[key] === '本科') {
-                                if (!cardValue.includes('本科')) show = false;
-                            } else if (filters[key] === '硕士') {
-                                if (!cardValue.includes('硕士')) show = false;
-                            } else if (filters[key] === '博士') {
-                                if (!cardValue.includes('博士')) show = false;
-                            }
-                        } else {
-                            if (cardValue !== filters[key]) show = false;
+
+                for (const [key, value] of Object.entries(filters)) {
+                    if (value !== 'all') {
+                        if (card.dataset[key] !== value) {
+                            show = false;
+                            break;
                         }
                     }
-                });
-                card.style.display = show ? 'block' : 'none';
+                }
+
+                card.style.display = show ? '' : 'none';
                 if (show) visibleCount++;
             });
 
-            document.getElementById('resultCount').textContent = `显示 ${visibleCount} 个岗位`;
-            document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+            document.getElementById('visibleCount').textContent = visibleCount;
+            document.getElementById('emptyState').style.display = visibleCount === 0 ? '' : 'none';
+        }
+
+        function resetFilters() {
+            for (const key of Object.keys(filters)) {
+                filters[key] = 'all';
+                document.querySelectorAll(`.filter-btn[data-filter="${key}"]`).forEach(b => b.classList.remove('active'));
+                document.querySelector(`.filter-btn[data-filter="${key}"][data-value="all"]`).classList.add('active');
+            }
+            applyFilters();
         }
     </script>
 </body>
