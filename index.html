@@ -393,28 +393,6 @@
             cursor: not-allowed;
         }
 
-        /* 历史快照提示 */
-        .archive-banner {
-            background: linear-gradient(135deg, #f39c12, #e67e22);
-            color: white;
-            text-align: center;
-            padding: 10px 20px;
-            border-radius: 12px;
-            margin-bottom: 16px;
-            font-size: 0.9em;
-            display: none;
-        }
-
-        .archive-banner i {
-            margin-right: 6px;
-        }
-
-        .archive-banner a {
-            color: white;
-            font-weight: 700;
-            text-decoration: underline;
-        }
-
         /* 底部 */
         .footer {
             text-align: center;
@@ -479,12 +457,6 @@
         </div>
 
         <!-- 统计栏 -->
-        <!-- 历史快照提示（仅archive页面显示） -->
-        <div class="archive-banner" id="archiveBanner">
-            <i class="fas fa-history"></i>
-            这是 <strong id="archiveDateText"></strong> 的历史快照，部分岗位可能已截止。<a href="javascript:goToday()">查看今日最新数据 →</a>
-        </div>
-
         <div class="stats-bar">
             <div class="stat-item">
                 <span class="stat-num" id="totalCount">18</span>
@@ -1016,109 +988,30 @@
 
     <script>
         // ===== 日期选择器逻辑 =====
-        const PAGE_DATE = '2026-05-26'; // 本页数据对应的日期
-        const FIRST_DATE = '2026-05-08'; // 最早可用快照日期
-        const REAL_TODAY = new Date().toISOString().split('T')[0]; // 动态获取真实今天
-        const BASE_URL = (function() {
-            let p = window.location.pathname;
-            if (p.endsWith('/index.html')) p = p.replace(/\/index\.html$/, '/');
-            else if (p.endsWith('.html') && p.includes('/archive/')) p = p.replace(/\/archive\/.*$/, '/');
-            else if (!p.endsWith('/')) p = p + '/';
-            return p;
-        })();
+        const PAGE_DATE = '2026-05-26';
+        const REAL_TODAY = new Date().toISOString().split('T')[0];
 
         const datePicker = document.getElementById('datePicker');
-        datePicker.max = REAL_TODAY;
-        datePicker.min = FIRST_DATE;
+        datePicker.min = PAGE_DATE;
+        datePicker.max = PAGE_DATE;
 
-        // 显示日期导航提示
-        function showDateToast(msg, duration) {
-            duration = duration || 3000;
-            let toast = document.getElementById('dateToast');
-            if (!toast) {
-                toast = document.createElement('div');
-                toast.id = 'dateToast';
-                toast.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:rgba(118,75,162,0.95);color:#fff;padding:10px 24px;border-radius:12px;font-size:0.9em;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:opacity 0.3s;pointer-events:none;';
-                document.body.appendChild(toast);
-            }
-            toast.textContent = msg;
-            toast.style.opacity = '1';
-            clearTimeout(toast._timer);
-            toast._timer = setTimeout(function() { toast.style.opacity = '0'; }, duration);
-        }
-
-        // 检查存档页面是否存在，存在则跳转，不存在则提示
-        function navigateToDate(dateStr) {
-            if (dateStr === REAL_TODAY || dateStr >= PAGE_DATE) {
-                // 回到 index.html
-                window.location.href = window.location.origin + BASE_URL;
-                return;
-            }
-            // 先检查存档是否存在
-            var archiveUrl = window.location.origin + BASE_URL + 'archive/' + dateStr + '.html';
-            showDateToast('正在加载 ' + dateStr + ' 的快照...');
-            fetch(archiveUrl, { method: 'HEAD' }).then(function(resp) {
-                if (resp.ok) {
-                    window.location.href = archiveUrl;
-                } else {
-                    showDateToast('暂无 ' + dateStr + ' 的快照数据');
-                    datePicker.value = PAGE_DATE; // 恢复当前日期
-                }
-            }).catch(function() {
-                // fetch失败（本地file://协议），直接跳转让浏览器处理404
-                window.location.href = archiveUrl;
-            });
-        }
-
+        // 日期改变时刷新（未来日期暂时不可用，保持当前页）
         datePicker.addEventListener('change', function() {
-            navigateToDate(this.value);
+            if (this.value !== PAGE_DATE) {
+                this.value = PAGE_DATE;
+            }
         });
 
         function goToday() {
-            window.location.href = window.location.origin + BASE_URL;
+            datePicker.value = PAGE_DATE;
         }
 
-        function goPrev() {
-            const current = new Date(datePicker.value + 'T00:00:00');
-            const prev = new Date(current);
-            do {
-                prev.setDate(prev.getDate() - 1);
-            } while (prev.getDay() === 0 || prev.getDay() === 6);
-            if (prev < new Date(FIRST_DATE + 'T00:00:00')) return;
-            datePicker.value = prev.toISOString().split('T')[0];
-            datePicker.dispatchEvent(new Event('change'));
-        }
+        function goPrev() {} // 不可用
+        function goNext() {} // 不可用
 
-        function goNext() {
-            const current = new Date(datePicker.value + 'T00:00:00');
-            const todayDate = new Date(REAL_TODAY + 'T00:00:00');
-            const next = new Date(current);
-            do {
-                next.setDate(next.getDate() + 1);
-            } while (next.getDay() === 0 || next.getDay() === 6);
-            if (next > todayDate) return;
-            datePicker.value = next.toISOString().split('T')[0];
-            datePicker.dispatchEvent(new Event('change'));
-        }
-
-        function updateNavButtons() {
-            const current = datePicker.value;
-            document.querySelectorAll('.date-nav-btn')[0].disabled = (current <= FIRST_DATE);
-            document.querySelectorAll('.date-nav-btn')[1].disabled = (current >= REAL_TODAY);
-        }
-        updateNavButtons();
-
-        // 检测是否为存档页面，显示历史快照横幅
-        (function detectArchive() {
-            const isArchive = window.location.pathname.includes('/archive/');
-            if (isArchive && PAGE_DATE < REAL_TODAY) {
-                const banner = document.getElementById('archiveBanner');
-                banner.style.display = 'block';
-                const dateText = document.getElementById('archiveDateText');
-                const parts = PAGE_DATE.split('-');
-                dateText.textContent = parts[0] + '年' + parseInt(parts[1]) + '月' + parseInt(parts[2]) + '日';
-            }
-        })();
+        // 左右箭头永久禁用
+        document.querySelectorAll('.date-nav-btn')[0].disabled = true;
+        document.querySelectorAll('.date-nav-btn')[1].disabled = true;
 
         // ===== 筛选逻辑 =====
         const activeFilters = {
