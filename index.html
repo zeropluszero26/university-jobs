@@ -1118,7 +1118,7 @@
             <h4><i class="fab fa-weixin" style="color:#07c160;"></i> 微信订阅更新通知</h4>
             <p class="sub-desc">扫码关注后，每天新岗位自动推送</p>
             <div class="qrcode-wrap">
-                <img id="subQR" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="订阅二维码">
+                <img id="subQR" src="wx-subscribe-qr.png" alt="微信扫码订阅">
             </div>
             <div class="sub-steps">
                 <div><i class="fas fa-check-circle"></i> 微信扫码关注</div>
@@ -1175,16 +1175,6 @@
         function toggleSub() {
             var panel = document.getElementById('subPanel');
             panel.classList.toggle('show');
-            if (panel.classList.contains('show')) {
-                var qr = document.getElementById('subQR');
-                var wrap = qr.parentElement;
-                var url = 'https://wxpusher.zjiecode.com/wxuser/?type=1&id=' + WXPUSHER_TOPIC_ID + '#/follow';
-                qr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(url);
-                qr.onerror = function() {
-                    wrap.innerHTML = '<div style=color:#07c160;font-size:0.85em><i class="fab fa-weixin" style="font-size:2em;display:block;margin-bottom:8px;"></i>微信扫码订阅<br><small style=color:#999>打开微信扫一扫</small></div>';
-                };
-                qr.onload = function() { wrap.style.background = '#fff'; };
-            }
         }
 
         // 点击面板外部关闭
