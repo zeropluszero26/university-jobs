@@ -454,6 +454,49 @@
             color: #e74c3c; font-size: 0.82em; margin-top: 10px; min-height: 20px;
         }
 
+        /* 微信订阅 */
+        .sub-float {
+            position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+            display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+        }
+        .sub-float-btn {
+            width: 50px; height: 50px; border-radius: 50%;
+            background: linear-gradient(135deg, #07c160, #06ad56);
+            color: white; border: none; cursor: pointer;
+            font-size: 1.3em; box-shadow: 0 4px 16px rgba(7,193,96,0.4);
+            transition: transform 0.3s; animation: pulse-sub 2s infinite;
+        }
+        @keyframes pulse-sub { 0%,100%{box-shadow:0 4px 16px rgba(7,193,96,0.4)} 50%{box-shadow:0 4px 28px rgba(7,193,96,0.7)} }
+        .sub-float-btn:hover { transform: scale(1.08); }
+        .sub-panel {
+            background: white; border-radius: 16px; padding: 24px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15); text-align: center;
+            width: 280px; display: none; animation: slideUp 0.3s ease;
+        }
+        .sub-panel.show { display: block; }
+        @keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+        .sub-panel h4 { color: #333; font-size: 1em; margin-bottom: 4px; }
+        .sub-panel .sub-desc { color: #999; font-size: 0.78em; margin-bottom: 14px; }
+        .sub-panel .qrcode-wrap {
+            width: 160px; height: 160px; margin: 0 auto 10px;
+            border: 3px solid #07c160; border-radius: 12px; padding: 4px;
+            display: flex; align-items: center; justify-content: center;
+            background: #f9f9f9;
+        }
+        .sub-panel .qrcode-wrap img { width: 100%; height: 100%; }
+        .sub-panel .sub-steps { text-align: left; font-size: 0.75em; color: #666; line-height: 1.8; }
+        .sub-panel .sub-steps i { color: #07c160; margin-right: 4px; }
+        .sub-panel .close-sub {
+            position: absolute; top: 10px; right: 14px;
+            background: none; border: none; font-size: 1.1em; color: #999; cursor: pointer;
+        }
+        .sub-panel { position: relative; }
+
+        @media (max-width: 768px) {
+            .sub-float { bottom: 16px; right: 16px; }
+            .sub-float-btn { width: 44px; height: 44px; font-size: 1.1em; }
+        }
+
         /* 底部 */
         .footer {
             text-align: center;
@@ -1068,6 +1111,26 @@
         </div>
     </div>
 
+    <!-- 微信订阅 -->
+    <div class="sub-float">
+        <div class="sub-panel" id="subPanel">
+            <button class="close-sub" onclick="toggleSub()">&times;</button>
+            <h4><i class="fab fa-weixin" style="color:#07c160;"></i> 微信订阅更新通知</h4>
+            <p class="sub-desc">扫码关注后，每天新岗位自动推送</p>
+            <div class="qrcode-wrap">
+                <img id="subQR" src="" alt="订阅二维码" onerror="this.parentElement.innerHTML='<div style=color:#999;font-size:0.75em>二维码加载中<br>请先配置WxPusher</div>'">
+            </div>
+            <div class="sub-steps">
+                <div><i class="fas fa-check-circle"></i> 微信扫码关注</div>
+                <div><i class="fas fa-check-circle"></i> 点击「关注主题」</div>
+                <div><i class="fas fa-check-circle"></i> 每日10点自动接收推送</div>
+            </div>
+        </div>
+        <button class="sub-float-btn" onclick="toggleSub()" title="微信订阅">
+            <i class="fas fa-bell"></i>
+        </button>
+    </div>
+
     <script>
         // ===== 登录验证 =====
         const AUTH_KEY = 'university_jobs_auth';
@@ -1103,6 +1166,33 @@
             if (inp.type === 'password') { inp.type = 'text'; icon.className = 'fas fa-eye-slash'; }
             else { inp.type = 'password'; icon.className = 'fas fa-eye'; }
         }
+
+        // ===== 微信订阅 =====
+        // 在 WxPusher (wxpusher.zjiecode.com) 注册后，填入你的 appToken 和 topicId
+        var WXPUSHER_APP_TOKEN = '';
+        var WXPUSHER_TOPIC_ID = 0;
+
+        function toggleSub() {
+            var panel = document.getElementById('subPanel');
+            panel.classList.toggle('show');
+            // 首次打开时加载二维码
+            if (panel.classList.contains('show') && WXPUSHER_TOPIC_ID) {
+                var qr = document.getElementById('subQR');
+                if (!qr.src) {
+                    qr.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' +
+                        encodeURIComponent('https://wxpusher.zjiecode.com/wxuser/?type=1&id=' + WXPUSHER_TOPIC_ID + '#/follow');
+                }
+            }
+        }
+
+        // 点击面板外部关闭
+        document.addEventListener('click', function(e) {
+            var panel = document.getElementById('subPanel');
+            var btn = document.querySelector('.sub-float-btn');
+            if (panel.classList.contains('show') && !panel.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+                panel.classList.remove('show');
+            }
+        });
         // ===== 日期选择器逻辑 =====
         const PAGE_DATE = '2026-05-26';   // 本页数据日期
         const FIRST_DATE = '2026-05-08';  // 最早快照日期
