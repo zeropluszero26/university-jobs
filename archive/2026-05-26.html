@@ -1031,15 +1031,47 @@
         datePicker.max = REAL_TODAY;
         datePicker.min = FIRST_DATE;
 
-        datePicker.addEventListener('change', function() {
-            const selected = this.value;
-            if (selected === REAL_TODAY || selected >= PAGE_DATE) {
-                // 今天或晚于当前页日期 → 回到 index.html
-                window.location.href = window.location.origin + BASE_URL;
-            } else {
-                // 历史 → archive/YYYY-MM-DD.html
-                window.location.href = window.location.origin + BASE_URL + 'archive/' + selected + '.html';
+        // 显示日期导航提示
+        function showDateToast(msg, duration) {
+            duration = duration || 3000;
+            let toast = document.getElementById('dateToast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'dateToast';
+                toast.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:rgba(118,75,162,0.95);color:#fff;padding:10px 24px;border-radius:12px;font-size:0.9em;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:opacity 0.3s;pointer-events:none;';
+                document.body.appendChild(toast);
             }
+            toast.textContent = msg;
+            toast.style.opacity = '1';
+            clearTimeout(toast._timer);
+            toast._timer = setTimeout(function() { toast.style.opacity = '0'; }, duration);
+        }
+
+        // 检查存档页面是否存在，存在则跳转，不存在则提示
+        function navigateToDate(dateStr) {
+            if (dateStr === REAL_TODAY || dateStr >= PAGE_DATE) {
+                // 回到 index.html
+                window.location.href = window.location.origin + BASE_URL;
+                return;
+            }
+            // 先检查存档是否存在
+            var archiveUrl = window.location.origin + BASE_URL + 'archive/' + dateStr + '.html';
+            showDateToast('正在加载 ' + dateStr + ' 的快照...');
+            fetch(archiveUrl, { method: 'HEAD' }).then(function(resp) {
+                if (resp.ok) {
+                    window.location.href = archiveUrl;
+                } else {
+                    showDateToast('暂无 ' + dateStr + ' 的快照数据');
+                    datePicker.value = PAGE_DATE; // 恢复当前日期
+                }
+            }).catch(function() {
+                // fetch失败（本地file://协议），直接跳转让浏览器处理404
+                window.location.href = archiveUrl;
+            });
+        }
+
+        datePicker.addEventListener('change', function() {
+            navigateToDate(this.value);
         });
 
         function goToday() {
