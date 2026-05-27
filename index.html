@@ -519,6 +519,8 @@
         .comment-section-header h3 { font-size: 1.1em; color: #2c3e50; font-weight: 700; }
         .comment-section-header .comment-hint { font-size: 0.78em; color: #999; margin-left: auto; }
         .comment-section-header .comment-count { font-size: 0.78em; color: #764ba2; background: #f3e8ff; padding: 2px 10px; border-radius: 10px; margin-left: 8px; }
+        .comment-section-header .comment-refresh { font-size: 0.78em; color: #764ba2; background: none; border: 1px solid #e8d5f5; padding: 2px 10px; border-radius: 10px; cursor: pointer; margin-left: 6px; transition: background 0.2s; }
+        .comment-section-header .comment-refresh:hover { background: #f3e8ff; }
 
         .comments-list { margin-bottom: 20px; max-height: 500px; overflow-y: auto; }
         .comment-empty, .comment-loading, .comment-error, .comment-setup { text-align: center; color: #999; padding: 30px 10px; font-size: 0.9em; }
@@ -1242,6 +1244,7 @@
                 <i class="fas fa-comments"></i>
                 <h3>讨论交流</h3>
                 <span id="comment-count" class="comment-count" style="display:none">0</span>
+                <button id="comment-refresh-btn" class="comment-refresh" onclick="refreshComments()" title="刷新评论"><i class="fas fa-sync-alt"></i></button>
                 <span class="comment-hint">无需登录，匿名可评</span>
             </div>
             <div id="comments-list" class="comments-list">
@@ -1492,13 +1495,10 @@
 
         // ===== GitHub Issues 评论区 =====
         (function() {
-            // 精细化令牌：仅 Issues 读写权限，限本仓库
-            // 创建方法：GitHub → Settings → Developer settings → Fine-grained tokens → Generate new token
-            // 权限仅选：Issues → Read and write，仓库仅选 zeroplus95/university-jobs
             var COMMENT_TOKEN = ['github_pat_11BTJG35A0','BwIApRKl9CVd_','A0yXtWk2KAHTeGrvc','DRGMQU07IndYOInmA9f','Sun7v6FNIOA2YEPlqGZiwQg'].join('');
-
             var REPO_OWNER = 'zeroplus95';
             var REPO_NAME = 'university-jobs';
+            var currentIssueNum = null;
 
             function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
@@ -1510,10 +1510,15 @@
 
             function api(url, opts) {
                 var h = {'Accept':'application/vnd.github.v3+json'};
-                if (COMMENT_TOKEN) h['Authorization'] = 'token '+COMMENT_TOKEN;
+                if (COMMENT_TOKEN) h['Authorization'] = 'Bearer '+COMMENT_TOKEN;
                 if (opts && opts.body) h['Content-Type'] = 'application/json';
-                return fetch(url, Object.assign({headers:h}, opts||{})).then(function(r){
-                    if (!r.ok) throw new Error('API '+r.status);
+                var fetchOpts = {headers: h, mode: 'cors'};
+                if (opts) {
+                    if (opts.method) fetchOpts.method = opts.method;
+                    if (opts.body) fetchOpts.body = opts.body;
+                }
+                return fetch(url, fetchOpts).then(function(r){
+                    if (!r.ok) return r.text().then(function(t){ throw new Error('API '+r.status+': '+t.substring(0,200)); });
                     return r.json();
                 });
             }
@@ -1521,7 +1526,7 @@
             function renderComments(comments) {
                 var list = document.getElementById('comments-list');
                 var cnt = document.getElementById('comment-count');
-                if (!comments.length) {
+                if (!comments || !comments.length) {
                     list.innerHTML = '<div class="comment-empty">还没有评论，来说点什么吧~</div>';
                     cnt.style.display = 'none';
                     return;
@@ -1539,8 +1544,12 @@
                     var t = new Date(c.created_at);
                     var ts = (t.getMonth()+1)+'/'+t.getDate()+' '+t.getHours().toString().padStart(2,'0')+':'+t.getMinutes().toString().padStart(2,'0');
                     var initial = nick.charAt(0).toUpperCase();
+                    var avatarHtml = '<div class="comment-avatar">'+esc(initial)+'</div>';
+                    if (c.user && c.user.avatar_url) {
+                        avatarHtml = '<div class="comment-avatar"><img src="'+esc(c.user.avatar_url)+'" alt=""></div>';
+                    }
                     return '<div class="comment-item">'
-                        +'<div class="comment-avatar">'+esc(initial)+'</div>'
+                        +avatarHtml
                         +'<div class="comment-body">'
                         +'<div class="comment-meta"><span class="comment-nick">'+esc(nick)+'</span><span class="comment-time">'+ts+'</span></div>'
                         +'<div class="comment-text">'+esc(content).replace(/\n/g,'<br>')+'</div>'
@@ -1549,6 +1558,26 @@
                 list.scrollTop = list.scrollHeight;
             }
 
+            function loadComments() {
+                if (!currentIssueNum) return;
+                document.getElementById('comments-list').innerHTML = '<div class="comment-loading">加载中...</div>';
+                return api('https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/issues/'+currentIssueNum+'/comments?per_page=100&sort=created&direction=asc')
+                .then(renderComments)
+                .catch(function(e){
+                    console.error('[评论] 加载失败:', e);
+                    document.getElementById('comments-list').innerHTML = '<div class="comment-error">评论加载失败，点击刷新重试</div>';
+                });
+            }
+
+            // 全局刷新函数
+            window.refreshComments = function() {
+                var btn = document.getElementById('comment-refresh-btn');
+                btn.querySelector('i').classList.add('fa-spin');
+                loadComments().finally(function(){
+                    btn.querySelector('i').classList.remove('fa-spin');
+                });
+            };
+
             function init() {
                 if (!COMMENT_TOKEN) {
                     document.getElementById('comments-list').innerHTML = '<div class="comment-setup">✨ 评论区配置中，敬请期待</div>';
@@ -1556,26 +1585,31 @@
                     return;
                 }
 
-                var issueNum = null;
-
-                // 查找或创建 Issue
+                // 用列表 API 代替搜索 API（更可靠，无 rate limit 问题）
                 var key = getPageKey();
-                var title = '\uD83D\uDCAC \u8BC4\u8BBA | '+key;
-                api('https://api.github.com/search/issues?q=is:issue+repo:'+REPO_OWNER+'/'+REPO_NAME+'+in:title+"'+encodeURIComponent(title)+'"')
-                .then(function(d){
-                    if (d.total_count>0) return d.items[0];
+                var targetTitle = '\uD83D\uDCAC \u8BC4\u8BBA | '+key;
+
+                api('https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/issues?state=open&per_page=50')
+                .then(function(issues){
+                    var found = null;
+                    for (var i = 0; i < issues.length; i++) {
+                        if (issues[i].title === targetTitle) { found = issues[i]; break; }
+                    }
+                    if (found) return found;
+                    // 创建新 Issue
                     return api('https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/issues',{
                         method:'POST',
-                        body:JSON.stringify({title:title, body:'\u6B64 Issue \u7528\u4E8E ['+document.title+']('+window.location.href+') \u9875\u9762\u7684\u8BC4\u8BBA\u3002'})
+                        body:JSON.stringify({title:targetTitle, body:'\u6B64 Issue \u7528\u4E8E ['+document.title+']('+window.location.href+') \u9875\u9762\u7684\u8BC4\u8BBA\u3002'})
                     });
                 })
                 .then(function(issue){
-                    issueNum = issue.number;
-                    return api('https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/issues/'+issueNum+'/comments?per_page=100&sort=created&direction=asc');
+                    currentIssueNum = issue.number;
+                    return api('https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/issues/'+currentIssueNum+'/comments?per_page=100&sort=created&direction=asc');
                 })
                 .then(renderComments)
-                .catch(function(){
-                    document.getElementById('comments-list').innerHTML = '<div class="comment-error">评论加载失败，请刷新重试</div>';
+                .catch(function(e){
+                    console.error('[评论] 初始化失败:', e);
+                    document.getElementById('comments-list').innerHTML = '<div class="comment-error">评论加载失败，点击 <button onclick="refreshComments()" style="color:#764ba2;background:none;border:none;cursor:pointer;text-decoration:underline">刷新</button> 重试</div>';
                 });
 
                 // 字数统计
@@ -1586,23 +1620,26 @@
                 // 提交评论
                 document.getElementById('comment-form').addEventListener('submit',function(e){
                     e.preventDefault();
-                    if (!issueNum) return;
+                    if (!currentIssueNum) { alert('评论区加载中，请稍后再试'); return; }
                     var nick = document.getElementById('comment-nick').value.trim()||'匿名';
                     var body = document.getElementById('comment-body').value.trim();
                     if (!body) return;
                     var btn = document.getElementById('comment-submit-btn');
                     btn.disabled = true; btn.textContent = '发布中...';
-                    api('https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/issues/'+issueNum+'/comments',{
+                    api('https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/issues/'+currentIssueNum+'/comments',{
                         method:'POST',
                         body:JSON.stringify({body:'@'+nick+'\n'+body})
                     })
                     .then(function(){
                         document.getElementById('comment-body').value = '';
                         document.getElementById('comment-char-count').textContent = '0/500';
-                        return api('https://api.github.com/repos/'+REPO_OWNER+'/'+REPO_NAME+'/issues/'+issueNum+'/comments?per_page=100&sort=created&direction=asc');
+                        // 刷新评论列表
+                        return loadComments();
                     })
-                    .then(renderComments)
-                    .catch(function(){ alert('评论发布失败，请稍后重试'); })
+                    .catch(function(e){
+                        console.error('[评论] 发布失败:', e);
+                        alert('评论发布失败: ' + (e.message||'请稍后重试'));
+                    })
                     .finally(function(){ btn.disabled = false; btn.textContent = '发布'; });
                 });
             }
