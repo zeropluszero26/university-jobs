@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高校行政岗招聘信息 - 2026年6月2日</title>
+    <title>高校行政岗招聘信息 - 2026年6月3日</title>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin:0; padding:0; box-sizing: border-box; }
@@ -624,7 +624,7 @@
         <!-- 日期选择器 -->
         <div class="date-picker-bar">
             <span class="date-picker-label"><i class="fas fa-calendar-alt"></i> 查看日期</span>
-            <input type="date" id="datePicker" class="date-input" value="2026-06-02" min="2026-05-08" max="2026-06-02">
+            <input type="date" id="datePicker" class="date-input" value="2026-06-03" min="2026-05-08" max="2026-06-03">
             <button class="date-today-btn" onclick="goToday()">今天</button>
             <button class="date-nav-btn" onclick="goPrev()"><i class="fas fa-chevron-left"></i></button>
             <button class="date-nav-btn" onclick="goNext()"><i class="fas fa-chevron-right"></i></button>
@@ -640,11 +640,11 @@
         <!-- 统计栏 -->
         <div class="stats-bar">
             <div class="stat-item">
-                <span class="stat-num" id="totalCount">45</span>
+                <span class="stat-num" id="totalCount">47</span>
                 <span class="stat-label">在招岗位</span>
             </div>
             <div class="stat-item">
-                <span class="stat-num" id="urgentCount" style="color:#ff6b6b">4</span>
+                <span class="stat-num" id="urgentCount" style="color:#ff6b6b">5</span>
                 <span class="stat-label">3天内截止</span>
             </div>
             <div class="stat-item">
@@ -709,7 +709,63 @@
         <!-- 岗位卡片 -->
         <div class="cards-grid" id="cardsGrid">
 
-            <!-- NEW 1. 南京邮电大学 - 今天开始报名！ -->
+            <!-- NEW 1. 南京理工大学 - 今日截止！ -->
+            <div class="job-card" data-region="华东" data-education="本科" data-hire="合同制" data-position="行政管理">
+                <div class="new-badge" style="background:#e74c3c;">紧急</div>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">南京理工大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-211">211</span>
+                            <span class="tag tag-double-first">双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-hetong">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">教务处招生办公室（劳务派遣）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按规定执行</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">江苏南京</span></div>
+                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">招生宣传管理</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月3日截止（今天！）</div>
+                    <a href="mailto:1604644775@qq.com" target="_blank" class="apply-link">查看详情</a>
+                </div>
+            </div>
+
+            <!-- NEW 2. 南京理工大学继续教育学院 -->
+            <div class="job-card" data-region="华东" data-education="本科" data-hire="合同制" data-position="行政管理">
+                <div class="new-badge">NEW</div>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">南京理工大学继续教育学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-211">211</span>
+                            <span class="tag tag-double-first">双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-hetong">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">培训项目主管（2名）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按规定执行</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">江苏南京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月8日截止</div>
+                    <a href="mailto:jjy@njust.edu.cn" target="_blank" class="apply-link">查看详情</a>
+                </div>
+            </div>
+
+            <!-- NEW 3. 南京邮电大学 - 今天开始报名！ -->
             <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
                 <div class="new-badge" style="background:#e74c3c;">今日开始</div>
                 <div class="card-header">
@@ -1976,7 +2032,7 @@
         });
 
         // ===== 日期选择器逻辑 =====
-        const PAGE_DATE = '2026-06-02';   // 本页数据日期
+        const PAGE_DATE = '2026-06-03';   // 本页数据日期
         const FIRST_DATE = '2026-05-08';  // 最早快照日期
         const REAL_TODAY = new Date().toISOString().split('T')[0];
         const BASE_URL = (function() {
