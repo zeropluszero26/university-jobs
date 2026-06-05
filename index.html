@@ -1023,14 +1023,6 @@
                 </div>
             </div>
 
-            
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月5日截止</div>
-                    <a href="https://rczp.nju.edu.cn/glgwjqt/sybzry/bwry/20260529/i393687.html" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 1. 西安科技大学 -->
             <div class="job-card" data-region="西北" data-education="硕士" data-hire="事业编制" data-position="辅导员">
                 <div class="new-badge" style="background:#e74c3c;">紧急</div>
                 <div class="card-header">
@@ -1077,14 +1069,6 @@
                     <a href="https://hrss.ah.gov.cn/zxzx/ztzl/ahsszsydwgkzpzl/ssgxgkzp/80789131.html" target="_blank" class="apply-link">查看详情</a>
                 </div>
             </div>
-
-            
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月5日16:00截止（已延长）</div>
-                    <a href="http://rscn.qlnu.edu.cn/info/1003/7051.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
             <!-- 8. 南京审计大学 🆕 -->
             <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
                 <div class="new-badge">NEW</div>
@@ -1161,18 +1145,8 @@
             </div>
 
             
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月5日16:00截止</div>
-                    <a href="https://personnel.sdfmu.edu.cn/info/1026/6141.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
 
             
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月5日截止</div>
-                    <a href="http://hr.ruc.edu.cn/bsjg/bwryglbgs/bwtzgg/dc88a7af95f842b491c4c461984ba0b0.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
 
             <!-- 13. 中国科学技术大学 -->
             <div class="job-card" data-region="华东" data-education="硕士" data-hire="聘用制" data-position="行政管理">
@@ -2014,7 +1988,7 @@
         const AUTH_KEY = 'university_jobs_auth';
         const PASSWORD_HASH = '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c';
 
-        (async function checkAuth() {
+        (async function() {
             if (sessionStorage.getItem(AUTH_KEY) === '1') {
                 document.getElementById('loginOverlay').classList.add('hidden');
                 return;
