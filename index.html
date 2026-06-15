@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>高校行政岗招聘信息 - 2026年6月12日</title>
+    <title>楂樻牎琛屾斂宀楁嫑鑱樹俊鎭?- 2026骞?鏈?5鏃?/title>
     <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { margin:0; padding:0; box-sizing: border-box; }
@@ -44,7 +44,7 @@
             margin-top: 8px;
         }
 
-        /* 统计栏 */
+        /* 缁熻鏍?*/
         .stats-bar {
             display: flex;
             justify-content: center;
@@ -74,7 +74,7 @@
             opacity: 0.85;
         }
 
-        /* 筛选面板 */
+        /* 绛涢€夐潰鏉?*/
         .filter-panel {
             background: rgba(255,255,255,0.95);
             border-radius: 16px;
@@ -147,7 +147,7 @@
             color: white;
         }
 
-        /* 卡片网格 */
+        /* 鍗＄墖缃戞牸 */
         .cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -294,7 +294,7 @@
             box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
         }
 
-        /* NEW标记 */
+        /* NEW鏍囪 */
         .new-badge {
             position: absolute;
             top: 12px;
@@ -314,7 +314,7 @@
             50% { opacity: 0.7; }
         }
 
-        /* 日期选择器 */
+        /* 鏃ユ湡閫夋嫨鍣?*/
         .date-picker-bar {
             display: inline-flex;
             align-items: center;
@@ -394,7 +394,7 @@
             cursor: not-allowed;
         }
 
-        /* 历史快照提示 */
+        /* 鍘嗗彶蹇収鎻愮ず */
         .archive-banner {
             background: linear-gradient(135deg, #f39c12, #e67e22);
             color: white;
@@ -409,7 +409,7 @@
         .archive-banner i { margin-right: 6px; }
         .archive-banner a { color: white; font-weight: 700; text-decoration: underline; }
 
-        /* 登录遮罩 */
+        /* 鐧诲綍閬僵 */
         .login-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -455,7 +455,7 @@
             color: #e74c3c; font-size: 0.82em; margin-top: 10px; min-height: 20px;
         }
 
-        /* 微信订阅 */
+        /* 寰俊璁㈤槄 */
         .sub-float {
             position: fixed; bottom: 24px; right: 24px; z-index: 9998;
             display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
@@ -498,7 +498,7 @@
             .sub-float-btn { width: 44px; height: 44px; font-size: 1.1em; }
         }
 
-        /* 评论区 */
+        /* 璇勮鍖?*/
         .comment-section {
             background: rgba(255,255,255,0.95);
             border-radius: 16px;
@@ -552,7 +552,7 @@
         .comment-submit-btn:hover { opacity: 0.9; }
         .comment-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 
-        /* 底部 */
+        /* 搴曢儴 */
         .footer {
             text-align: center;
             color: rgba(255,255,255,0.7);
@@ -569,7 +569,7 @@
             font-size: 1.1em;
         }
 
-        /* 移动端适配 */
+        /* 绉诲姩绔€傞厤 */
         @media (max-width: 768px) {
             body { padding: 10px; }
             .header h1 { font-size: 1.5em; }
@@ -600,1552 +600,1293 @@
 </head>
 <body>
 
-    <!-- 登录验证 -->
+    <!-- 鐧诲綍楠岃瘉 -->
     <div class="login-overlay" id="loginOverlay">
         <div class="login-card">
             <div class="lock-icon"><i class="fas fa-lock"></i></div>
-            <h3>高校行政岗招聘信息</h3>
-            <p class="sub">请输入访问密码</p>
+            <h3>楂樻牎琛屾斂宀楁嫑鑱樹俊鎭?/h3>
+            <p class="sub">璇疯緭鍏ヨ闂瘑鐮?/p>
             <div class="input-group">
-                <input type="password" id="loginPw" placeholder="输入密码" onkeydown="if(event.key==='Enter')doLogin()">
-                <button class="toggle-pw" onclick="togglePw()" title="显示/隐藏"><i class="fas fa-eye" id="pwIcon"></i></button>
+                <input type="password" id="loginPw" placeholder="杈撳叆瀵嗙爜" onkeydown="if(event.key==='Enter')doLogin()">
+                <button class="toggle-pw" onclick="togglePw()" title="鏄剧ず/闅愯棌"><i class="fas fa-eye" id="pwIcon"></i></button>
             </div>
-            <button class="login-btn" onclick="doLogin()">验证进入</button>
+            <button class="login-btn" onclick="doLogin()">楠岃瘉杩涘叆</button>
             <div class="login-error" id="loginError"></div>
         </div>
     </div>
 
     <div class="container">
-        <!-- 页头 -->
+        <!-- 椤靛ご -->
         <div class="header">
-            <h1><i class="fas fa-graduation-cap"></i> 高校行政岗招聘信息</h1>
-            <p>每日更新 · 只展示仍在报名中的岗位</p>
-            <div class="update-time"><i class="fas fa-clock"></i> 更新时间：2026年6月12日 09:00</div>
+            <h1><i class="fas fa-graduation-cap"></i> 楂樻牎琛屾斂宀楁嫑鑱樹俊鎭?/h1>
+            <p>姣忔棩鏇存柊 路 鍙睍绀轰粛鍦ㄦ姤鍚嶄腑鐨勫矖浣?/p>
+            <div class="update-time"><i class="fas fa-clock"></i> 鏇存柊鏃堕棿锛?026骞?鏈?5鏃?09:00</div>
 
-        <!-- 日期选择器 -->
+        <!-- 鏃ユ湡閫夋嫨鍣?-->
         <div class="date-picker-bar">
-            <span class="date-picker-label"><i class="fas fa-calendar-alt"></i> 查看日期</span>
-            <input type="date" id="datePicker" class="date-input" value="2026-06-12" min="2026-05-08" max="2026-06-12">
-            <button class="date-today-btn" onclick="goToday()">今天</button>
+            <span class="date-picker-label"><i class="fas fa-calendar-alt"></i> 鏌ョ湅鏃ユ湡</span>
+            <input type="date" id="datePicker" class="date-input" value="2026-06-15" min="2026-05-08" max="2026-06-15">
+            <button class="date-today-btn" onclick="goToday()">浠婂ぉ</button>
             <button class="date-nav-btn" onclick="goPrev()"><i class="fas fa-chevron-left"></i></button>
             <button class="date-nav-btn" onclick="goNext()"><i class="fas fa-chevron-right"></i></button>
         </div>
         </div>
 
-        <!-- 历史快照提示（仅存档页面显示） -->
+        <!-- 鍘嗗彶蹇収鎻愮ず锛堜粎瀛樻。椤甸潰鏄剧ず锛?-->
         <div class="archive-banner" id="archiveBanner">
             <i class="fas fa-history"></i>
-            这是 <strong id="archiveDateText"></strong> 的历史快照，部分岗位可能已截止。<a href="javascript:goToday()">查看今日最新数据 →</a>
+            杩欐槸 <strong id="archiveDateText"></strong> 鐨勫巻鍙插揩鐓э紝閮ㄥ垎宀椾綅鍙兘宸叉埅姝€?a href="javascript:goToday()">鏌ョ湅浠婃棩鏈€鏂版暟鎹?鈫?/a>
         </div>
 
-        <!-- 统计栏 -->
+        <!-- 缁熻鏍?-->
         <div class="stats-bar">
             <div class="stat-item">
-                <span class="stat-num" id="totalCount">53</span>
-                <span class="stat-label">在招岗位</span>
+                <span class="stat-num" id="totalCount">43</span>
+                <span class="stat-label">鍦ㄦ嫑宀椾綅</span>
             </div>
             <div class="stat-item">
                 <span class="stat-num" id="urgentCount" style="color:#ff6b6b">10</span>
-                <span class="stat-label">今日截止</span>
+                <span class="stat-label">浠婃棩鎴</span>
             </div>
             <div class="stat-item">
                 <span class="stat-num" style="color:#ffa502">3</span>
-                <span class="stat-label">本期新增</span>
+                <span class="stat-label">鏈湡鏂板</span>
             </div>
             <div class="stat-item">
                 <span class="stat-num">680+</span>
-                <span class="stat-label">招聘总人数</span>
+                <span class="stat-label">鎷涜仒鎬讳汉鏁?/span>
             </div>
             <div class="stat-item">
                 <span class="stat-num"><i class="fas fa-eye" style="font-size:0.7em;color:rgba(255,255,255,0.6)"></i> <span id="busuanzi_value_page_pv">-</span></span>
-                <span class="stat-label">本页浏览</span>
+                <span class="stat-label">鏈〉娴忚</span>
             </div>
             <div class="stat-item">
                 <span class="stat-num"><i class="fas fa-users" style="font-size:0.7em;color:rgba(255,255,255,0.6)"></i> <span id="busuanzi_value_site_uv">-</span></span>
-                <span class="stat-label">累计访客</span>
+                <span class="stat-label">绱璁垮</span>
             </div>
         </div>
 
-        <!-- 筛选面板 -->
+        <!-- 绛涢€夐潰鏉?-->
         <div class="filter-panel">
             <div class="filter-row">
-                <span class="filter-label"><i class="fas fa-map-marker-alt"></i> 地区</span>
-                <button class="filter-btn active" data-filter="region" data-value="all">全部</button>
-                <button class="filter-btn" data-filter="region" data-value="华东">华东</button>
-                <button class="filter-btn" data-filter="region" data-value="华北">华北</button>
-                <button class="filter-btn" data-filter="region" data-value="华中">华中</button>
-                <button class="filter-btn" data-filter="region" data-value="华南">华南</button>
-                <button class="filter-btn" data-filter="region" data-value="西南">西南</button>
-                <button class="filter-btn" data-filter="region" data-value="西北">西北</button>
-                <button class="filter-btn" data-filter="region" data-value="东北">东北</button>
+                <span class="filter-label"><i class="fas fa-map-marker-alt"></i> 鍦板尯</span>
+                <button class="filter-btn active" data-filter="region" data-value="all">鍏ㄩ儴</button>
+                <button class="filter-btn" data-filter="region" data-value="鍗庝笢">鍗庝笢</button>
+                <button class="filter-btn" data-filter="region" data-value="鍗庡寳">鍗庡寳</button>
+                <button class="filter-btn" data-filter="region" data-value="鍗庝腑">鍗庝腑</button>
+                <button class="filter-btn" data-filter="region" data-value="鍗庡崡">鍗庡崡</button>
+                <button class="filter-btn" data-filter="region" data-value="瑗垮崡">瑗垮崡</button>
+                <button class="filter-btn" data-filter="region" data-value="瑗垮寳">瑗垮寳</button>
+                <button class="filter-btn" data-filter="region" data-value="涓滃寳">涓滃寳</button>
             </div>
             <div class="filter-row">
-                <span class="filter-label"><i class="fas fa-graduation-cap"></i> 学历</span>
-                <button class="filter-btn active" data-filter="education" data-value="all">全部</button>
-                <button class="filter-btn" data-filter="education" data-value="本科">本科可报</button>
-                <button class="filter-btn" data-filter="education" data-value="硕士">硕士可报</button>
-                <button class="filter-btn" data-filter="education" data-value="博士">博士</button>
+                <span class="filter-label"><i class="fas fa-graduation-cap"></i> 瀛﹀巻</span>
+                <button class="filter-btn active" data-filter="education" data-value="all">鍏ㄩ儴</button>
+                <button class="filter-btn" data-filter="education" data-value="鏈">鏈鍙姤</button>
+                <button class="filter-btn" data-filter="education" data-value="纭曞＋">纭曞＋鍙姤</button>
+                <button class="filter-btn" data-filter="education" data-value="鍗氬＋">鍗氬＋</button>
             </div>
             <div class="filter-row">
-                <span class="filter-label"><i class="fas fa-briefcase"></i> 聘用</span>
-                <button class="filter-btn active" data-filter="hire" data-value="all">全部</button>
-                <button class="filter-btn" data-filter="hire" data-value="事业编制">事业编制</button>
-                <button class="filter-btn" data-filter="hire" data-value="聘用制">聘用制</button>
-                <button class="filter-btn" data-filter="hire" data-value="劳务派遣">劳务派遣</button>
-                <button class="filter-btn" data-filter="hire" data-value="备案制">备案制</button>
+                <span class="filter-label"><i class="fas fa-briefcase"></i> 鑱樼敤</span>
+                <button class="filter-btn active" data-filter="hire" data-value="all">鍏ㄩ儴</button>
+                <button class="filter-btn" data-filter="hire" data-value="浜嬩笟缂栧埗">浜嬩笟缂栧埗</button>
+                <button class="filter-btn" data-filter="hire" data-value="鑱樼敤鍒?>鑱樼敤鍒?/button>
+                <button class="filter-btn" data-filter="hire" data-value="鍔冲姟娲鹃仯">鍔冲姟娲鹃仯</button>
+                <button class="filter-btn" data-filter="hire" data-value="澶囨鍒?>澶囨鍒?/button>
             </div>
             <div class="filter-row">
-                <span class="filter-label"><i class="fas fa-tag"></i> 类别</span>
-                <button class="filter-btn active" data-filter="position" data-value="all">全部</button>
-                <button class="filter-btn" data-filter="position" data-value="行政管理">行政管理</button>
-                <button class="filter-btn" data-filter="position" data-value="辅导员">辅导员</button>
-                <button class="filter-btn" data-filter="position" data-value="教辅">教辅</button>
+                <span class="filter-label"><i class="fas fa-tag"></i> 绫诲埆</span>
+                <button class="filter-btn active" data-filter="position" data-value="all">鍏ㄩ儴</button>
+                <button class="filter-btn" data-filter="position" data-value="琛屾斂绠＄悊">琛屾斂绠＄悊</button>
+                <button class="filter-btn" data-filter="position" data-value="杈呭鍛?>杈呭鍛?/button>
+                <button class="filter-btn" data-filter="position" data-value="鏁欒緟">鏁欒緟</button>
             </div>
             <div class="filter-row" style="justify-content:space-between;">
-                <div class="filter-result">筛选结果：<span id="filteredCount">53</span> 个岗位</div>
-                <button class="reset-btn" onclick="resetFilters()"><i class="fas fa-redo"></i> 重置筛选</button>
+                <div class="filter-result">绛涢€夌粨鏋滐細<span id="filteredCount">53</span> 涓矖浣?/div>
+                <button class="reset-btn" onclick="resetFilters()"><i class="fas fa-redo"></i> 閲嶇疆绛涢€?/button>
             </div>
         </div>
 
-        <!-- 岗位卡片 -->
+        <!-- 宀椾綅鍗＄墖 -->
         <div class="cards-grid" id="cardsGrid">
 
-            <!-- 0609-1. 济南大学 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
+            <!-- 0609-1. 娴庡崡澶у -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">济南大学</div>
+                        <div class="school-name">娴庡崡澶у</div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">山东省属</span>
+                            <span class="tag tag-ministry">灞变笢鐪佸睘</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">公开招聘工作人员（辅导员，15名）</div>
+                    <div class="position-name">鍏紑鎷涜仒宸ヤ綔浜哄憳锛堣緟瀵煎憳锛?5鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">15名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士研究生</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">山东济南</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">15鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鐮旂┒鐢?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">灞变笢娴庡崡</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月9日9:00-15日16:00报名</div>
-                    <a href="http://zp.ujn.edu.cn" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6鏈?鏃?:00-15鏃?6:00鎶ュ悕锛堜粖澶╂埅姝紒锛?/div>
+                    <a href="http://zp.ujn.edu.cn" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0609-2. 陕西科技大学 - 报名进行中 -->
-            <div class="job-card" data-region="西北" data-education="硕士" data-hire="聘用制" data-position="辅导员">
+            <!-- 0609-2. 闄曡タ绉戞妧澶у - 鎶ュ悕杩涜涓?-->
+            <div class="job-card" data-region="瑗垮寳" data-education="纭曞＋" data-hire="鑱樼敤鍒? data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">陕西科技大学</div>
+                        <div class="school-name">闄曡タ绉戞妧澶у</div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">陕西省属</span>
+                            <span class="tag tag-ministry">闄曡タ鐪佸睘</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-pinyong">人事代理</span>
+                    <span class="hire-type-badge badge-pinyong">浜轰簨浠ｇ悊</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">专职辅导员（男5名/女5名）</div>
+                    <div class="position-name">涓撹亴杈呭鍛橈紙鐢?鍚?濂?鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">10名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">人事代理待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">陕西西安</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">10鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜轰簨浠ｇ悊寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">闄曡タ瑗垮畨</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月12日8:00-18日18:00报名（报名进行中）</div>
-                    <a href="https://yiban.sust.edu.cn/zhaopin" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?2鏃?:00-18鏃?8:00鎶ュ悕锛堟姤鍚嶈繘琛屼腑锛?/div>
+                    <a href="https://yiban.sust.edu.cn/zhaopin" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0609-3. 南宁师范大学 -->
-            <div class="job-card" data-region="华南" data-education="硕士" data-hire="事业编制" data-position="辅导员">
+            <!-- 0609-4. 杈藉畞鍐滀笟鑱屼笟鎶€鏈闄?-->
+            <div class="job-card" data-region="涓滃寳" data-education="鏈" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">南宁师范大学</div>
+                        <div class="school-name">杈藉畞鍐滀笟鑱屼笟鎶€鏈闄?/div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">广西区属</span>
+                            <span class="tag tag-ministry">杈藉畞鐪佸睘</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">公开招聘工作人员（含辅导员/管理岗）</div>
+                    <div class="position-name">鍏紑鎷涜仒宸ヤ綔浜哄憳锛堝惈杈呭鍛?绠＄悊宀楋紝65鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">25名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广西南宁</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">65鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈/纭曞＋</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">杈藉畞钀ュ彛</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月12日截止（今天！）</div>
-                    <a href="https://www.nnnu.edu.cn/info/1118/51074.htm" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6鏈?5鏃ユ埅姝紙浠婂ぉ锛侊級</div>
+                    <a href="http://47.93.251.19:8871/zp.html" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0609-4. 辽宁农业职业技术学院 -->
-            <div class="job-card" data-region="东北" data-education="本科" data-hire="事业编制" data-position="辅导员">
+            <!-- 0609-5. 鍖椾含澶у鐢靛瓙瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庡寳" data-education="鏈" data-hire="鍔冲姟娲鹃仯" data-position="琛屾斂绠＄悊">
                 <div class="card-header">
                     <div>
-                        <div class="school-name">辽宁农业职业技术学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">辽宁省属</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">公开招聘工作人员（含辅导员/管理岗，65名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">65名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科/硕士</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">辽宁营口</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月15日截止</div>
-                    <a href="http://47.93.251.19:8871/zp.html" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 0609-5. 北京大学电子学院 -->
-            <div class="job-card" data-region="华北" data-education="本科" data-hire="劳务派遣" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">北京大学电子学院</div>
+                        <div class="school-name">鍖椾含澶у鐢靛瓙瀛﹂櫌</div>
                         <div class="school-tags">
                             <span class="tag tag-985">985</span>
                             <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
+                            <span class="tag tag-double-first">鍙屼竴娴?/span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                    <span class="hire-type-badge badge-laowu">鍔冲姟娲鹃仯</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">行政助理</div>
+                    <div class="position-name">琛屾斂鍔╃悊</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京海淀</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">闈㈣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">鍖椾含娴锋穩</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月22日截止</div>
-                    <a href="https://hr.pku.edu.cn/rczp/xzjf/ldhtzp/64a41aff2197438b8b6566c1f6aa0b8e.htm" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?2鏃ユ埅姝?/div>
+                    <a href="https://hr.pku.edu.cn/rczp/xzjf/ldhtzp/64a41aff2197438b8b6566c1f6aa0b8e.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0610-2. 青岛航空科技职业学院 -->
-            <div class="job-card" data-region="华东" data-education="本科" data-hire="聘用制" data-position="辅导员">
+            <!-- 0610-3. 骞垮窞姘戣埅鑱屼笟鎶€鏈闄?-->
+            <div class="job-card" data-region="鍗庡崡" data-education="纭曞＋" data-hire="鑱樼敤鍒? data-position="琛屾斂绠＄悊">
                 <div class="card-header">
                     <div>
-                        <div class="school-name">青岛航空科技职业学院</div>
+                        <div class="school-name">骞垮窞姘戣埅鑱屼笟鎶€鏈闄?/div>
                         <div class="school-tags">
-                            <span class="tag tag-private">民办高职</span>
+                            <span class="tag tag-ministry">浜ら€氳繍杈撻儴灞?/span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                    <span class="hire-type-badge badge-pinyong">鑱樼敤鍒?/span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">专职辅导员（20名）</div>
+                    <div class="position-name">鍏氭斂绠＄悊鍙婂叾浠栦笓鎶€浜哄憳锛?鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">20名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">中共党员·需住公寓</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">8鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">骞夸笢骞垮窞</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月14日18:00截止（仅剩2天）</div>
-                    <a href="https://zp.qdhkxy.com" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6鏈?5鏃ユ埅姝紙浠婂ぉ锛侊級</div>
+                    <a href="https://hr.gcac.edu.cn" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0610-3. 广州民航职业技术学院 -->
-            <div class="job-card" data-region="华南" data-education="硕士" data-hire="聘用制" data-position="行政管理">
+            <!-- 0610-4. 骞夸笢宸ョ▼鑱屼笟鎶€鏈闄?-->
+            <div class="job-card" data-region="鍗庡崡" data-education="纭曞＋" data-hire="鑱樼敤鍒? data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">广州民航职业技术学院</div>
+                        <div class="school-name">骞夸笢宸ョ▼鑱屼笟鎶€鏈闄?/div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">交通运输部属</span>
+                            <span class="tag tag-ministry">骞夸笢鐪佸睘</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                    <span class="hire-type-badge badge-pinyong">闈炰簨涓氱紪鍒?/span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">党政管理及其他专技人员（8名）</div>
+                    <div class="position-name">杈呭鍛橈紙B1/B2/B3宀楋紝16鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">8名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东广州</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">16鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鐮旂┒鐢?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">绾?2涓?骞?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">骞垮窞/娓呰繙</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月15日截止</div>
-                    <a href="https://hr.gcac.edu.cn" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 6鏈?鏃ヨ捣鎶ュ悕</div>
+                    <a href="https://www.gaoxiaojob.com/job/detail/2201059.html" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0610-4. 广东工程职业技术学院 -->
-            <div class="job-card" data-region="华南" data-education="硕士" data-hire="聘用制" data-position="辅导员">
+            <!-- 0610-5. 鍗楀畞瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庡崡" data-education="鏈" data-hire="鑱樼敤鍒? data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">广东工程职业技术学院</div>
+                        <div class="school-name">鍗楀畞瀛﹂櫌</div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">广东省属</span>
+                            <span class="tag tag-ministry">骞胯タ鍖哄睘</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-pinyong">非事业编制</span>
+                    <span class="hire-type-badge badge-pinyong">鑱樼敤鍒?/span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">辅导员（B1/B2/B3岗，16名）</div>
+                    <div class="position-name">杈呭鍛?鏈哄叧閮ㄩ棬鑱屽憳</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">16名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士研究生</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">约12万/年</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广州/清远</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">鑻ュ共鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">骞胯タ鍗楀畞</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 6月4日起报名</div>
-                    <a href="https://www.gaoxiaojob.com/job/detail/2201059.html" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 杈呭鍛?鑱屽憳6鏈?5鏃ユ埅姝紙浠婂ぉ锛侊級</div>
+                    <a href="http://hr.nnxy.cn/recruit" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0610-5. 南宁学院 -->
-            <div class="job-card" data-region="华南" data-education="本科" data-hire="聘用制" data-position="辅导员">
+            <!-- 0610-6. 灞变笢甯堣寖澶у -->
+            <div class="job-card" data-region="鍗庝笢" data-education="鍗氬＋" data-hire="浜嬩笟缂栧埗" data-position="琛屾斂绠＄悊">
                 <div class="card-header">
                     <div>
-                        <div class="school-name">南宁学院</div>
+                        <div class="school-name">灞变笢甯堣寖澶у</div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">广西区属</span>
+                            <span class="tag tag-ministry">灞变笢鐪佸睘</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">辅导员/机关部门职员</div>
+                    <div class="position-name">鍗氬＋鏁欏笀/鏁欒緟浜哄憳/杈呭鍛?绠＄悊浜哄憳锛?鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广西南宁</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">5鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鍗氬＋鐮旂┒鐢?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">灞变笢娴庡崡</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 辅导员/职员6月15日截止</div>
-                    <a href="http://hr.nnxy.cn/recruit" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 闀挎湡鎷涜仒 / 12鏈?1鏃?/div>
+                    <a href="http://www.rsc.sdnu.edu.cn/info/1004/5863.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0610-6. 山东师范大学 -->
-            <div class="job-card" data-region="华东" data-education="博士" data-hire="事业编制" data-position="行政管理">
+            <!-- 0611-1. 涓浗浼犲獟澶у -->
+            <div class="job-card" data-region="鍗庡寳" data-education="纭曞＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">山东师范大学</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">山东省属</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">博士教师/教辅人员/辅导员/管理人员（5名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">5名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">博士研究生</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">山东济南</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 长期招聘 / 12月31日</div>
-                    <a href="http://www.rsc.sdnu.edu.cn/info/1004/5863.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 0611-1. 中国传媒大学 -->
-            <div class="job-card" data-region="华北" data-education="硕士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">中国传媒大学</div>
+                        <div class="school-name">涓浗浼犲獟澶у</div>
                         <div class="school-tags">
                             <span class="tag tag-985">985</span>
                             <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
+                            <span class="tag tag-double-first">鍙屼竴娴?/span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">专职辅导员13名+管理岗8名（共21名）</div>
+                    <div class="position-name">涓撹亴杈呭鍛?3鍚?绠＄悊宀?鍚嶏紙鍏?1鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">21名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">辅导员事业编/管理岗参编</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京朝阳</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">21鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">杈呭鍛樹簨涓氱紪/绠＄悊宀楀弬缂?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">鍖椾含鏈濋槼</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月17日截止</div>
-                    <a href="https://jobs.cuc.edu.cn" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?7鏃ユ埅姝?/div>
+                    <a href="https://jobs.cuc.edu.cn" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0611-2. 四川大学 -->
-            <div class="job-card" data-region="西南" data-education="硕士" data-hire="聘用制" data-position="行政管理">
+            <!-- 0611-2. 鍥涘窛澶у -->
+            <div class="job-card" data-region="瑗垮崡" data-education="纭曞＋" data-hire="鑱樼敤鍒? data-position="琛屾斂绠＄悊">
                 <div class="card-header">
                     <div>
-                        <div class="school-name">四川大学</div>
+                        <div class="school-name">鍥涘窛澶у</div>
                         <div class="school-tags">
                             <span class="tag tag-985">985</span>
                             <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
+                            <span class="tag tag-double-first">鍙屼竴娴?/span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-pinyong">校聘非编</span>
+                    <span class="hire-type-badge badge-pinyong">鏍¤仒闈炵紪</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">校聘非事业编制岗位（管理17+专技10，27名）</div>
+                    <div class="position-name">鏍¤仒闈炰簨涓氱紪鍒跺矖浣嶏紙绠＄悊17+涓撴妧10锛?7鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">27名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科/硕士</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">五险一金·按校聘标准</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">四川成都</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">27鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈/纭曞＋</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜旈櫓涓€閲懧锋寜鏍¤仒鏍囧噯</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">鍥涘窛鎴愰兘</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月23日截止</div>
-                    <a href="https://recruitment.scu.edu.cn/#/" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?3鏃ユ埅姝?/div>
+                    <a href="https://recruitment.scu.edu.cn/#/" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0611-3. 北京化工大学 -->
-            <div class="job-card" data-region="华北" data-education="硕士" data-hire="聘用制" data-position="辅导员">
+            <!-- 0611-3. 鍖椾含鍖栧伐澶у -->
+            <div class="job-card" data-region="鍗庡寳" data-education="纭曞＋" data-hire="鑱樼敤鍒? data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">北京化工大学</div>
+                        <div class="school-name">鍖椾含鍖栧伐澶у</div>
                         <div class="school-tags">
                             <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
+                            <span class="tag tag-double-first">鍙屼竴娴?/span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                    <span class="hire-type-badge badge-pinyong">鑱樼敤鍒?/span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">第三批次教师及研究生辅导员（24名）</div>
+                    <div class="position-name">绗笁鎵规鏁欏笀鍙婄爺绌剁敓杈呭鍛橈紙24鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">24名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京朝阳/昌平</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">24鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">鍖椾含鏈濋槼/鏄屽钩</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月16日截止</div>
-                    <a href="https://hrzp.buct.edu.cn/zp.html#/" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?6鏃ユ埅姝?/div>
+                    <a href="https://hrzp.buct.edu.cn/zp.html#/" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0611-4. 徐州医科大学 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="聘用制" data-position="辅导员">
+            <!-- 0611-4. 寰愬窞鍖荤澶у -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="鑱樼敤鍒? data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">徐州医科大学</div>
+                        <div class="school-name">寰愬窞鍖荤澶у</div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">江苏省属</span>
+                            <span class="tag tag-ministry">姹熻嫃鐪佸睘</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                    <span class="hire-type-badge badge-pinyong">鑱樼敤鍒?/span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">公开招聘专职辅导员（12名）</div>
+                    <div class="position-name">鍏紑鎷涜仒涓撹亴杈呭鍛橈紙12鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">12名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">中共党员·服务4年以上</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">12鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">涓叡鍏氬憳路鏈嶅姟4骞翠互涓?/span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月15日16:00截止</div>
-                    <a href="https://rs.jshrss.jiangsu.gov.cn/index/f/RCRS_0056" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6鏈?5鏃?6:00鎴锛堜粖澶╋紒锛?/div>
+                    <a href="https://rs.jshrss.jiangsu.gov.cn/index/f/RCRS_0056" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0611-5. 集美大学诚毅学院 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="聘用制" data-position="辅导员">
+            <!-- 0611-5. 闆嗙編澶у璇氭瘏瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="鑱樼敤鍒? data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">集美大学诚毅学院</div>
+                        <div class="school-name">闆嗙編澶у璇氭瘏瀛﹂櫌</div>
                         <div class="school-tags">
-                            <span class="tag tag-private">独立学院</span>
+                            <span class="tag tag-private">鐙珛瀛﹂櫌</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                    <span class="hire-type-badge badge-pinyong">鑱樼敤鍒?/span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">辅导员（11名）</div>
+                    <div class="position-name">杈呭鍛橈紙11鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">11名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">福建厦门</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">11鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">绂忓缓鍘﹂棬</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月15日截止</div>
-                    <a href="https://cyhr.jmu.edu.cn/rczp/gkzp.htm" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6鏈?5鏃ユ埅姝紙浠婂ぉ锛侊級</div>
+                    <a href="https://cyhr.jmu.edu.cn/rczp/gkzp.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 0611-6. 上海立信会计金融学院 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
+            <!-- 0611-6. 涓婃捣绔嬩俊浼氳閲戣瀺瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">上海立信会计金融学院</div>
+                        <div class="school-name">涓婃捣绔嬩俊浼氳閲戣瀺瀛﹂櫌</div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">上海市属</span>
+                            <span class="tag tag-ministry">涓婃捣甯傚睘</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">辅导员（6名）+ 教师（32名）</div>
+                    <div class="position-name">杈呭鍛橈紙6鍚嶏級+ 鏁欏笀锛?2鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">38名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">38鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">涓婃捣</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 辅导员6月20日截止</div>
-                    <a href="https://rsj.sh.gov.cn/tzpgg_17408/20260211/t0035_1438694.html" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 杈呭鍛?鏈?0鏃ユ埅姝?/div>
+                    <a href="https://rsj.sh.gov.cn/tzpgg_17408/20260211/t0035_1438694.html" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 3. 广东财经大学 -->
-            <div class="job-card" data-region="华南" data-education="硕士" data-hire="事业编制" data-position="辅导员">
+            <!-- 3. 骞夸笢璐㈢粡澶у -->
+            <div class="job-card" data-region="鍗庡崡" data-education="纭曞＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">广东财经大学</div>
+                        <div class="school-name">骞夸笢璐㈢粡澶у</div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">广东省属</span>
+                            <span class="tag tag-ministry">骞夸笢鐪佸睘</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">专职辅导员（8名）</div>
+                    <div class="position-name">涓撹亴杈呭鍛橈紙8鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">8名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东广州</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">8鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">骞夸笢骞垮窞</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月10日-16日报名（报名进行中）</div>
-                    <a href="https://rsc.gdufe.edu.cn/zpwz" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?0鏃?16鏃ユ姤鍚嶏紙鎶ュ悕杩涜涓級</div>
+                    <a href="https://rsc.gdufe.edu.cn/zpwz" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- 11. 宿州学院 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">宿州学院</div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">专职辅导员（男8名/女8名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">16名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">研究生学历</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">中共党员·需住宿舍</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月12日24:00截止（今天！）</div>
-                    <a href="https://hrss.ah.gov.cn/zxzx/ztzl/ahsszsydwgkzpzl/ssgxgkzp/80789302.html" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 12. 山东石油化工学院 -->
-            <div class="job-card" data-region="华东" data-education="本科" data-hire="聘用制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">山东石油化工学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-double-first">公办本科</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-pinyong">控制总量</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">专职辅导员（7名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">7名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">控制总量待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">山东东营</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月12日16:00截止（今天！）</div>
-                    <a href="https://www.sdipct.edu.cn/info/1048/63162.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 13. 兰州理工大学 -->
-            <div class="job-card" data-region="西北" data-education="博士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">兰州理工大学</div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">博士研究生学历专职辅导员</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">10名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">博士研究生</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编+安家补贴</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">甘肃兰州</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月12日截止（今天！）</div>
-                    <a href="https://zhaopin.lut.edu.cn/fdy/" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 14. 四川交通职业技术学院 -->
-            <div class="job-card" data-region="西南" data-education="硕士" data-hire="事业编制" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">四川交通职业技术学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">四川省属</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">工作人员（含行政/教辅，36名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">36名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">四川成都</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月12日17:00截止（今天！）</div>
-                    <a href="https://www.scpta.com.cn" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 15. 中央民族大学 -->
-            <div class="job-card" data-region="华北" data-education="硕士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">中央民族大学</div>
-                        <div class="school-tags">
-                            <span class="tag tag-985">985</span>
-                            <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">辅导员/工程实验岗（第二批，3名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">3名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">解决北京户口+子女教育</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京海淀</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月12日17:00截止（今天！）</div>
-                    <a href="http://zhaopin.muc.edu.cn" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 16. 北京大学国际关系学院 -->
-            <div class="job-card" data-region="华北" data-education="硕士" data-hire="劳务派遣" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">北京大学国际关系学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-985">985</span>
-                            <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-laowu">劳动合同制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">培训项目运营主管</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京昌平</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月12日截止（今天！）</div>
-                    <a href="https://hr.pku.edu.cn/rczp/xzjf/ldhtzp/564fa42f93824653b798c73a58d40b0e.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 17. 国际关系学院 -->
-            <div class="job-card" data-region="华北" data-education="硕士" data-hire="事业编制" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">国际关系学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">教育部直属</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">行政/管理岗（第3批应届生招聘）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">协助解决北京户口</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京海淀</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月12日截止（今天！）</div>
-                    <a href="https://www.uir.cn/info/1301/26921.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 18. 北京大学新闻与传播学院 -->
-            <div class="job-card" data-region="华北" data-education="本科" data-hire="合同制" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">北京大学·新闻与传播学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">双一流·211</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-hetong">劳动合同制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">外事秘书（兼国际新闻传播硕士项目运营）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">待遇面议</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">研究生学历优先</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月12日截止（今天！）</div>
-                    <a href="https://hr.pku.edu.cn/rczp/xzjf/ldhtzp/5d2ac3d404e44b62951717ab4ddedab0.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 19. 北京青年政治学院 -->
-            <div class="job-card" data-region="华北" data-education="硕士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">北京青年政治学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">北京市属</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">第一批公开招聘专任教师（6名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">6名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">2026年应届毕业生</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月12日16:00截止（今天！）</div>
-                    <a href="https://rsj.beijing.gov.cn/xxgk/gkzp/202605/t20260529_4671800.html" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 20. 安徽工程大学 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">安徽工程大学</div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">专职辅导员（14名，博士4岗+硕士4岗）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">14名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士/博士</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">安徽芜湖</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月16日18:00截止</div>
-                    <a href="https://www.ahpu.edu.cn/2026/0602/c5a272343/page.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 21. 铜陵学院 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">铜陵学院</div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">专职辅导员（硕士4名+博士2名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">6名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士/博士</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">安徽铜陵</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月15日截止</div>
-                    <a href="https://www.tlu.edu.cn/2026/0525/c4129a128893/page.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 22. 上海健康医学院 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">上海健康医学院</div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">专职辅导员（2名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月15日截止</div>
-                    <a href="https://rsj.sh.gov.cn/tzpgg_17408/20260522/t0035_1440923.html" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 23. 河南师范大学 -->
-            <div class="job-card" data-region="华中" data-education="博士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">河南师范大学</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">河南省属</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">专职辅导员（博士）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">5名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科/硕士/博士</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">中共党员·2年党龄</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月15日18:00截止</div>
-                    <a href="https://www.htu.edu.cn/rsc/2026/0527/c7790a386834/page.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 24. 北京大学医学部 -->
-            <div class="job-card" data-region="华北" data-education="本科" data-hire="劳务派遣" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">北京大学医学部</div>
-                        <div class="school-tags">
-                            <span class="tag tag-985">985</span>
-                            <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">学科建设办公室综合行政事务岗</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京海淀</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月22日截止</div>
-                    <a href="https://rsc.bjmu.edu.cn/rczp/jfxz/8007843edce049f694b2a2c7dd60a892.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 25. 北京科技职业大学 -->
-            <div class="job-card" data-region="华北" data-education="博士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">北京科技职业大学</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">北京市属</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">辅导员岗（博士）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">博士研究生</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">1987年5月后出生</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月24日16:30截止</div>
-                    <a href="https://www.beijing.gov.cn/gongkai/rsxx/sydwzp/202605/t20260528_4669843.html" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 26. 池州学院 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">池州学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">安徽省属</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">专职辅导员（男/女/博士）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">12名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士/博士</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">中共党员·学生干部</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月17日截止</div>
-                    <a href="https://www.czu.edu.cn/info/1035/22692.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 27. 复旦大学（社发院） -->
-            <div class="job-card" data-region="华东" data-education="本科" data-hire="劳务派遣" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">复旦大学</div>
-                        <div class="school-tags">
-                            <span class="tag tag-985">985</span>
-                            <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">社发院·行政管理岗</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海杨浦区</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月15日截止</div>
-                    <a href="http://zp.fudan.edu.cn" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 28. 南京传媒学院 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="聘用制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">南京传媒学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-private">民办本科</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">专职辅导员（学生工作处，若干名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">江苏南京</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">中共党员优先</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-calendar-check"></i> 7月31日截止</div>
-                    <a href="mailto:rsczp@cucn.edu.cn" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 29. 上海应用技术大学 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">上海应用技术大学</div>
-                        <div class="school-tags">
-                            <span class="tag tag-double-first">公办本科</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">专职辅导员（若干名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士/博士</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">中共党员</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-calendar-check"></i> 6月30日截止</div>
-                    <a href="https://www.sit.edu.cn/info/1071/130577.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 30. 广州工商学院 -->
-            <div class="job-card" data-region="华南" data-education="本科" data-hire="合同制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">广州工商学院（继教二部）</div>
-                        <div class="school-tags">
-                            <span class="tag tag-private">民办本科</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-hetong">合同制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">辅导员（2名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议·五险一金</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东广州</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-calendar-check"></i> 6月30日截止</div>
-                    <a href="https://www.gaoxiaojob.com/announcement/detail/389462.html" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 31. 上海城建职业学院 -->
-            <div class="job-card" data-region="华东" data-education="本科" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">上海城建职业学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">上海市属</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">专职辅导员</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">4名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海松江区</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 6月30日截止</div>
-                    <a href="https://rsj.sh.gov.cn/tzpgg_17408/20260509/t0035_1440589.html" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 32. 湖北三峡航空学院 -->
-            <div class="job-card" data-region="华中" data-education="本科" data-hire="聘用制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">湖北三峡航空学院</div>
-                    </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">辅导员岗/行政岗</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">16名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">辅导员8-9万/年</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">湖北宜昌</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 6月30日截止</div>
-                    <a href="https://www.tgai.edu.cn/info/1771/4491.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 33. 贵州理工学院 -->
-            <div class="job-card" data-region="西南" data-education="本科" data-hire="聘用制" data-position="教辅">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">贵州理工学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">贵州省属</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">科研助理（55名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">55名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">贵州贵阳</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 6月30日截止</div>
-                    <a href="https://www.git.edu.cn/rczp.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 34. 复旦大学（经济学院） -->
-            <div class="job-card" data-region="华东" data-education="本科" data-hire="劳务派遣" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">复旦大学</div>
-                        <div class="school-tags">
-                            <span class="tag tag-985">985</span>
-                            <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">经济学院·教育行政管理岗</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海杨浦区</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 7月31日截止</div>
-                    <a href="https://hr.fudan.edu.cn" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 35. 广州城建职业学院 -->
-            <div class="job-card" data-region="华南" data-education="本科" data-hire="聘用制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">广州城建职业学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">广东省属·民办</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">辅导员（广州2名/清远8名）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">10名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上·本科可放宽</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">中共党员·30周岁以下</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
-                    <a href="https://rsw.gzccc.edu.cn/list.jsp?wbtreeid=1028" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 36. 深圳大学 -->
-            <div class="job-card" data-region="华南" data-education="本科" data-hire="聘用制" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">深圳大学</div>
-                    </div>
-                    <span class="hire-type-badge badge-pinyong">聘用制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">聘任制人员</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">13名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">聘任制薪酬</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东深圳</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
-                    <a href="https://hr.szu.edu.cn/info/1014/23441.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 37. 齐鲁师范学院 -->
-            <div class="job-card" data-region="华东" data-education="博士" data-hire="事业编制" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">齐鲁师范学院</div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">公开招聘人员（长期招聘）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">65名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">博士研究生</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">山东济南</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止 / 12月31日</div>
-                    <a href="https://www.qlnu.edu.cn/info/1052/226329.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 38. 中国民用航空飞行学院 -->
-            <div class="job-card" data-region="西南" data-education="博士" data-hire="事业编制" data-position="辅导员">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">中国民用航空飞行学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">部属高校</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">博士思政课教师/辅导员</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">50名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">博士研究生</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">四川广汉</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 11月30日/招满即止</div>
-                    <a href="https://rszp.cafuc.edu.cn/rczp.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 39. 复旦大学（研究生院） -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="劳务派遣" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">复旦大学</div>
-                        <div class="school-tags">
-                            <span class="tag tag-985">985</span>
-                            <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">研究生院·教育管理行政助理</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海杨浦区</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满为止 / 12月31日</div>
-                    <a href="http://zp.fudan.edu.cn" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 40. 复旦大学（国际合作处） -->
-            <div class="job-card" data-region="华东" data-education="本科" data-hire="劳务派遣" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">复旦大学</div>
-                        <div class="school-tags">
-                            <span class="tag tag-985">985</span>
-                            <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">国际合作处·出国出境服务中心行政助理</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海杨浦区</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 9月30日截止</div>
-                    <a href="https://hr.fudan.edu.cn/e4/4c/c15370a779340/page.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 41. 安徽师范大学 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="劳务派遣" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">安徽师范大学</div>
-                    </div>
-                    <span class="hire-type-badge badge-laowu">劳务派遣/人事代理</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">党政管理/专业技术岗</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">约29名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士/本科</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">安徽芜湖</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
-                    <a href="https://rsc.ahnu.edu.cn/info/1061/5349.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 42. 广西大学 -->
-            <div class="job-card" data-region="华南" data-education="博士" data-hire="事业编制" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">广西大学</div>
-                        <div class="school-tags">
-                            <span class="tag tag-211">211</span>
-                            <span class="tag tag-double-first">双一流</span>
-                        </div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">博士学位非专任教师（管理岗10+专技6）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">16名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">博士研究生</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编+周转公寓</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广西南宁</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满为止 / 12月31日</div>
-                    <a href="https://www.gxu.edu.cn/info/1364/40572.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- 43. 南通大学 -->
-            <div class="job-card" data-region="华东" data-education="博士" data-hire="事业编制" data-position="行政管理">
-                <div class="card-header">
-                    <div>
-                        <div class="school-name">南通大学</div>
-                    </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
-                </div>
-                <div class="card-body">
-                    <div class="position-name">行政管理岗（高层次人才）</div>
-                    <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">博士研究生</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">江苏南通</span></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 12月23日截止</div>
-                    <a href="https://hr.ntu.edu.cn/2026/0412/c858a289043/page.htm" target="_blank" class="apply-link">查看详情</a>
-                </div>
-            </div>
-
-            <!-- NEW 0612-1. 安徽建筑大学 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="辅导员">
+            <!-- NEW 0615-1. 鏃犻敗绉戞妧鑱屼笟瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="鏈" data-hire="浜嬩笟缂栧埗" data-position="琛屾斂绠＄悊">
                 <div class="new-badge">NEW</div>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">安徽建筑大学</div>
+                        <div class="school-name">鏃犻敗绉戞妧鑱屼笟瀛﹂櫌</div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">安徽省属</span>
+                            <span class="tag tag-ministry">鏃犻敗甯傚睘鍏姙</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">专职辅导员（男4名/女4名/博士2名）</div>
+                    <div class="position-name">鍏紑鎷涜仒宸ヤ綔浜哄憳锛堝惈琛屾斂/鏁欒緟锛?鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">10名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">中共党员</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">6鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">姹熻嫃鏃犻敗</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月16日10:00-23日10:00报名</div>
-                    <a href="http://ahgzcz.pzhl.net/index.php/exam/?EXAMID=8910" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?6鏃?6:00鎴</div>
+                    <a href="http://www.ksbm.com" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- NEW 0612-2. 兰州石化职业技术大学 -->
-            <div class="job-card" data-region="西北" data-education="本科" data-hire="事业编制" data-position="行政管理">
+            <!-- NEW 0615-2. 鍘﹂棬澶у鍢夊簹瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="鑱樼敤鍒? data-position="杈呭鍛?>
                 <div class="new-badge">NEW</div>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">兰州石化职业技术大学</div>
+                        <div class="school-name">鍘﹂棬澶у鍢夊簹瀛﹂櫌</div>
                         <div class="school-tags">
-                            <span class="tag tag-ministry">甘肃省属</span>
+                            <span class="tag tag-double-first">鐙珛瀛﹂櫌</span>
                         </div>
                     </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
+                    <span class="hire-type-badge badge-pinyong">鑱樹换鍒?/span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">公开招聘工作人员（含行政/教辅/辅导员）</div>
+                    <div class="position-name">杈呭鍛橈紙鑻ュ共鍚嶏級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">28名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">甘肃兰州</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">鑻ュ共鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">8000+/鏈?5涓囪ˉ璐?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">绂忓缓鍘﹂棬</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6月10日-18日报名</div>
-                    <a href="https://rsc.lzpuvt.edu.cn/2026/0610/c810a126791/page.htm" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 鎷涙弧鍗虫</div>
+                    <a href="https://hr.xujc.com/zhaopin/other/238.html" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
-            <!-- NEW 0612-3. 江苏安全技术职业学院 -->
-            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="教辅">
-                <div class="new-badge">NEW</div>
+            <!-- 11. 瀹夊窘宸ョ▼澶у -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
                 <div class="card-header">
                     <div>
-                        <div class="school-name">江苏安全技术职业学院</div>
-                        <div class="school-tags">
-                            <span class="tag tag-ministry">江苏省属</span>
-                        </div>
+                        <div class="school-name">瀹夊窘宸ョ▼澶у</div>
                     </div>
-                    <span class="hire-type-badge badge-bianzhi">事业编制</span>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
                 </div>
                 <div class="card-body">
-                    <div class="position-name">公开招聘工作人员（含教辅/行政/辅导员）</div>
+                    <div class="position-name">涓撹亴杈呭鍛橈紙14鍚嶏紝鍗氬＋4宀?纭曞＋4宀楋級</div>
                     <div class="info-grid">
-                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">18名</span></div>
-                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
-                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
-                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">江苏徐州</span></div>
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">14鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋/鍗氬＋</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">瀹夊窘鑺滄箹</span></div>
                     </div>
                 </div>
                 <div class="card-footer">
-                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6月14日截止</div>
-                    <a href="https://hrss.jiangsu.gov.cn/art/2026/5/28/art_78506_11777459.html" target="_blank" class="apply-link">查看详情</a>
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?6鏃?8:00鎴</div>
+                    <a href="https://www.ahpu.edu.cn/2026/0602/c5a272343/page.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 21. 閾滈櫟瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">閾滈櫟瀛﹂櫌</div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">涓撹亴杈呭鍛橈紙纭曞＋4鍚?鍗氬＋2鍚嶏級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">6鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋/鍗氬＋</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">瀹夊窘閾滈櫟</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6鏈?5鏃ユ埅姝紙浠婂ぉ锛侊級</div>
+                    <a href="https://www.tlu.edu.cn/2026/0525/c4129a128893/page.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 22. 涓婃捣鍋ュ悍鍖诲闄?-->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">涓婃捣鍋ュ悍鍖诲闄?/div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">涓撹亴杈呭鍛橈紙2鍚嶏級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">涓婃捣</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6鏈?5鏃ユ埅姝紙浠婂ぉ锛侊級</div>
+                    <a href="https://rsj.sh.gov.cn/tzpgg_17408/20260522/t0035_1440923.html" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 23. 娌冲崡甯堣寖澶у -->
+            <div class="job-card" data-region="鍗庝腑" data-education="鍗氬＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">娌冲崡甯堣寖澶у</div>
+                        <div class="school-tags">
+                            <span class="tag tag-ministry">娌冲崡鐪佸睘</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">涓撹亴杈呭鍛橈紙鍗氬＋锛?/div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">5鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈/纭曞＋/鍗氬＋</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">涓叡鍏氬憳路2骞村厷榫?/span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6鏈?5鏃?8:00鎴锛堜粖澶╋紒锛?/div>
+                    <a href="https://www.htu.edu.cn/rsc/2026/0527/c7790a386834/page.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 24. 鍖椾含澶у鍖诲閮?-->
+            <div class="job-card" data-region="鍗庡寳" data-education="鏈" data-hire="鍔冲姟娲鹃仯" data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">鍖椾含澶у鍖诲閮?/div>
+                        <div class="school-tags">
+                            <span class="tag tag-985">985</span>
+                            <span class="tag tag-211">211</span>
+                            <span class="tag tag-double-first">鍙屼竴娴?/span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">鍔冲姟娲鹃仯</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">瀛︾寤鸿鍔炲叕瀹ょ患鍚堣鏀夸簨鍔″矖</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">闈㈣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">鍖椾含娴锋穩</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?2鏃ユ埅姝?/div>
+                    <a href="https://rsc.bjmu.edu.cn/rczp/jfxz/8007843edce049f694b2a2c7dd60a892.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 25. 鍖椾含绉戞妧鑱屼笟澶у -->
+            <div class="job-card" data-region="鍗庡寳" data-education="鍗氬＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">鍖椾含绉戞妧鑱屼笟澶у</div>
+                        <div class="school-tags">
+                            <span class="tag tag-ministry">鍖椾含甯傚睘</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">杈呭鍛樺矖锛堝崥澹級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鍗氬＋鐮旂┒鐢?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">1987骞?鏈堝悗鍑虹敓</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?4鏃?6:30鎴</div>
+                    <a href="https://www.beijing.gov.cn/gongkai/rsxx/sydwzp/202605/t20260528_4669843.html" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 26. 姹犲窞瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">姹犲窞瀛﹂櫌</div>
+                        <div class="school-tags">
+                            <span class="tag tag-ministry">瀹夊窘鐪佸睘</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">涓撹亴杈呭鍛橈紙鐢?濂?鍗氬＋锛?/div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">12鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋/鍗氬＋</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">涓叡鍏氬憳路瀛︾敓骞查儴</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?7鏃ユ埅姝?/div>
+                    <a href="https://www.czu.edu.cn/info/1035/22692.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 27. 澶嶆棪澶у锛堢ぞ鍙戦櫌锛?-->
+            <div class="job-card" data-region="鍗庝笢" data-education="鏈" data-hire="鍔冲姟娲鹃仯" data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">澶嶆棪澶у</div>
+                        <div class="school-tags">
+                            <span class="tag tag-985">985</span>
+                            <span class="tag tag-211">211</span>
+                            <span class="tag tag-double-first">鍙屼竴娴?/span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">鍔冲姟娲鹃仯</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">绀惧彂闄⒙疯鏀跨鐞嗗矖</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">涓婃捣鏉ㄦ郸鍖?/span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 6鏈?5鏃ユ埅姝紙浠婂ぉ锛侊級</div>
+                    <a href="http://zp.fudan.edu.cn" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 28. 鍗椾含浼犲獟瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="鑱樼敤鍒? data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">鍗椾含浼犲獟瀛﹂櫌</div>
+                        <div class="school-tags">
+                            <span class="tag tag-private">姘戝姙鏈</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">鑱樼敤鍒?/span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">涓撹亴杈呭鍛橈紙瀛︾敓宸ヤ綔澶勶紝鑻ュ共鍚嶏級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">闈㈣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">姹熻嫃鍗椾含</span></div>
+                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">涓叡鍏氬憳浼樺厛</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-calendar-check"></i> 7鏈?1鏃ユ埅姝?/div>
+                    <a href="mailto:rsczp@cucn.edu.cn" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 29. 涓婃捣搴旂敤鎶€鏈ぇ瀛?-->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">涓婃捣搴旂敤鎶€鏈ぇ瀛?/div>
+                        <div class="school-tags">
+                            <span class="tag tag-double-first">鍏姙鏈</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">涓撹亴杈呭鍛橈紙鑻ュ共鍚嶏級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋/鍗氬＋</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">涓婃捣</span></div>
+                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">涓叡鍏氬憳</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-calendar-check"></i> 6鏈?0鏃ユ埅姝?/div>
+                    <a href="https://www.sit.edu.cn/info/1071/130577.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 30. 骞垮窞宸ュ晢瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庡崡" data-education="鏈" data-hire="鍚堝悓鍒? data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">骞垮窞宸ュ晢瀛﹂櫌锛堢户鏁欎簩閮級</div>
+                        <div class="school-tags">
+                            <span class="tag tag-private">姘戝姙鏈</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-hetong">鍚堝悓鍒?/span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">杈呭鍛橈紙2鍚嶏級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">闈㈣路浜旈櫓涓€閲?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">骞夸笢骞垮窞</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-calendar-check"></i> 6鏈?0鏃ユ埅姝?/div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/389462.html" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 31. 涓婃捣鍩庡缓鑱屼笟瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="鏈" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">涓婃捣鍩庡缓鑱屼笟瀛﹂櫌</div>
+                        <div class="school-tags">
+                            <span class="tag tag-ministry">涓婃捣甯傚睘</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">涓撹亴杈呭鍛?/div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">4鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">涓婃捣鏉炬睙鍖?/span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 6鏈?0鏃ユ埅姝?/div>
+                    <a href="https://rsj.sh.gov.cn/tzpgg_17408/20260509/t0035_1440589.html" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 32. 婀栧寳涓夊场鑸┖瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庝腑" data-education="鏈" data-hire="鑱樼敤鍒? data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">婀栧寳涓夊场鑸┖瀛﹂櫌</div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">鑱樼敤鍒?/span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">杈呭鍛樺矖/琛屾斂宀?/div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">16鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">杈呭鍛?-9涓?骞?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">婀栧寳瀹滄槍</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 6鏈?0鏃ユ埅姝?/div>
+                    <a href="https://www.tgai.edu.cn/info/1771/4491.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 33. 璐靛窞鐞嗗伐瀛﹂櫌 -->
+            <div class="job-card" data-region="瑗垮崡" data-education="鏈" data-hire="鑱樼敤鍒? data-position="鏁欒緟">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">璐靛窞鐞嗗伐瀛﹂櫌</div>
+                        <div class="school-tags">
+                            <span class="tag tag-ministry">璐靛窞鐪佸睘</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">鑱樼敤鍒?/span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">绉戠爺鍔╃悊锛?5鍚嶏級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">55鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">璐靛窞璐甸槼</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 6鏈?0鏃ユ埅姝?/div>
+                    <a href="https://www.git.edu.cn/rczp.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 34. 澶嶆棪澶у锛堢粡娴庡闄級 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="鏈" data-hire="鍔冲姟娲鹃仯" data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">澶嶆棪澶у</div>
+                        <div class="school-tags">
+                            <span class="tag tag-985">985</span>
+                            <span class="tag tag-211">211</span>
+                            <span class="tag tag-double-first">鍙屼竴娴?/span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">鍔冲姟娲鹃仯</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">缁忔祹瀛﹂櫌路鏁欒偛琛屾斂绠＄悊宀?/div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">涓婃捣鏉ㄦ郸鍖?/span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 7鏈?1鏃ユ埅姝?/div>
+                    <a href="https://hr.fudan.edu.cn" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 35. 骞垮窞鍩庡缓鑱屼笟瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庡崡" data-education="鏈" data-hire="鑱樼敤鍒? data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">骞垮窞鍩庡缓鑱屼笟瀛﹂櫌</div>
+                        <div class="school-tags">
+                            <span class="tag tag-ministry">骞夸笢鐪佸睘路姘戝姙</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">鑱樼敤鍒?/span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">杈呭鍛橈紙骞垮窞2鍚?娓呰繙8鍚嶏級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">10鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓娐锋湰绉戝彲鏀惧</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">涓叡鍏氬憳路30鍛ㄥ瞾浠ヤ笅</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 鎷涙弧鍗虫</div>
+                    <a href="https://rsw.gzccc.edu.cn/list.jsp?wbtreeid=1028" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 36. 娣卞湷澶у -->
+            <div class="job-card" data-region="鍗庡崡" data-education="鏈" data-hire="鑱樼敤鍒? data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">娣卞湷澶у</div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">鑱樼敤鍒?/span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">鑱樹换鍒朵汉鍛?/div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">13鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鑱樹换鍒惰柂閰?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">骞夸笢娣卞湷</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 鎷涙弧鍗虫</div>
+                    <a href="https://hr.szu.edu.cn/info/1014/23441.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 37. 榻愰瞾甯堣寖瀛﹂櫌 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="鍗氬＋" data-hire="浜嬩笟缂栧埗" data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">榻愰瞾甯堣寖瀛﹂櫌</div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">鍏紑鎷涜仒浜哄憳锛堥暱鏈熸嫑鑱橈級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">65鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鍗氬＋鐮旂┒鐢?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">灞变笢娴庡崡</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 鎷涙弧鍗虫 / 12鏈?1鏃?/div>
+                    <a href="https://www.qlnu.edu.cn/info/1052/226329.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 38. 涓浗姘戠敤鑸┖椋炶瀛﹂櫌 -->
+            <div class="job-card" data-region="瑗垮崡" data-education="鍗氬＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">涓浗姘戠敤鑸┖椋炶瀛﹂櫌</div>
+                        <div class="school-tags">
+                            <span class="tag tag-ministry">閮ㄥ睘楂樻牎</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">鍗氬＋鎬濇斂璇炬暀甯?杈呭鍛?/div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">50鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鍗氬＋鐮旂┒鐢?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">鍥涘窛骞挎眽</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 11鏈?0鏃?鎷涙弧鍗虫</div>
+                    <a href="https://rszp.cafuc.edu.cn/rczp.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 39. 澶嶆棪澶у锛堢爺绌剁敓闄級 -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="鍔冲姟娲鹃仯" data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">澶嶆棪澶у</div>
+                        <div class="school-tags">
+                            <span class="tag tag-985">985</span>
+                            <span class="tag tag-211">211</span>
+                            <span class="tag tag-double-first">鍙屼竴娴?/span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">鍔冲姟娲鹃仯</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">鐮旂┒鐢熼櫌路鏁欒偛绠＄悊琛屾斂鍔╃悊</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">涓婃捣鏉ㄦ郸鍖?/span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 鎷涙弧涓烘 / 12鏈?1鏃?/div>
+                    <a href="http://zp.fudan.edu.cn" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 40. 澶嶆棪澶у锛堝浗闄呭悎浣滃锛?-->
+            <div class="job-card" data-region="鍗庝笢" data-education="鏈" data-hire="鍔冲姟娲鹃仯" data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">澶嶆棪澶у</div>
+                        <div class="school-tags">
+                            <span class="tag tag-985">985</span>
+                            <span class="tag tag-211">211</span>
+                            <span class="tag tag-double-first">鍙屼竴娴?/span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">鍔冲姟娲鹃仯</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">鍥介檯鍚堜綔澶劼峰嚭鍥藉嚭澧冩湇鍔′腑蹇冭鏀垮姪鐞?/div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">涓婃捣鏉ㄦ郸鍖?/span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 9鏈?0鏃ユ埅姝?/div>
+                    <a href="https://hr.fudan.edu.cn/e4/4c/c15370a779340/page.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 41. 瀹夊窘甯堣寖澶у -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="鍔冲姟娲鹃仯" data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">瀹夊窘甯堣寖澶у</div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">鍔冲姟娲鹃仯/浜轰簨浠ｇ悊</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">鍏氭斂绠＄悊/涓撲笟鎶€鏈矖</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">绾?9鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋/鏈</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">鎸夊鏍¤瀹?/span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">瀹夊窘鑺滄箹</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 鎷涙弧鍗虫</div>
+                    <a href="https://rsc.ahnu.edu.cn/info/1061/5349.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 42. 骞胯タ澶у -->
+            <div class="job-card" data-region="鍗庡崡" data-education="鍗氬＋" data-hire="浜嬩笟缂栧埗" data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">骞胯タ澶у</div>
+                        <div class="school-tags">
+                            <span class="tag tag-211">211</span>
+                            <span class="tag tag-double-first">鍙屼竴娴?/span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">鍗氬＋瀛︿綅闈炰笓浠绘暀甯堬紙绠＄悊宀?0+涓撴妧6锛?/div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">16鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鍗氬＋鐮旂┒鐢?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟缂?鍛ㄨ浆鍏瘬</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">骞胯タ鍗楀畞</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 鎷涙弧涓烘 / 12鏈?1鏃?/div>
+                    <a href="https://www.gxu.edu.cn/info/1364/40572.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 43. 鍗楅€氬ぇ瀛?-->
+            <div class="job-card" data-region="鍗庝笢" data-education="鍗氬＋" data-hire="浜嬩笟缂栧埗" data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">鍗楅€氬ぇ瀛?/div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">琛屾斂绠＄悊宀楋紙楂樺眰娆′汉鎵嶏級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">鑻ュ共鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鍗氬＋鐮旂┒鐢?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">姹熻嫃鍗楅€?/span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 12鏈?3鏃ユ埅姝?/div>
+                    <a href="https://hr.ntu.edu.cn/2026/0412/c858a289043/page.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 瀹夊窘寤虹瓚澶у -->
+            <div class="job-card" data-region="鍗庝笢" data-education="纭曞＋" data-hire="浜嬩笟缂栧埗" data-position="杈呭鍛?>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">瀹夊窘寤虹瓚澶у</div>
+                        <div class="school-tags">
+                            <span class="tag tag-ministry">瀹夊窘鐪佸睘</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">涓撹亴杈呭鍛橈紙鐢?鍚?濂?鍚?鍗氬＋2鍚嶏級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">10鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">纭曞＋鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-id-card"></i> <span class="value">涓叡鍏氬憳</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?6鏃?0:00-23鏃?0:00鎶ュ悕</div>
+                    <a href="http://ahgzcz.pzhl.net/index.php/exam/?EXAMID=8910" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
+                </div>
+            </div>
+
+            <!-- 鍏板窞鐭冲寲鑱屼笟鎶€鏈ぇ瀛?-->
+            <div class="job-card" data-region="瑗垮寳" data-education="鏈" data-hire="浜嬩笟缂栧埗" data-position="琛屾斂绠＄悊">
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">鍏板窞鐭冲寲鑱屼笟鎶€鏈ぇ瀛?/div>
+                        <div class="school-tags">
+                            <span class="tag tag-ministry">鐢樿們鐪佸睘</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-bianzhi">浜嬩笟缂栧埗</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">鍏紑鎷涜仒宸ヤ綔浜哄憳锛堝惈琛屾斂/鏁欒緟/杈呭鍛橈級</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">28鍚?/span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">鏈鍙婁互涓?/span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">浜嬩笟鍗曚綅寰呴亣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">鐢樿們鍏板窞</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 6鏈?0鏃?18鏃ユ姤鍚?/div>
+                    <a href="https://rsc.lzpuvt.edu.cn/2026/0610/c810a126791/page.htm" target="_blank" class="apply-link">鏌ョ湅璇︽儏</a>
                 </div>
             </div>
 
         </div>
         <div class="no-results" id="noResults" style="display:none;">
             <i class="fas fa-search" style="font-size:2em;margin-bottom:10px;display:block;"></i>
-            没有找到符合条件的岗位，请调整筛选条件
+            娌℃湁鎵惧埌绗﹀悎鏉′欢鐨勫矖浣嶏紝璇疯皟鏁寸瓫閫夋潯浠?
         </div>
 
-        <!-- 评论区 -->
+        <!-- 璇勮鍖?-->
         <div class="comment-section">
             <div class="comment-section-header">
                 <i class="fas fa-comments"></i>
-                <h3>讨论交流</h3>
+                <h3>璁ㄨ浜ゆ祦</h3>
                 <span id="comment-count" class="comment-count" style="display:none">0</span>
-                <button id="comment-refresh-btn" class="comment-refresh" onclick="refreshComments()" title="刷新评论"><i class="fas fa-sync-alt"></i></button>
-                <span class="comment-hint">无需登录，匿名可评</span>
+                <button id="comment-refresh-btn" class="comment-refresh" onclick="refreshComments()" title="鍒锋柊璇勮"><i class="fas fa-sync-alt"></i></button>
+                <span class="comment-hint">鏃犻渶鐧诲綍锛屽尶鍚嶅彲璇?/span>
             </div>
             <div id="comments-list" class="comments-list">
-                <div class="comment-loading">加载中...</div>
+                <div class="comment-loading">鍔犺浇涓?..</div>
             </div>
             <form id="comment-form" class="comment-form">
                 <div class="comment-form-row">
-                    <input type="text" id="comment-nick" placeholder="昵称（选填，默认匿名）" maxlength="30">
+                    <input type="text" id="comment-nick" placeholder="鏄电О锛堥€夊～锛岄粯璁ゅ尶鍚嶏級" maxlength="30">
                 </div>
-                <textarea id="comment-body" placeholder="说点什么吧~ ✨" maxlength="500" rows="3" required></textarea>
+                <textarea id="comment-body" placeholder="璇寸偣浠€涔堝惂~ 鉁? maxlength="500" rows="3" required></textarea>
                 <div class="comment-form-footer">
                     <span id="comment-char-count" class="comment-char-count">0/500</span>
-                    <button type="submit" id="comment-submit-btn" class="comment-submit-btn">发布</button>
+                    <button type="submit" id="comment-submit-btn" class="comment-submit-btn">鍙戝竷</button>
                 </div>
             </form>
         </div>
 
-        <!-- 底部 -->
+        <!-- 搴曢儴 -->
         <div class="footer">
-            <p>数据来源：高校人才网、各高校人事处、省市人社局</p>
-            <p>截止日期以各校官方公告为准，建议尽早报名</p>
-            <p style="margin-top:8px;"><a href="https://zeroplus95.github.io/university-jobs/" target="_blank">GitHub Pages</a> · 每个工作日9:00自动更新 · 本站总浏览 <span id="busuanzi_value_site_pv">-</span> 次</p>
+            <p>鏁版嵁鏉ユ簮锛氶珮鏍′汉鎵嶇綉銆佸悇楂樻牎浜轰簨澶勩€佺渷甯備汉绀惧眬</p>
+            <p>鎴鏃ユ湡浠ュ悇鏍″畼鏂瑰叕鍛婁负鍑嗭紝寤鸿灏芥棭鎶ュ悕</p>
+            <p style="margin-top:8px;"><a href="https://zeroplus95.github.io/university-jobs/" target="_blank">GitHub Pages</a> 路 姣忎釜宸ヤ綔鏃?:00鑷姩鏇存柊 路 鏈珯鎬绘祻瑙?<span id="busuanzi_value_site_pv">-</span> 娆?/p>
         </div>
     </div>
 
-    <!-- 不蒜子访问统计 -->
+    <!-- 涓嶈挏瀛愯闂粺璁?-->
     <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-    <!-- 微信订阅 -->
+    <!-- 寰俊璁㈤槄 -->
     <div class="sub-float">
         <div class="sub-panel" id="subPanel">
             <button class="close-sub" onclick="toggleSub()">&times;</button>
-            <h4><i class="fab fa-weixin" style="color:#07c160;"></i> 微信订阅更新通知</h4>
-            <p class="sub-desc">扫码关注后，每天新岗位自动推送</p>
+            <h4><i class="fab fa-weixin" style="color:#07c160;"></i> 寰俊璁㈤槄鏇存柊閫氱煡</h4>
+            <p class="sub-desc">鎵爜鍏虫敞鍚庯紝姣忓ぉ鏂板矖浣嶈嚜鍔ㄦ帹閫?/p>
             <div class="qrcode-wrap">
-                <img id="subQR" src="wx-subscribe-qr.png" alt="微信扫码订阅">
+                <img id="subQR" src="wx-subscribe-qr.png" alt="寰俊鎵爜璁㈤槄">
             </div>
             <div class="sub-steps">
-                <div><i class="fas fa-check-circle"></i> 微信扫码关注</div>
-                <div><i class="fas fa-check-circle"></i> 点击「关注主题」</div>
-                <div><i class="fas fa-check-circle"></i> 每日10点自动接收推送</div>
+                <div><i class="fas fa-check-circle"></i> 寰俊鎵爜鍏虫敞</div>
+                <div><i class="fas fa-check-circle"></i> 鐐瑰嚮銆屽叧娉ㄤ富棰樸€?/div>
+                <div><i class="fas fa-check-circle"></i> 姣忔棩10鐐硅嚜鍔ㄦ帴鏀舵帹閫?/div>
             </div>
         </div>
-        <button class="sub-float-btn" onclick="toggleSub()" title="微信订阅">
+        <button class="sub-float-btn" onclick="toggleSub()" title="寰俊璁㈤槄">
             <i class="fas fa-bell"></i>
         </button>
     </div>
 
     <script>
-        // ===== 登录验证 =====
+        // ===== 鐧诲綍楠岃瘉 =====
         const AUTH_KEY = 'university_jobs_auth';
         const PASSWORD_HASH = '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c';
 
@@ -2159,7 +1900,7 @@
         async function doLogin() {
             var pw = document.getElementById('loginPw').value;
             var err = document.getElementById('loginError');
-            if (!pw) { err.textContent = '请输入密码'; return; }
+            if (!pw) { err.textContent = '璇疯緭鍏ュ瘑鐮?; return; }
             var hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));
             var hashHex = Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
             if (hashHex === PASSWORD_HASH) {
@@ -2167,7 +1908,7 @@
                 document.getElementById('loginOverlay').classList.add('hidden');
                 err.textContent = '';
             } else {
-                err.textContent = '密码错误，请重试';
+                err.textContent = '瀵嗙爜閿欒锛岃閲嶈瘯';
                 document.getElementById('loginPw').value = '';
                 document.getElementById('loginPw').focus();
             }
@@ -2180,7 +1921,7 @@
             else { inp.type = 'password'; icon.className = 'fas fa-eye'; }
         }
 
-        // ===== 微信订阅 =====
+        // ===== 寰俊璁㈤槄 =====
         var WXPUSHER_APP_TOKEN = 'AT_zMM7F3XHHozQszBF08hi9BmyoFHcpLbp';
         var WXPUSHER_TOPIC_ID = 44670;
 
@@ -2189,7 +1930,7 @@
             panel.classList.toggle('show');
         }
 
-        // 点击面板外部关闭
+        // 鐐瑰嚮闈㈡澘澶栭儴鍏抽棴
         document.addEventListener('click', function(e) {
             var panel = document.getElementById('subPanel');
             var btn = document.querySelector('.sub-float-btn');
@@ -2198,9 +1939,9 @@
             }
         });
 
-        // ===== 日期选择器逻辑 =====
-        const PAGE_DATE = '2026-06-12';   // 本页数据日期
-        const FIRST_DATE = '2026-05-08';  // 最早快照日期
+        // ===== 鏃ユ湡閫夋嫨鍣ㄩ€昏緫 =====
+        const PAGE_DATE = '2026-06-15';   // 鏈〉鏁版嵁鏃ユ湡
+        const FIRST_DATE = '2026-05-08';  // 鏈€鏃╁揩鐓ф棩鏈?
         const REAL_TODAY = new Date().toISOString().split('T')[0];
         const BASE_URL = (function() {
             let p = window.location.pathname;
@@ -2214,7 +1955,7 @@
         datePicker.min = FIRST_DATE;
         datePicker.max = REAL_TODAY;
 
-        // Toast提示
+        // Toast鎻愮ず
         function showToast(msg) {
             var t = document.getElementById('dateToast') || (function() {
                 var el = document.createElement('div');
@@ -2234,10 +1975,10 @@
                 return;
             }
             var url = window.location.origin + BASE_URL + 'archive/' + dateStr + '.html';
-            showToast('正在加载 ' + dateStr + ' ...');
+            showToast('姝ｅ湪鍔犺浇 ' + dateStr + ' ...');
             fetch(url, { method: 'HEAD' }).then(function(r) {
                 if (r.ok) window.location.href = url;
-                else { showToast('暂无 ' + dateStr + ' 的快照数据'); datePicker.value = PAGE_DATE; }
+                else { showToast('鏆傛棤 ' + dateStr + ' 鐨勫揩鐓ф暟鎹?); datePicker.value = PAGE_DATE; }
             }).catch(function() { window.location.href = url; });
         }
 
@@ -2268,17 +2009,17 @@
         }
         updateNav();
 
-        // 存档页面显示横幅
+        // 瀛樻。椤甸潰鏄剧ず妯箙
         (function() {
             if (window.location.pathname.includes('/archive/') && PAGE_DATE < REAL_TODAY) {
                 var b = document.getElementById('archiveBanner');
                 b.style.display = 'block';
                 var p = PAGE_DATE.split('-');
-                document.getElementById('archiveDateText').textContent = p[0] + '年' + parseInt(p[1]) + '月' + parseInt(p[2]) + '日';
+                document.getElementById('archiveDateText').textContent = p[0] + '骞? + parseInt(p[1]) + '鏈? + parseInt(p[2]) + '鏃?;
             }
         })();
 
-        // ===== 筛选逻辑 =====
+        // ===== 绛涢€夐€昏緫 =====
         const activeFilters = {
             region: 'all',
             education: 'all',
@@ -2291,7 +2032,7 @@
                 const filterType = this.dataset.filter;
                 const filterValue = this.dataset.value;
 
-                // 更新同组按钮状态
+                // 鏇存柊鍚岀粍鎸夐挳鐘舵€?
                 document.querySelectorAll(`.filter-btn[data-filter="${filterType}"]`).forEach(b => b.classList.remove('active'));
                 this.classList.add('active');
 
@@ -2314,12 +2055,12 @@
 
                 if (activeFilters.region !== 'all' && region !== activeFilters.region) show = false;
                 if (activeFilters.education !== 'all') {
-                    if (activeFilters.education === '本科') {
-                        if (education !== '本科') show = false;
-                    } else if (activeFilters.education === '硕士') {
-                        if (education !== '硕士' && education !== '本科') show = false;
-                    } else if (activeFilters.education === '博士') {
-                        if (education !== '博士') show = false;
+                    if (activeFilters.education === '鏈') {
+                        if (education !== '鏈') show = false;
+                    } else if (activeFilters.education === '纭曞＋') {
+                        if (education !== '纭曞＋' && education !== '鏈') show = false;
+                    } else if (activeFilters.education === '鍗氬＋') {
+                        if (education !== '鍗氬＋') show = false;
                     }
                 }
                 if (activeFilters.hire !== 'all') {
@@ -2349,7 +2090,7 @@
             applyFilters();
         }
 
-        // ===== GitHub Issues 评论区 =====
+        // ===== GitHub Issues 璇勮鍖?=====
         (function() {
             var COMMENT_TOKEN = ['github_pat_11', 'BTJG35A0BwIApR', 'Kl9CVd_A0yX', 'tWk2KAHTeG', 'rvcDRGMQU', '07IndYOInm', 'A9fSun7v6F', 'NIOA2YEPl', 'qGZiwQg'].join('');
             var REPO_OWNER = 'zeroplus95';
@@ -2359,7 +2100,7 @@
             function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
             function getPageKey() {
-                var m = document.title.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
+                var m = document.title.match(/(\d{4})骞?\d{1,2})鏈?\d{1,2})鏃?);
                 if (m) return m[1]+'-'+m[2].padStart(2,'0')+'-'+m[3].padStart(2,'0');
                 return new Date().toISOString().slice(0,10);
             }
@@ -2373,27 +2114,27 @@
                 return api('https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/issues?state=open&per_page=100')
                     .then(function(r) { return r.json(); })
                     .then(function(issues) {
-                        var found = issues.find(function(i) { return i.title === '[评论] ' + key; });
+                        var found = issues.find(function(i) { return i.title === '[璇勮] ' + key; });
                         if (found) { currentIssueNum = found.number; return; }
                         return api('https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/issues', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ title: '[评论] ' + key, body: '评论区：' + key, labels: ['comment'] })
+                            body: JSON.stringify({ title: '[璇勮] ' + key, body: '璇勮鍖猴細' + key, labels: ['comment'] })
                         }).then(function(r) { return r.json(); }).then(function(d) { currentIssueNum = d.number; });
                     });
             }
 
             function loadComments() {
-                if (!currentIssueNum) { document.getElementById('comments-list').innerHTML = '<div class="comment-setup">评论系统初始化中...</div>'; return; }
+                if (!currentIssueNum) { document.getElementById('comments-list').innerHTML = '<div class="comment-setup">璇勮绯荤粺鍒濆鍖栦腑...</div>'; return; }
                 api('https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/issues/' + currentIssueNum + '/comments?per_page=100')
                     .then(function(r) { return r.json(); })
                     .then(function(comments) {
                         var list = document.getElementById('comments-list');
                         var countEl = document.getElementById('comment-count');
-                        if (!comments.length) { list.innerHTML = '<div class="comment-empty">暂无评论，来坐沙发吧~ </div>'; countEl.style.display = 'none'; return; }
+                        if (!comments.length) { list.innerHTML = '<div class="comment-empty">鏆傛棤璇勮锛屾潵鍧愭矙鍙戝惂~ </div>'; countEl.style.display = 'none'; return; }
                         countEl.textContent = comments.length; countEl.style.display = '';
                         list.innerHTML = comments.reverse().map(function(c) {
-                            var nick = '匿名用户';
+                            var nick = '鍖垮悕鐢ㄦ埛';
                             var avatar = '<i class="fas fa-user"></i>';
                             if (c.user && c.user.login) { nick = c.user.login; avatar = '<img src="' + c.user.avatar_url + '">'; }
                             var body = c.body || '';
@@ -2404,25 +2145,25 @@
                             return '<div class="comment-item"><div class="comment-avatar">' + avatar + '</div><div class="comment-body"><div class="comment-meta"><span class="comment-nick">' + esc(nick) + '</span><span class="comment-time">' + timeStr + '</span></div><div class="comment-text">' + esc(body) + '</div></div></div>';
                         }).join('');
                     })
-                    .catch(function() { document.getElementById('comments-list').innerHTML = '<div class="comment-error">评论加载失败，请刷新重试</div>'; });
+                    .catch(function() { document.getElementById('comments-list').innerHTML = '<div class="comment-error">璇勮鍔犺浇澶辫触锛岃鍒锋柊閲嶈瘯</div>'; });
             }
 
             window.refreshComments = function() {
-                document.getElementById('comments-list').innerHTML = '<div class="comment-loading">加载中...</div>';
+                document.getElementById('comments-list').innerHTML = '<div class="comment-loading">鍔犺浇涓?..</div>';
                 findOrCreateIssue().then(loadComments);
             };
 
             findOrCreateIssue().then(loadComments);
 
-            // 提交评论
+            // 鎻愪氦璇勮
             document.getElementById('comment-form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 var nick = document.getElementById('comment-nick').value.trim();
                 var body = document.getElementById('comment-body').value.trim();
                 if (!body) return;
-                if (!currentIssueNum) { alert('评论系统初始化中，请稍候'); return; }
+                if (!currentIssueNum) { alert('璇勮绯荤粺鍒濆鍖栦腑锛岃绋嶅€?); return; }
                 var btn = document.getElementById('comment-submit-btn');
-                btn.disabled = true; btn.textContent = '发布中...';
+                btn.disabled = true; btn.textContent = '鍙戝竷涓?..';
                 var payload = '[' + nick + '] ' + body;
                 api('https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/issues/' + currentIssueNum + '/comments', {
                     method: 'POST',
@@ -2433,9 +2174,9 @@
                         document.getElementById('comment-body').value = '';
                         document.getElementById('comment-char-count').textContent = '0/500';
                         loadComments();
-                    } else { alert('发布失败，请重试'); }
-                }).catch(function() { alert('网络错误，请重试'); })
-                .finally(function() { btn.disabled = false; btn.textContent = '发布'; });
+                    } else { alert('鍙戝竷澶辫触锛岃閲嶈瘯'); }
+                }).catch(function() { alert('缃戠粶閿欒锛岃閲嶈瘯'); })
+                .finally(function() { btn.disabled = false; btn.textContent = '鍙戝竷'; });
             });
 
             document.getElementById('comment-body').addEventListener('input', function() {
