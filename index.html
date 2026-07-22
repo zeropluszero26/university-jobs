@@ -2338,8 +2338,13 @@
         // ===== 登录验证 =====
         const AUTH_KEY = 'university_jobs_auth';
         const PASSWORD_HASH = '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c';
+        const PASSWORD_ENABLED = false; // 【暂停密码验证】2026-07-22 临时放开访问；恢复时改回 true
 
         (async function() {
+            if (!PASSWORD_ENABLED) {
+                document.getElementById('loginOverlay').classList.add('hidden');
+                return;
+            }
             if (sessionStorage.getItem(AUTH_KEY) === '1') {
                 document.getElementById('loginOverlay').classList.add('hidden');
                 return;
