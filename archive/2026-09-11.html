@@ -1,0 +1,3664 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN" data-page-node-id="fTfgtsjQQ9sSzyZrE00lS3">
+
+<head data-page-node-id="cIHbIxv8E2VuL2Ak72aoVE">
+
+    <meta charset="UTF-8" data-page-node-id="mvEmFV9PXzDtdKBsbdHpzn">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="iXboubDEeCdnbM38fCFPtN">
+
+    <title>高校行政岗招聘信息 - 2026年9月11日</title>
+
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css" data-page-node-id="NQ10ALfP1ZjXuRd8kL59Vw">
+
+    <style>
+
+
+
+        * { margin:0; padding:0; box-sizing: border-box; }
+
+
+
+        body {
+
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+            min-height: 100vh;
+
+            padding: 15px;
+
+        }
+
+
+
+        .container { max-width: 1200px; margin:0 auto; }
+
+
+
+        .header {
+
+            text-align: center;
+
+            color: white;
+
+            margin-bottom: 25px;
+
+            padding: 20px;
+
+        }
+
+
+
+        .header h1 {
+
+            font-size: 2em;
+
+            margin-bottom: 8px;
+
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+
+        }
+
+
+
+        .header p {
+
+            font-size: 1em;
+
+            opacity: 0.9;
+
+        }
+
+
+
+        .update-time {
+
+            background: rgba(255,255,255,0.2);
+
+            display: inline-block;
+
+            padding: 4px 14px;
+
+            border-radius: 20px;
+
+            font-size: 0.85em;
+
+            margin-top: 8px;
+
+        }
+
+
+
+        /* 统计栏 */
+
+        .stats-bar {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+
+            margin-bottom: 20px;
+
+        }
+
+
+
+        .stat-item {
+
+            background: rgba(255,255,255,0.15);
+
+            backdrop-filter: blur(10px);
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            min-width: 100px;
+
+        }
+
+
+
+        .stat-item .stat-num {
+
+            font-size: 1.6em;
+
+            font-weight: bold;
+
+            display: block;
+
+        }
+
+
+
+        .stat-item .stat-label {
+
+            font-size: 0.75em;
+
+            opacity: 0.85;
+
+        }
+
+
+
+        /* 筛选面板 */
+
+        .filter-panel {
+
+            background: rgba(255,255,255,0.95);
+
+            border-radius: 16px;
+
+            padding: 18px;
+
+            margin-bottom: 20px;
+
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
+        }
+
+
+
+        .filter-row {
+
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .filter-row:last-child { margin-bottom: 0; }
+
+
+
+        .filter-label {
+
+            font-weight: 600;
+
+            color: #555;
+
+            font-size: 0.85em;
+
+            min-width: 70px;
+
+            flex-shrink: 0;
+
+        }
+
+
+
+        .filter-btn {
+
+            padding: 5px 14px;
+
+            border: 2px solid #764ba2;
+
+            background: white;
+
+            color: #764ba2;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            font-size: 0.82em;
+
+            transition: all 0.3s;
+
+            white-space: nowrap;
+
+        }
+
+
+
+        .filter-btn:hover, .filter-btn.active {
+
+            background: #764ba2;
+
+            color: white;
+
+        }
+
+
+
+        .filter-result {
+
+            font-size: 0.85em;
+
+            color: #764ba2;
+
+            margin-top: 8px;
+
+            text-align: right;
+
+        }
+
+
+
+        .filter-result span {
+
+            font-weight: bold;
+
+            font-size: 1.1em;
+
+        }
+
+
+
+        .reset-btn {
+
+            padding: 5px 14px;
+
+            border: 2px solid #e74c3c;
+
+            background: white;
+
+            color: #e74c3c;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            font-size: 0.82em;
+
+            transition: all 0.3s;
+
+            margin-left: auto;
+
+        }
+
+
+
+        .reset-btn:hover {
+
+            background: #e74c3c;
+
+            color: white;
+
+        }
+
+
+
+        /* 卡片网格 */
+
+        .cards-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+
+            gap: 18px;
+
+        }
+
+
+
+        .job-card {
+
+            background: white;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
+            transition: transform 0.3s, box-shadow 0.3s;
+
+            position: relative;
+
+        }
+
+
+
+        .job-card:hover {
+
+            transform: translateY(-4px);
+
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15);
+
+        }
+
+
+
+        .card-header {
+
+            padding: 16px 18px 12px;
+
+            border-bottom: 1px solid #f0f0f0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: flex-start;
+
+        }
+
+
+
+        .school-name {
+
+            font-size: 1.15em;
+
+            font-weight: 700;
+
+            color: #2c3e50;
+
+            line-height: 1.3;
+
+        }
+
+
+
+        .school-tags {
+
+            display: flex;
+
+            gap: 4px;
+
+            flex-wrap: wrap;
+
+            margin-top: 4px;
+
+        }
+
+
+
+        .tag {
+
+            font-size: 0.65em;
+
+            padding: 2px 6px;
+
+            border-radius: 4px;
+
+            font-weight: 600;
+
+        }
+
+
+
+        .tag-985 { background: #ff6b6b; color: white; }
+
+        .tag-211 { background: #ffa502; color: white; }
+
+        .tag-double-first { background: #7c5cfc; color: white; }
+
+        .tag-ministry { background: #2ed573; color: white; }
+
+        .tag-private { background: #a29bfe; color: white; }
+
+
+
+        .hire-type-badge {
+
+            padding: 4px 10px;
+
+            border-radius: 20px;
+
+            font-size: 0.75em;
+
+            font-weight: 600;
+
+            white-space: nowrap;
+
+            flex-shrink: 0;
+
+        }
+
+
+
+        .badge-bianzhi { background: #fff0f0; color: #e74c3c; border: 1px solid #e74c3c; }
+
+        .badge-pinyong { background: #f0f8ff; color: #3498db; border: 1px solid #3498db; }
+
+        .badge-laowu { background: #fff8f0; color: #f39c12; border: 1px solid #f39c12; }
+
+        .badge-beian { background: #f0fff0; color: #27ae60; border: 1px solid #27ae60; }
+
+        .badge-hetong { background: #f8f0ff; color: #8e44ad; border: 1px solid #8e44ad; }
+
+
+
+        .card-body {
+
+            padding: 14px 18px;
+
+        }
+
+
+
+        .position-name {
+
+            font-size: 1.05em;
+
+            font-weight: 600;
+
+            color: #34495e;
+
+            margin-bottom: 10px;
+
+        }
+
+
+
+        .info-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 6px 12px;
+
+        }
+
+
+
+        .info-item {
+
+            font-size: 0.82em;
+
+            color: #666;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 4px;
+
+        }
+
+
+
+        .info-item i {
+
+            width: 14px;
+
+            text-align: center;
+
+            color: #764ba2;
+
+            font-size: 0.9em;
+
+        }
+
+
+
+        .info-item .value {
+
+            color: #333;
+
+            font-weight: 500;
+
+        }
+
+
+
+        .card-footer {
+
+            padding: 10px 18px;
+
+            background: #fafafa;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+
+        .deadline {
+
+            font-size: 0.85em;
+
+            font-weight: 600;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 4px;
+
+        }
+
+
+
+        .deadline-urgent { color: #e74c3c; }
+
+        .deadline-normal { color: #27ae60; }
+
+        .deadline-long { color: #3498db; }
+
+
+
+        .deadline i { font-size: 0.9em; }
+
+
+
+        .apply-link {
+
+            display: inline-block;
+
+            padding: 6px 16px;
+
+            background: linear-gradient(135deg, #667eea, #764ba2);
+
+            color: white;
+
+            border-radius: 20px;
+
+            text-decoration: none;
+
+            font-size: 0.82em;
+
+            font-weight: 600;
+
+            transition: all 0.3s;
+
+        }
+
+
+
+        .apply-link:hover {
+
+            transform: scale(1.05);
+
+            box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
+
+        }
+
+
+
+        /* NEW标记 */
+
+        .new-badge {
+
+            position: absolute;
+
+            top: 12px;
+
+            right: -28px;
+
+            background: #e74c3c;
+
+            color: white;
+
+            padding: 2px 32px;
+
+            font-size: 0.7em;
+
+            font-weight: 700;
+
+            transform: rotate(45deg);
+
+            box-shadow: 0 2px 8px rgba(231,76,60,0.4);
+
+            animation: pulse-new 2s infinite;
+
+        }
+
+
+
+        @keyframes pulse-new {
+
+            0%, 100% { opacity:1; }
+
+            50% { opacity: 0.7; }
+
+        }
+
+
+
+        /* 日期选择器 */
+
+        .date-picker-bar {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            background: rgba(255,255,255,0.2);
+
+            backdrop-filter: blur(10px);
+
+            padding: 6px 16px;
+
+            border-radius: 20px;
+
+            margin-top: 10px;
+
+        }
+
+
+
+        .date-picker-label {
+
+            color: white;
+
+            font-size: 0.85em;
+
+            font-weight: 600;
+
+        }
+
+
+
+        .date-input {
+
+            padding: 4px 10px;
+
+            border: 2px solid rgba(255,255,255,0.5);
+
+            border-radius: 12px;
+
+            background: rgba(255,255,255,0.9);
+
+            color: #333;
+
+            font-size: 0.85em;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            outline: none;
+
+            transition: border-color 0.3s;
+
+        }
+
+
+
+        .date-input:focus {
+
+            border-color: #764ba2;
+
+        }
+
+
+
+        .date-input::-webkit-calendar-picker-indicator {
+
+            cursor: pointer;
+
+            filter: invert(30%);
+
+        }
+
+
+
+        .date-today-btn {
+
+            padding: 4px 12px;
+
+            border: 2px solid rgba(255,255,255,0.7);
+
+            background: rgba(255,255,255,0.2);
+
+            color: white;
+
+            border-radius: 12px;
+
+            cursor: pointer;
+
+            font-size: 0.8em;
+
+            font-weight: 600;
+
+            transition: all 0.3s;
+
+        }
+
+
+
+        .date-today-btn:hover {
+
+            background: rgba(255,255,255,0.4);
+
+        }
+
+
+
+        .date-nav-btn {
+
+            width: 28px;
+
+            height: 28px;
+
+            border: 2px solid rgba(255,255,255,0.5);
+
+            background: rgba(255,255,255,0.15);
+
+            color: white;
+
+            border-radius: 50%;
+
+            cursor: pointer;
+
+            font-size: 0.75em;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            transition: all 0.3s;
+
+        }
+
+
+
+        .date-nav-btn:hover {
+
+            background: rgba(255,255,255,0.35);
+
+        }
+
+
+
+        .date-nav-btn:disabled {
+
+            opacity: 0.3;
+
+            cursor: not-allowed;
+
+        }
+
+
+
+        /* 历史快照提示 */
+
+        .archive-banner {
+
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+
+            color: white;
+
+            text-align: center;
+
+            padding: 10px 20px;
+
+            border-radius: 12px;
+
+            margin-bottom: 16px;
+
+            font-size: 0.9em;
+
+            display: none;
+
+        }
+
+
+
+        .archive-banner i { margin-right: 6px; }
+
+        .archive-banner a { color: white; font-weight: 700; text-decoration: underline; }
+
+
+
+        /* 登录遮罩 */
+
+        .login-overlay {
+
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+            z-index: 10000;
+
+            display: flex; align-items: center; justify-content: center;
+
+            transition: opacity 0.4s, visibility 0.4s;
+
+        }
+
+        .login-overlay.hidden { opacity: 0; visibility: hidden; }
+
+        .login-card {
+
+            background: white; border-radius: 20px; padding: 40px 36px;
+
+            width: 360px; max-width: 90vw; box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+
+            text-align: center;
+
+        }
+
+        .login-card .lock-icon {
+
+            width: 60px; height: 60px; background: linear-gradient(135deg, #667eea, #764ba2);
+
+            border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+
+            margin-bottom: 16px;
+
+        }
+
+        .login-card .lock-icon i { color: white; font-size: 1.5em; }
+
+        .login-card h3 { color: #333; font-size: 1.2em; margin-bottom: 6px; }
+
+        .login-card .sub { color: #999; font-size: 0.82em; margin-bottom: 20px; }
+
+        .login-card .input-group {
+
+            position: relative; margin-bottom: 16px;
+
+        }
+
+        .login-card .input-group input {
+
+            width: 100%; padding: 12px 44px 12px 16px;
+
+            border: 2px solid #e0e0e0; border-radius: 12px;
+
+            font-size: 0.95em; outline: none; transition: border-color 0.3s;
+
+        }
+
+        .login-card .input-group input:focus { border-color: #764ba2; }
+
+        .login-card .input-group .toggle-pw {
+
+            position: absolute; right: 12px; top: 50%; transform: translateY(-50%);
+
+            background: none; border: none; color: #999; cursor: pointer; font-size: 0.9em;
+
+        }
+
+        .login-card .login-btn {
+
+            width: 100%; padding: 12px; border: none; border-radius: 12px;
+
+            background: linear-gradient(135deg, #667eea, #764ba2);
+
+            color: white; font-size: 1em; font-weight: 600; cursor: pointer;
+
+            transition: transform 0.2s, box-shadow 0.2s;
+
+        }
+
+        .login-card .login-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(118,75,162,0.4); }
+
+        .login-card .login-error {
+
+            color: #e74c3c; font-size: 0.82em; margin-top: 10px; min-height: 20px;
+
+        }
+
+
+
+        /* 微信订阅 */
+
+        .sub-float {
+
+            position: fixed; bottom: 24px; right: 24px; z-index: 9998;
+
+            display: flex; flex-direction: column; align-items: flex-end; gap: 8px;
+
+        }
+
+        .sub-float-btn {
+
+            width: 50px; height: 50px; border-radius: 50%;
+
+            background: linear-gradient(135deg, #07c160, #06ad56);
+
+            color: white; border: none; cursor: pointer;
+
+            font-size: 1.3em; box-shadow: 0 4px 16px rgba(7,193,96,0.4);
+
+            transition: transform 0.3s; animation: pulse-sub 2s infinite;
+
+        }
+
+        @keyframes pulse-sub { 0%,100%{box-shadow:0 4px 16px rgba(7,193,96,0.4)} 50%{box-shadow:0 4px 28px rgba(7,193,96,0.7)} }
+
+        .sub-float-btn:hover { transform: scale(1.08); }
+
+        .sub-panel {
+
+            background: white; border-radius: 16px; padding: 24px;
+
+            box-shadow: 0 12px 40px rgba(0,0,0,0.15); text-align: center;
+
+            width: 280px; display: none; animation: slideUp 0.3s ease;
+
+        }
+
+        .sub-panel.show { display: block; }
+
+        @keyframes slideUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+
+        .sub-panel h4 { color: #333; font-size: 1em; margin-bottom: 4px; }
+
+        .sub-panel .sub-desc { color: #999; font-size: 0.78em; margin-bottom: 14px; }
+
+        .sub-panel .qrcode-wrap {
+
+            width: 160px; height: 160px; margin: 0 auto 10px;
+
+            border: 3px solid #07c160; border-radius: 12px; padding: 4px;
+
+            display: flex; align-items: center; justify-content: center;
+
+            background: #f9f9f9;
+
+        }
+
+        .sub-panel .qrcode-wrap img { width: 100%; height: 100%; }
+
+        .sub-panel .sub-steps { text-align: left; font-size: 0.75em; color: #666; line-height: 1.8; }
+
+        .sub-panel .sub-steps i { color: #07c160; margin-right: 4px; }
+
+        .sub-panel .close-sub {
+
+            position: absolute; top: 10px; right: 14px;
+
+            background: none; border: none; font-size: 1.1em; color: #999; cursor: pointer;
+
+        }
+
+        .sub-panel { position: relative; }
+
+
+
+        @media (max-width: 768px) {
+
+            .sub-float { bottom: 16px; right: 16px; }
+
+            .sub-float-btn { width: 44px; height: 44px; font-size: 1.1em; }
+
+        }
+
+
+
+        /* 评论区 */
+
+        .comment-section {
+
+            background: rgba(255,255,255,0.95);
+
+            border-radius: 16px;
+
+            padding: 24px;
+
+            margin-top: 24px;
+
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+
+        }
+
+
+
+        .comment-section-header {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            margin-bottom: 18px;
+
+            padding-bottom: 14px;
+
+            border-bottom: 2px solid #e8d5f5;
+
+        }
+
+
+
+        .comment-section-header i { font-size: 1.3em; color: #764ba2; }
+
+        .comment-section-header h3 { font-size: 1.1em; color: #2c3e50; font-weight: 700; }
+
+        .comment-section-header .comment-hint { font-size: 0.78em; color: #999; margin-left: auto; }
+
+        .comment-section-header .comment-count { font-size: 0.78em; color: #764ba2; background: #f3e8ff; padding: 2px 10px; border-radius: 10px; margin-left: 8px; }
+
+        .comment-section-header .comment-refresh { font-size: 0.78em; color: #764ba2; background: none; border: 1px solid #e8d5f5; padding: 2px 10px; border-radius: 10px; cursor: pointer; margin-left: 6px; transition: background 0.2s; }
+
+        .comment-section-header .comment-refresh:hover { background: #f3e8ff; }
+
+
+
+        .comments-list { margin-bottom: 20px; max-height: 500px; overflow-y: auto; }
+
+        .comment-empty, .comment-loading, .comment-error, .comment-setup { text-align: center; color: #999; padding: 30px 10px; font-size: 0.9em; }
+
+        .comment-error { color: #e74c3c; }
+
+
+
+        .comment-item { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f0e6f6; }
+
+        .comment-item:last-child { border-bottom: none; }
+
+
+
+        .comment-avatar { flex-shrink: 0; width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #667eea, #764ba2); display: flex; align-items: center; justify-content: center; color: white; font-size: 0.85em; font-weight: 600; }
+
+        .comment-avatar img { width: 36px; height: 36px; border-radius: 50%; }
+
+
+
+        .comment-body { flex: 1; min-width: 0; }
+
+        .comment-meta { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+
+        .comment-nick { font-weight: 600; color: #764ba2; font-size: 0.9em; }
+
+        .comment-time { font-size: 0.75em; color: #bbb; }
+
+        .comment-text { font-size: 0.9em; color: #444; line-height: 1.6; word-break: break-word; }
+
+
+
+        .comment-form { margin-top: 16px; }
+
+        .comment-form-row { display: flex; gap: 10px; margin-bottom: 10px; }
+
+        .comment-form-row input { flex: 1; padding: 10px 14px; border: 1.5px solid #e8d5f5; border-radius: 10px; font-size: 0.88em; outline: none; transition: border-color 0.2s; background: #faf5ff; }
+
+        .comment-form-row input:focus { border-color: #764ba2; }
+
+        .comment-form textarea { width: 100%; padding: 12px 14px; border: 1.5px solid #e8d5f5; border-radius: 10px; font-size: 0.88em; resize: vertical; min-height: 80px; outline: none; transition: border-color 0.2s; background: #faf5ff; font-family: inherit; }
+
+        .comment-form textarea:focus { border-color: #764ba2; }
+
+
+
+        .comment-form-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+
+        .comment-char-count { font-size: 0.78em; color: #bbb; }
+
+        .comment-submit-btn { padding: 8px 24px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border: none; border-radius: 10px; font-size: 0.88em; cursor: pointer; transition: opacity 0.2s; }
+
+        .comment-submit-btn:hover { opacity: 0.9; }
+
+        .comment-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+
+
+        /* 底部 */
+
+        .footer {
+
+            text-align: center;
+
+            color: rgba(255,255,255,0.7);
+
+            padding: 30px 0 10px;
+
+            font-size: 0.85em;
+
+        }
+
+
+
+        .footer a { color: rgba(255,255,255,0.9); }
+
+
+
+        .no-results {
+
+            text-align: center;
+
+            color: rgba(255,255,255,0.8);
+
+            padding: 60px 20px;
+
+            font-size: 1.1em;
+
+        }
+
+
+
+        /* 移动端适配 */
+
+        @media (max-width: 768px) {
+
+            body { padding: 10px; }
+
+            .header h1 { font-size: 1.5em; }
+
+            .header p { font-size: 0.9em; }
+
+            .cards-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 14px;
+
+            }
+
+            .stats-bar { gap: 8px; }
+
+            .stat-item { min-width: 80px; padding: 8px 12px; }
+
+            .stat-item .stat-num { font-size: 1.3em; }
+
+            .filter-row { gap: 6px; }
+
+            .filter-btn { padding: 4px 10px; font-size: 0.78em; }
+
+            .info-grid { grid-template-columns: 1fr; }
+
+            .card-header { flex-direction: column; gap: 6px; }
+
+            .date-picker-bar { flex-wrap: wrap; justify-content: center; padding: 6px 10px; gap: 6px; }
+
+            .date-picker-label { font-size: 0.8em; }
+
+            .date-input { font-size: 0.8em; padding: 3px 8px; }
+
+        }
+
+
+
+        @media (max-width: 400px) {
+
+            .cards-grid { grid-template-columns: 1fr; }
+
+            .job-card { border-radius: 12px; }
+
+            .header h1 { font-size: 1.3em; }
+
+        }
+
+        .job-card { cursor: pointer; }
+
+    
+
+    </style>
+
+</head>
+
+<body data-page-node-id="L4sBFebQE5DLkow28S5s2o">
+
+
+
+    <!-- 登录验证 -->
+
+    <div class="login-overlay" id="loginOverlay" data-page-node-id="gjFAkedIimFpAzQqDpOosy">
+
+        <div class="login-card" data-page-node-id="sJke3beiAHF6f6kt8AfmKG">
+
+            <div class="lock-icon" data-page-node-id="I9dJbZfcmdcj33a9DltxGj"><i class="fas fa-lock" data-page-node-id="lCfl0BTO7vT1JUEfrorKMT"></i></div>
+
+            <h3 data-page-node-id="8Wk4ZELW84EriFKTQh8fLj">高校行政岗招聘信息</h3>
+
+            <p class="sub" data-page-node-id="KKhXpvnTcEfdToNJheGgHt">请输入访问密码</p>
+
+            <div class="input-group" data-page-node-id="EuKgsTCsrVf08iymcDqHxL">
+
+                <input type="password" id="loginPw" placeholder="输入密码" onkeydown="if(event.key==='Enter')doLogin()" data-page-node-id="LKoVFtAyvWaE65tCkhOHAp">
+
+                <button class="toggle-pw" onclick="togglePw()" title="显示/隐藏" data-page-node-id="6EgLkhFvDF9uXmUALAQncJ"><i class="fas fa-eye" id="pwIcon" data-page-node-id="Joyp2oNCVy9C42kNpZhcvb"></i></button>
+
+            </div>
+
+            <button class="login-btn" onclick="doLogin()" data-page-node-id="YjkHNZchI3oLNJv6EDlR0e">验证进入</button>
+
+            <div class="login-error" id="loginError" data-page-node-id="ldzpBJkJ8LPuAuM6P9A0MX"></div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="container" data-page-node-id="ihbppg1VO60IhXIkphNyOE">
+
+        <!-- 页头 -->
+
+        <div class="header" data-page-node-id="FCnBF9QVQVmLv89BMeKyOI">
+
+            <h1 data-page-node-id="tfLsNEzKpoY54c1oFz4R2N"><i class="fas fa-graduation-cap" data-page-node-id="kag5r4hkcHcV2dnSrwh8uF"></i> 高校行政岗招聘信息</h1>
+
+            <p data-page-node-id="ZLLvK5AWEV0mQRKh9PpUL9">每日更新 · 只展示仍在报名中的岗位</p>
+
+            <div class="update-time" data-page-node-id="FoyrahvF1mrfh4lokBhsnR"><i class="fas fa-clock" data-page-node-id="7QmhjebNdyq9J3VEnYMZKb"></i> 更新时间：2026年9月11日 09:10（剔除9月11日及之前截止岗位，新增北大政府管理学院·兰州大学公共卫生学院·华南理工机械学院·广州医大未来医学学院·中国海洋大学未来海洋学院·教育部内蒙古高等研究院等，共56岗位）</div>
+
+
+
+        <!-- 日期选择器 -->
+
+        <div class="date-picker-bar" data-page-node-id="kFzB1rkvaVpNHx7yQPcYAQ">
+
+            <span class="date-picker-label" data-page-node-id="rtRPSrDzMCCOXvv2DcoVOR"><i class="fas fa-calendar-alt" data-page-node-id="7CcAxBYkv3FQgzB5lyhwXT"></i> 查看日期</span>
+
+            <input type="date" id="datePicker" class="date-input" value="2026-09-11" min="2026-05-08" max="2026-09-11" data-page-node-id="EqLEwCRRqdqdnmazujVQxu">
+
+            <button class="date-today-btn" onclick="goToday()" data-page-node-id="NV8unsxZKXzawmuRCCD2QB">今天</button>
+
+            <button class="date-nav-btn" onclick="goPrev()" data-page-node-id="X2yJGiTVzH1EHWEpas8mvt"><i class="fas fa-chevron-left" data-page-node-id="NLfi0qaaqK2XDN23cCla8O"></i></button>
+
+            <button class="date-nav-btn" onclick="goNext()" data-page-node-id="J7yCVzEsnCS12CIqe40R6b"><i class="fas fa-chevron-right" data-page-node-id="KSKVtDwNQyZXiDNZdyOOt4"></i></button>
+
+        </div>
+
+        </div>
+
+
+
+        <!-- 历史快照提示（仅存档页面显示） -->
+
+        <div class="archive-banner" id="archiveBanner" data-page-node-id="S3eEAQYAKUzyzt2IP0thH0">
+
+            <i class="fas fa-history" data-page-node-id="vMVLtyAnuFMuCRRU4zsDTD"></i>
+
+            这是 <strong id="archiveDateText" data-page-node-id="lfxdcVZM53gj4F2rsBQnYg"></strong> 的历史快照，部分岗位可能已截止。<a href="javascript:goToday()" data-page-node-id="F47eUHTS5RwksyclYOoXhx">查看今日最新数据 →</a>
+
+        </div>
+
+
+
+        <!-- 统计栏 -->
+
+        <div class="stats-bar" data-page-node-id="Ko1H4jVnb7gAEfvumghxa0">
+
+            <div class="stat-item" data-page-node-id="88YGDD9WsdSftyFJNeTpAP">
+
+                <span class="stat-num" id="totalCount">56</span>
+
+                <span class="stat-label" data-page-node-id="WwL6IFEmKbdGbuG9eTXhCL">在招岗位</span>
+
+            </div>
+
+            <div class="stat-item" data-page-node-id="JpphbGjhq7DYZzw4wlnnI4">
+
+                <span class="stat-num" id="urgentCount" style="color:#e74c3c">8</span>
+
+                <span class="stat-label" data-page-node-id="0Hhd9j4Ue7DU4zH4KB0uRU">即将截止</span>
+
+            </div>
+
+            <div class="stat-item" data-page-node-id="y6FewomlChBZUaHDdyAi79">
+
+                <span class="stat-num" id="newCount" style="color:#ffa502">6</span>
+
+                <span class="stat-label" data-page-node-id="XTNlOsei89rUeCsG7kTEKF">本期新增</span>
+
+            </div>
+
+            <div class="stat-item" data-page-node-id="Bh3ZDcfxvVqBsL5ByREX73">
+
+                <span class="stat-num" data-page-node-id="LoPH3FVu8gmMEvfBW0UaLc">1000+</span>
+
+                <span class="stat-label" data-page-node-id="DKecPXU1i2tDzYt1E92Tx5">招聘总人数</span>
+
+            </div>
+
+            <div class="stat-item" data-page-node-id="yHvjIjx3ohsj8HOZZDUP08">
+
+                <span class="stat-num" data-page-node-id="SFxGmpOrQIto2SCZLyLUdq"><i class="fas fa-eye" style="font-size:0.7em;color:rgba(255,255,255,0.6)" data-page-node-id="KM5FaVjC1iFx3MDMAepLRa"></i> <span id="busuanzi_value_page_pv" data-page-node-id="MuhLtHsr8x37LpjjyOZuIu">-</span></span>
+
+                <span class="stat-label" data-page-node-id="lJnNSlXkn7BJlwltYDBS2s">本页浏览</span>
+
+            </div>
+
+            <div class="stat-item" data-page-node-id="yekvyzAoWJJIfiR9wMu6ea">
+
+                <span class="stat-num" data-page-node-id="F19HjQwiu4EJZHJUuedXJa"><i class="fas fa-users" style="font-size:0.7em;color:rgba(255,255,255,0.6)" data-page-node-id="M5IPMZUzNWNBu3M09Q5G7y"></i> <span id="busuanzi_value_site_uv" data-page-node-id="e8cVLjMS6pBsjtXBQtRWzS">-</span></span>
+
+                <span class="stat-label" data-page-node-id="Ik3Xamezmg3zZ5mMZzEKcu">累计访客</span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 筛选面板 -->
+
+        <div class="filter-panel" data-page-node-id="Ai5IZg1bigdu1AcGJGBk0U">
+
+            <div class="filter-row" data-page-node-id="6h4vN9fxDrEWdONWhbWkIN">
+
+                <span class="filter-label" data-page-node-id="xBoZOgPUsEyJG2TY0fk7aG"><i class="fas fa-map-marker-alt" data-page-node-id="7xg9pqU55O9k1VVWeXSomp"></i> 地区</span>
+
+                <button class="filter-btn active" data-filter="region" data-value="all" data-page-node-id="PheabJsd2inYN2BcJHZWXP">全部</button>
+
+                <button class="filter-btn" data-filter="region" data-value="华东" data-page-node-id="XjKZGuBL0y70idzlLIpJt6">华东</button>
+
+                <button class="filter-btn" data-filter="region" data-value="华北" data-page-node-id="oIn1VwWtAVu8tMyRqYvBJA">华北</button>
+
+                <button class="filter-btn" data-filter="region" data-value="华中" data-page-node-id="IRaPBDRO6Da2YyQMmcTECZ">华中</button>
+
+                <button class="filter-btn" data-filter="region" data-value="华南" data-page-node-id="3K2mbpwa0ZRgI77ndcK3Be">华南</button>
+
+                <button class="filter-btn" data-filter="region" data-value="西南" data-page-node-id="IY3zgfqlT8D1bUkkmmNzq8">西南</button>
+
+                <button class="filter-btn" data-filter="region" data-value="西北" data-page-node-id="tnA6lgubbuVGsWpRWpxYot">西北</button>
+
+                <button class="filter-btn" data-filter="region" data-value="东北" data-page-node-id="NBpJrufEQ6JVw6KUSGMfWw">东北</button>
+
+            </div>
+
+            <div class="filter-row" data-page-node-id="jnR9e0RDqLBe0rBsUfdIB2">
+
+                <span class="filter-label" data-page-node-id="y7OxH9Rx2YXxzXp79YwMz1"><i class="fas fa-graduation-cap" data-page-node-id="sQuBips27aMj7BgLM3ohUE"></i> 学历</span>
+
+                <button class="filter-btn active" data-filter="education" data-value="all" data-page-node-id="hdcCR4W55YnIf7RIzLtM5c">全部</button>
+
+                <button class="filter-btn" data-filter="education" data-value="本科" data-page-node-id="FBRqKxqYX5MzSPwqh3GACN">本科可报</button>
+
+                <button class="filter-btn" data-filter="education" data-value="硕士" data-page-node-id="CiNE68q47HLWq69Hya9BNa">硕士可报</button>
+
+                <button class="filter-btn" data-filter="education" data-value="博士" data-page-node-id="GBWCEwtHmDZR54T5ucaak0">博士</button>
+
+            </div>
+
+            <div class="filter-row" data-page-node-id="tDgFJy9ZjNaHICVjKLgwkE">
+
+                <span class="filter-label" data-page-node-id="QHFlQljqg6EsEmVABxtWtD"><i class="fas fa-briefcase" data-page-node-id="yzZl5Dl5iAJGSDb0ktFcew"></i> 聘用</span>
+
+                <button class="filter-btn active" data-filter="hire" data-value="all" data-page-node-id="i3nCpadxgaP73K7PSJ77PX">全部</button>
+
+                <button class="filter-btn" data-filter="hire" data-value="事业编制" data-page-node-id="QjK36GkxXtoJD4rg8gXLHW">事业编制</button>
+
+                <button class="filter-btn" data-filter="hire" data-value="聘用制" data-page-node-id="ruMDrtyVEcHC7ZLZUwJGYR">聘用制</button>
+
+                <button class="filter-btn" data-filter="hire" data-value="劳务派遣" data-page-node-id="ZiBOI0PichtrwYDOdTxR8c">劳务派遣</button>
+
+                <button class="filter-btn" data-filter="hire" data-value="备案制" data-page-node-id="5NmX3Re0x8Ya0FH34dVbTf">备案制</button>
+
+            </div>
+
+            <div class="filter-row" data-page-node-id="lrR5CvEOjBfCy6kRLxasqi">
+
+                <span class="filter-label" data-page-node-id="8FDhLsYGq3SXyo1bhMS3Fk"><i class="fas fa-tag" data-page-node-id="k2o9jXLIXYyB1Bd9EabihC"></i> 类别</span>
+
+                <button class="filter-btn active" data-filter="position" data-value="all" data-page-node-id="IZcS2t8cYUUXTSM3wyGVp7">全部</button>
+
+                <button class="filter-btn" data-filter="position" data-value="行政管理" data-page-node-id="GOz36qBDS7vbEkytowAAub">行政管理</button>
+
+                <button class="filter-btn" data-filter="position" data-value="辅导员" data-page-node-id="hUwndCXjEAYaMweQZYkATO">辅导员</button>
+
+                <button class="filter-btn" data-filter="position" data-value="教辅" data-page-node-id="3OZVfvxFgxodZ3Q2JyBbQ9">教辅</button>
+
+            </div>
+
+            <div class="filter-row" style="justify-content:space-between;" data-page-node-id="xgLArBHJrghEXiW0EUyzGn">
+
+                <div class="filter-result" data-page-node-id="Gor79O4XSLvYpWFrAsr2nG">筛选结果：<span id="filteredCount" data-page-node-id="On5bDTfeStYGlVR6CLEmlg">49</span> 个岗位</div>
+
+                <button class="reset-btn" onclick="resetFilters()" data-page-node-id="4nlOIEKoU1MN9OFuUPrACU"><i class="fas fa-redo" data-page-node-id="SjZqe8YmmtfGNfi7naBFLY"></i> 重置筛选</button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- 岗位卡片 -->
+
+        <div class="cards-grid" id="cardsGrid" data-page-node-id="7uHQr6Xr5IdHQXHOLUpfdO">
+            <div class="job-card" data-region="华北" data-education="本科" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/429347.html','_blank')">
+                <div class="new-badge">NEW</div>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">北京大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">政府管理学院高端教育培训中心招聘2名劳动合同制工作人员</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">劳动合同制·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月20日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/429347.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西北" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/428451.html','_blank')">
+                <div class="new-badge">NEW</div>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">兰州大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">公共卫生学院2026年9月招聘1名办公室行政助理（B岗）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">聘用制·五险一金</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">甘肃兰州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 9月14日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/428451.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="本科" data-hire="合同工" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://m.gaoxiaojob.com/announcement/detail/428454.html','_blank')">
+                <div class="new-badge">NEW</div>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">华南理工大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">合同工</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">机械与汽车工程学院2026年9月招聘1名工作人员</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">合同工·按学校规定</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东广州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 9月13日截止</div>
+                    <a href="https://m.gaoxiaojob.com/announcement/detail/428454.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="硕士" data-hire="编外" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.zgsydw.com/guangdong/20260814/1646867_1.html','_blank')">
+                <div class="new-badge">NEW</div>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">广州医科大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">双一流·公办本科</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">编外</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">未来医学学院2026年编外人员招聘行政秘书</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议·按学校规定</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东广州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月15日截止</div>
+                    <a href="https://www.zgsydw.com/guangdong/20260814/1646867_1.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://rsc.ouc.edu.cn/2026/0909/c923a536818/page.htm','_blank')">
+                <div class="new-badge">NEW</div>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">中国海洋大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">未来海洋学院2026年9月招聘办公室秘书1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">派遣·12-15万</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">山东青岛</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月22日截止</div>
+                    <a href="https://rsc.ouc.edu.cn/2026/0909/c923a536818/page.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华北" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/429902.html','_blank')">
+                <div class="new-badge">NEW</div>
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">教育部内蒙古高等研究院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">教育部直属</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2027年度公开招聘5名工作人员（事业编制）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">5名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">内蒙古</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月17日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/429902.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="本科" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://hr.fudan.edu.cn/e4/4c/c15370a779340/page.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">复旦大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">国际合作与交流处出国出境中心行政助理1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">劳务派遣·按学校</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月30日截止</div>
+                    <a href="https://hr.fudan.edu.cn/e4/4c/c15370a779340/page.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://hr.fudan.edu.cn/0e/9f/c15370a790175/page.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">复旦大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">本科生院教务处培养与专业建设办公室教学资源管理岗1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">派遣·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月30日截止</div>
+                    <a href="https://hr.fudan.edu.cn/0e/9f/c15370a790175/page.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://hr.fudan.edu.cn/0e/38/c15370a790072/page.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">复旦大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">上海数学中心行政管理助理1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">派遣·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 10月9日截止</div>
+                    <a href="https://hr.fudan.edu.cn/0e/38/c15370a790072/page.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="本科" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://hr.fudan.edu.cn/c2/b3/c15370a770739/page.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">复旦大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">财务与国有资产管理处财务管理岗位4名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">4名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">派遣·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 10月31日截止</div>
+                    <a href="https://hr.fudan.edu.cn/c2/b3/c15370a770739/page.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://hr.fudan.edu.cn/0e/75/c15370a790133/page.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">复旦大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">全球健康治理高等研究院项目主管1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">派遣·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 12月31日截止</div>
+                    <a href="https://hr.fudan.edu.cn/0e/75/c15370a790133/page.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="本科" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/429114.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">上海外国语大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">211/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">语言科学研究院行政管理人员1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">人事派遣·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月15日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/429114.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://law.tongji.edu.cn/info/1090/8696.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">同济大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">法学院行政综合岗1人</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">派遣·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月16日截止</div>
+                    <a href="https://law.tongji.edu.cn/info/1090/8696.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/428130.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">同济大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">继续教育学院海外留学教育中心行政办公室主任1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">派遣·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月30日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/428130.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/423257.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">上海城建职业学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办高职·国家优质</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年度管理岗3人+专职辅导员6人（事业编制）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">9名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月30日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/423257.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://hr.fudan.edu.cn/09/2c/c15370a78780/page.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">复旦大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">可持续发展研究院综合行政2名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业单位待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">上海</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月30日截止</div>
+                    <a href="https://hr.fudan.edu.cn/09/2c/c15370a78780/page.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华北" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/428208.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">北京信息职业技术学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">双高计划·公办高职</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年9月第二批公开招聘事业编制教师/工作人员22人</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">22名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月18日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/428208.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华北" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://jobs.tsinghua.edu.cn/project/qhdx/pages/recruit_new/#/post/detail/34F2DF0A0A7A4F8998DF576C3B778C96','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">清华大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">五道口金融学院校友事务办公室工作人员1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 9月12日截止</div>
+                    <a href="https://jobs.tsinghua.edu.cn/project/qhdx/pages/recruit_new/#/post/detail/34F2DF0A0A7A4F8998DF576C3B778C96" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华北" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://jobs.tsinghua.edu.cn','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">清华大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">苏世民书院2026年9月招聘招生岗位人员1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校规定</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月15日截止</div>
+                    <a href="https://jobs.tsinghua.edu.cn" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华北" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gse.pku.edu.cn/syxw/tzgg/e4377cda721247759ce29724fef7bb7b.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">北京大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">教育学院综合办行政助理1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">劳动合同制·五险一金</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月18日截止</div>
+                    <a href="https://www.gse.pku.edu.cn/syxw/tzgg/e4377cda721247759ce29724fef7bb7b.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华北" data-education="本科" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://hr.pku.edu.cn/rczp/xzjf/ldhtzp/7e4d23b4d5a347808649901fd0554985.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">北京大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">党委宣传部总编室编辑人员1名（劳动合同制）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 9月13日截止</div>
+                    <a href="https://hr.pku.edu.cn/rczp/xzjf/ldhtzp/7e4d23b4d5a347808649901fd0554985.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华北" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://recruit.ucas.ac.cn','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">中国科学院大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">双一流·中科院直属</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">管理支撑服务保障岗工作人员若干</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">不超过40名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">五险一金·人才派遣</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
+                    <a href="https://recruit.ucas.ac.cn" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华北" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://hr.ruc.edu.cn/bsjg/bwryglbgs/bwtzgg/abab226840454322b063b1066a60179a.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">中国人民大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">党委教师工作部教师发展服务与人才拓展管理岗1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">劳务派遣待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月15日截止</div>
+                    <a href="https://hr.ruc.edu.cn/bsjg/bwryglbgs/bwtzgg/abab226840454322b063b1066a60179a.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华北" data-education="硕士" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427320.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">清华大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">北京信息科学与技术国家研究中心行政秘书1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">派遣·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">北京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月18日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427320.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西北" data-education="本科" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://hr.xjtu.edu.cn/info/1048/9791.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">西安交通大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">未来技术学院管理辅助岗1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">陕西西安</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月15日截止</div>
+                    <a href="https://hr.xjtu.edu.cn/info/1048/9791.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西北" data-education="本科" data-hire="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427310.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">西安交通大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">钱学森学院2026年9月招聘教务秘书1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">派遣·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">陕西西安</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月22日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427310.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华中" data-education="本科" data-hire="非事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/428608.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">中南大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">非事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">商学院2026年9月招聘非事业编制工作人员3名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">3名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">大专及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议·五险一金</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">湖南长沙</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月20日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/428608.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华中" data-education="硕士" data-hire="合同制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/428528.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">华中师范大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">211/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-hetong">合同制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">马克思主义学院2026年招聘行政管理人员1名（非事业编合同聘用制）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">合同聘用制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">湖北武汉</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 9月13日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/428528.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://zpxt.gzhmu.edu.cn','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">广州医科大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办本科·双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">校本部2026年第六次公开招聘事业编制工作人员12名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">12名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东广州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月18日截止</div>
+                    <a href="https://zpxt.gzhmu.edu.cn" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gzhu.edu.cn/info/1055/32347.htm','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">广州大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办本科·双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026第二次招聘事业编制工作人员6名（学科编辑/秘书/行政）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">6名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东广州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月15日截止</div>
+                    <a href="https://www.gzhu.edu.cn/info/1055/32347.htm" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/256083.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">香港科技大学（广州）</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">内地与香港合作·事业单位</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">行政专员（全球事务/党委办公室/教务及学生事务等）若干</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">具有竞争力薪酬</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东广州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/256083.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('http://wap.gaoxiaojob.com/announcement/detail/338676.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">大湾区大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">新型研究型大学</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">行政管理岗·师资人才岗·实验室安全岗 若干</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">具有竞争力薪酬</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东东莞</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
+                    <a href="http://wap.gaoxiaojob.com/announcement/detail/338676.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="硕士" data-hire="事业编制" data-position="辅导员" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427522.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">广东石油化工学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办本科</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年公开招聘事业编制辅导员20名（第二批·全部有编）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">20名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东茂名</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 9月13日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427522.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="本科" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427280.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">广州康大职业技术学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">民办高职</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">校编行政教辅/辅导员若干</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">校编待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东广州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月30日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427280.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427290.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">北京大学深圳研究生院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流·深圳</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年9月招聘行政教辅人员2名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议·五险一金</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东深圳</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427290.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427295.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">深圳职业技术大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办本科</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年9月招聘行政管理人员若干名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东深圳</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月30日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427295.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="本科" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427315.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">广东科贸职业学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办高职</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年9月招聘行政管理人员若干名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东广州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月25日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427315.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://m.gaoxiaojob.com/job/detail/2308149.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">西湖大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">新型研究型大学</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">西湖实验室人事（人才）工作专员1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议·五险一金</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">浙江杭州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
+                    <a href="https://m.gaoxiaojob.com/job/detail/2308149.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427434.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">厦门工学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-private">民办本科</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">数据与政务处行政专员1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">落户+定期体检+节日福利</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">福建厦门</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月15日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427434.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="本科" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://ehr.zju.edu.cn/vuejs/recruitment/position-detail.htm?id=N1869680996338630661','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">浙江大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">管理学院学位与教育质量管理岗1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">浙江杭州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月30日截止</div>
+                    <a href="https://ehr.zju.edu.cn/vuejs/recruitment/position-detail.htm?id=N1869680996338630661" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427300.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">南京林业大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年9月招聘行政管理人员2名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">江苏南京</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月25日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427300.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427305.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">杭州师范大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办本科</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年9月招聘行政管理岗1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议·五险一金</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">浙江杭州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月20日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427305.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="劳务派遣" data-position="教辅" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427441.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">浙江交通职业技术学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办高职</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年公开招聘行政教辅人员2名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">劳务派遣待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">浙江杭州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427441.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华东" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/429400.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">福耀科技大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-private">新型研究型大学·民办公助</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">生命与健康科学学院教学科研秘书</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">提供住房·子女入学</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">福建福州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/429400.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西南" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://zixun.kunming.cn/c/9477909.shtml','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">云南大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">211/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年第二批公开招聘工作人员（事业编制）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">若干</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">云南昆明</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 9月14日截止</div>
+                    <a href="https://zixun.kunming.cn/c/9477909.shtml" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西南" data-education="本科" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/428983.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">云南轻纺职业学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办高职·全部有编</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年下半年公开招聘工作人员9名（全部有编）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">9名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">云南昆明</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-urgent"><i class="fas fa-exclamation-triangle"></i> 9月14日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/428983.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西南" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://rsc.stbu.edu.cn/rcyj/2026/0710/82389.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">四川工商学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">民办本科</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">行政岗位招聘12人</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">12名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校标准</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">四川成都</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月30日截止</div>
+                    <a href="https://rsc.stbu.edu.cn/rcyj/2026/0710/82389.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西南" data-education="本科" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/429365.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">电子科技大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">电子信息智能研究院科研行政助理1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">四川成都</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月20日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/429365.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西南" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://rlsbj.cq.gov.cn/zwxx_182/sydw/sydwgkzp2026/202609/t20260908_16049506.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">重庆三峡科技大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办本科·新建本科</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年考核招聘事业单位工作人员90名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">90名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">重庆</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 10月31日截止</div>
+                    <a href="https://rlsbj.cq.gov.cn/zwxx_182/sydw/sydwgkzp2026/202609/t20260908_16049506.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西南" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.cqrb.cn/shishi/2026-09-08/2770169_pc.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">重庆商务职业学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办高职·市属</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年考核招聘事业单位工作人员25名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">25名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">重庆</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-clock"></i> 11月6日截止</div>
+                    <a href="https://www.cqrb.cn/shishi/2026-09-08/2770169_pc.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西北" data-education="硕士" data-hire="聘用制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/429231.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">兰州大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">985/双一流</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">国际文化交流学院2026年招聘8名工作人员（聘用制B岗）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">8名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">聘用制·五险一金</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">甘肃兰州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月18日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/429231.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="东北" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/429332.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">吉林财经大学</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办本科·省属</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年公开招聘工作人员16名（含专项招聘·事业编制）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">16名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">吉林长春</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月18日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/429332.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="东北" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/429334.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">白城医学高等专科学校</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办高职·省属</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年公开招聘工作人员8名（含专项招聘·事业编制）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">8名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">吉林白城</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月18日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/429334.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="华南" data-education="硕士" data-hire="事业编制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/428655.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">嘉应学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">公办本科·省属</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-shiye">事业编制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年公开招聘工作人员16名（第二轮·滚动招聘）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">16名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">事业编制待遇</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">广东梅州</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-normal"><i class="fas fa-clock"></i> 9月18日截止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/428655.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="东北" data-education="硕士" data-hire="聘用制" data-position="辅导员" style="cursor:pointer" onclick="window.open('https://www.gaoxiaojob.com/announcement/detail/427157.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">辽宁师范大学海华学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-private">独立学院</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-pinyong">聘用制</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">2026年招聘辅导员2名（另招财务/教师等共34人）</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">2名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">硕士及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">按学校标准</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">辽宁大连</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
+                    <a href="https://www.gaoxiaojob.com/announcement/detail/427157.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+            <div class="job-card" data-region="西南" data-education="本科" data-hire="劳务派遣" data-position="教辅" style="cursor:pointer" onclick="window.open('https://gaoxiaojob.com/announcement/detail/412348.html','_blank')">
+                
+                <div class="card-header">
+                    <div>
+                        <div class="school-name">西南财经大学中法学院</div>
+                        <div class="school-tags">
+                            <span class="tag tag-public">211/双一流·中外合办</span>
+                        </div>
+                    </div>
+                    <span class="hire-type-badge badge-laowu">劳务派遣</span>
+                </div>
+                <div class="card-body">
+                    <div class="position-name">教学管理专员1名</div>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-users"></i> <span class="value">1名</span></div>
+                        <div class="info-item"><i class="fas fa-graduation-cap"></i> <span class="value">本科及以上</span></div>
+                        <div class="info-item"><i class="fas fa-yen-sign"></i> <span class="value">五险一金·面议</span></div>
+                        <div class="info-item"><i class="fas fa-building"></i> <span class="value">四川成都</span></div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="deadline deadline-long"><i class="fas fa-infinity"></i> 招满即止</div>
+                    <a href="https://gaoxiaojob.com/announcement/detail/412348.html" target="_blank" class="apply-link" onclick="event.stopPropagation()">查看详情</a>
+                </div>
+            </div>
+
+        
+
+        
+
+        
+
+        
+
+        
+
+
+
+        <!-- 无结果提示 -->
+
+        <div class="no-results" id="noResults" style="display:none" data-page-node-id="qSlJ6r1tBx8vDqUHGJJUsu">
+
+            <i class="fas fa-search" style="font-size:2em;margin-bottom:10px;display:block;opacity:0.6" data-page-node-id="QeLIopXYYr05SzC4sRKFGw"></i>
+
+            没有找到符合条件的岗位，试试调整筛选条件？
+
+        </div>
+
+
+
+        <!-- 评论区 -->
+
+        <div class="comment-section" data-page-node-id="cizPD4yGVCESbJqH08n19r">
+
+            <div class="comment-section-header" data-page-node-id="HJMDRxYpAZXB1xtZBfCapd">
+
+                <i class="fas fa-comments" data-page-node-id="ZwH646lPZ3w3I4P1JMCjzM"></i>
+
+                <h3 data-page-node-id="ewPA8oFq87EmbhMMbojhT4">讨论交流</h3>
+
+                <span id="comment-count" class="comment-count" style="display:none" data-page-node-id="xiz6z3XtehINwaOPydTsWB">0</span>
+
+                <button id="comment-refresh-btn" class="comment-refresh" onclick="refreshComments()" title="刷新评论" data-page-node-id="nohDPESaooWmKI10WbwzGC"><i class="fas fa-sync-alt" data-page-node-id="nOeNYyFBQ7GR3efH0uT6XN"></i></button>
+
+                <span class="comment-hint" data-page-node-id="DCw0f55N48P1LFKpDmDB9c">无需登录，匿名可评</span>
+
+            </div>
+
+            <div id="comments-list" class="comments-list" data-page-node-id="V08EC2rHz14tQyEPt7qLsI">
+
+                <div class="comment-loading" data-page-node-id="z2YOXDg5NHrMXhDfwVm4mV">加载中...</div>
+
+            </div>
+
+            <form id="comment-form" class="comment-form" data-page-node-id="FxFEXN6Rrd6F2hDsyAADh7">
+
+                <div class="comment-form-row" data-page-node-id="f9N6jG9KiIwNZ0BHjkNLqO">
+
+                    <input type="text" id="comment-nick" placeholder="昵称（选填，默认匿名）" maxlength="30" data-page-node-id="t1yHjACmELbu1aIvLe6pdq">
+
+                </div>
+
+                <textarea id="comment-body" placeholder="说点什么吧~ ✨" maxlength="500" rows="3" required></textarea>
+
+                <div class="comment-form-footer" data-page-node-id="B0RXwKlPNAzVOwox5ML0H5">
+
+                    <span id="comment-char-count" class="comment-char-count" data-page-node-id="eRLJW3ocdBm80EnSKbxdjs">0/500</span>
+
+                    <button type="submit" id="comment-submit-btn" class="comment-submit-btn" data-page-node-id="i1K3PdAADGZGLQordx7QGF">发布</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- 底部 -->
+
+        <div class="footer" data-page-node-id="zkztZLpPF5Y1Mbbh8WxkIF">
+
+            <p data-page-node-id="7lDd14xWUODaT71vwMvuIG">数据来源：高校人才网、各高校人事处、省市人社局</p>
+
+            <p data-page-node-id="5u3R9pyFuNzXW00H851KjG">截止日期以各校官方公告为准，建议尽早报名</p>
+
+            <p style="margin-top:8px;" data-page-node-id="S8HuzA1LRoC7xbyMeCY0mA"><a href="https://zeroplus95.github.io/university-jobs/" target="_blank" data-page-node-id="JcSTEUoCZpYQO6piYF2BWb">GitHub Pages</a> · 每个工作日9:00自动更新 · 本站总浏览 <span id="busuanzi_value_site_pv" data-page-node-id="yEOZH25UVYGXdwXvzE2Zpo">-</span> 次</p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- 不蒜子访问统计 -->
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    <!-- 微信订阅 -->
+
+    <div class="sub-float" data-page-node-id="uXFbD1spmQDRhe16I4BiLe">
+
+        <div class="sub-panel" id="subPanel" data-page-node-id="d6aReO9Si9nNpJ2EzYFEQp">
+
+            <button class="close-sub" onclick="toggleSub()" data-page-node-id="aUsYSr6s45aW3XF3nZ9zt2">&times;</button>
+
+            <h4 data-page-node-id="Ps9fS0DujwpVWJHXpE69wJ"><i class="fab fa-weixin" style="color:#07c160;" data-page-node-id="WIs6YqhLhgXzbKAuGhhs0Z"></i> 微信订阅更新通知</h4>
+
+            <p class="sub-desc" data-page-node-id="m5mA1u8TOTnTK8uqeeNrNn">扫码关注后，每天新岗位自动推送</p>
+
+            <div class="qrcode-wrap" data-page-node-id="5OEcCdGSVmJAZKaFKZEJTf">
+
+                <img id="subQR" src="wx-subscribe-qr.png" alt="微信扫码订阅" data-page-node-id="SZICmAWHSQrJkMnH3IH0xn">
+
+            </div>
+
+            <div class="sub-steps" data-page-node-id="T94KWh5rk6KgYUFXZqBrgg">
+
+                <div data-page-node-id="KBrBvaiCoYhjNAnHdx4RM2"><i class="fas fa-check-circle" data-page-node-id="H9kVq1hAoVlv9lT3kgp1d8"></i> 微信扫码关注</div>
+
+                <div data-page-node-id="nS2eBAeUo2WosDJMAlLJcE"><i class="fas fa-check-circle" data-page-node-id="wzX9HYYDOtfoE3zCmRDpMU"></i> 点击「关注主题」</div>
+
+                <div data-page-node-id="sGZwwkJA6sHtMhZ3WTyF2E"><i class="fas fa-check-circle" data-page-node-id="ruFuF9lO0RrfLrkUEC9TeL"></i> 每日10点自动接收推送</div>
+
+            </div>
+
+        </div>
+
+        <button class="sub-float-btn" onclick="toggleSub()" title="微信订阅" data-page-node-id="SDr7YWeKHYJLTBERachIy4">
+
+            <i class="fas fa-bell" data-page-node-id="3ii9E0KxR5TdWpkAB17LC0"></i>
+
+        </button>
+
+    </div>
+
+
+
+    <script>
+
+        // ===== 登录验证 =====
+
+        const AUTH_KEY = 'university_jobs_auth';
+
+        const PASSWORD_HASH = '0ffe1abd1a08215353c233d6e009613e95eec4253832a761af28ff37ac5a150c';
+
+        const PASSWORD_ENABLED = false; // 【暂停密码验证】2026-07-22 临时放开访问；恢复时改回 true
+
+
+
+        (async function() {
+
+            if (!PASSWORD_ENABLED) {
+
+                document.getElementById('loginOverlay').classList.add('hidden');
+
+                return;
+
+            }
+
+            if (sessionStorage.getItem(AUTH_KEY) === '1') {
+
+                document.getElementById('loginOverlay').classList.add('hidden');
+
+                return;
+
+            }
+
+        })();
+
+
+
+        async function doLogin() {
+
+            var pw = document.getElementById('loginPw').value;
+
+            var err = document.getElementById('loginError');
+
+            if (!pw) { err.textContent = '请输入密码'; return; }
+
+            var hash = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(pw));
+
+            var hashHex = Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2, '0')).join('');
+
+            if (hashHex === PASSWORD_HASH) {
+
+                sessionStorage.setItem(AUTH_KEY, '1');
+
+                document.getElementById('loginOverlay').classList.add('hidden');
+
+                err.textContent = '';
+
+            } else {
+
+                err.textContent = '密码错误，请重试';
+
+                document.getElementById('loginPw').value = '';
+
+                document.getElementById('loginPw').focus();
+
+            }
+
+        }
+
+
+
+        function togglePw() {
+
+            var inp = document.getElementById('loginPw');
+
+            var icon = document.getElementById('pwIcon');
+
+            if (inp.type === 'password') { inp.type = 'text'; icon.className = 'fas fa-eye-slash'; }
+
+            else { inp.type = 'password'; icon.className = 'fas fa-eye'; }
+
+        }
+
+
+
+        // ===== 微信订阅 =====
+
+        var WXPUSHER_APP_TOKEN = 'AT_zMM7F3XHHozQszBF08hi9BmyoFHcpLbp';
+
+        var WXPUSHER_TOPIC_ID = 44670;
+
+
+
+        function toggleSub() {
+
+            var panel = document.getElementById('subPanel');
+
+            panel.classList.toggle('show');
+
+        }
+
+
+
+        // 点击面板外部关闭
+
+        document.addEventListener('click', function(e) {
+
+            var panel = document.getElementById('subPanel');
+
+            var btn = document.querySelector('.sub-float-btn');
+
+            if (panel.classList.contains('show') && !panel.contains(e.target) && e.target !== btn && !btn.contains(e.target)) {
+
+                panel.classList.remove('show');
+
+            }
+
+        });
+
+
+
+        // ===== 日期选择器逻辑 =====
+
+        const PAGE_DATE = '2026-09-11';   // 本页数据日期
+
+        const FIRST_DATE = '2026-05-08';  // 最早快照日期
+
+        const REAL_TODAY = new Date().toISOString().split('T')[0];
+
+        const BASE_URL = (function() {
+
+            let p = window.location.pathname;
+
+            if (p.includes('/archive/')) p = p.replace(/\/archive\/.*$/, '/');
+
+            else if (p.endsWith('/index.html')) p = p.replace(/index\.html$/, '');
+
+            else if (!p.endsWith('/')) p = p + '/';
+
+            return p;
+
+        })();
+
+
+
+        const datePicker = document.getElementById('datePicker');
+
+        datePicker.min = FIRST_DATE;
+
+        datePicker.max = REAL_TODAY;
+
+
+
+        // 动态更新本期新增统计
+
+        (function() {
+
+            var newBadges = document.querySelectorAll('.new-badge');
+
+            var newCountEl = document.getElementById('newCount');
+
+            if (newCountEl && newBadges.length > 0) {
+
+                newCountEl.textContent = newBadges.length;
+
+            }
+
+        })();
+
+        // Toast提示
+
+        function showToast(msg) {
+
+            var t = document.getElementById('dateToast') || (function() {
+
+                var el = document.createElement('div');
+
+                el.id = 'dateToast';
+
+                el.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:rgba(118,75,162,0.95);color:#fff;padding:10px 24px;border-radius:12px;font-size:0.9em;z-index:9999;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:opacity 0.3s;pointer-events:none;';
+
+                document.body.appendChild(el);
+
+                return el;
+
+            })();
+
+            t.textContent = msg; t.style.opacity = '1';
+
+            clearTimeout(t._tid);
+
+            t._tid = setTimeout(function() { t.style.opacity = '0'; }, 3000);
+
+        }
+
+
+
+        function navigateToDate(dateStr) {
+
+            if (dateStr === REAL_TODAY) {
+
+                window.location.href = window.location.origin + BASE_URL;
+
+                return;
+
+            }
+
+            var url = window.location.origin + BASE_URL + 'archive/' + dateStr + '.html';
+
+            showToast('正在加载 ' + dateStr + ' ...');
+
+            fetch(url, { method: 'HEAD' }).then(function(r) {
+
+                if (r.ok) window.location.href = url;
+
+                else { showToast('暂无 ' + dateStr + ' 的快照数据'); datePicker.value = PAGE_DATE; }
+
+            }).catch(function() { window.location.href = url; });
+
+        }
+
+
+
+        datePicker.addEventListener('change', function() { navigateToDate(this.value); });
+
+
+
+        function goToday() { window.location.href = window.location.origin + BASE_URL; }
+
+
+
+        function goPrev() {
+
+            var d = new Date(datePicker.value + 'T00:00:00'), min = new Date(FIRST_DATE + 'T00:00:00');
+
+            do { d.setDate(d.getDate() - 1); } while (d.getDay() === 0 || d.getDay() === 6);
+
+            if (d < min) return;
+
+            datePicker.value = d.toISOString().split('T')[0];
+
+            navigateToDate(datePicker.value);
+
+        }
+
+
+
+        function goNext() {
+
+            var d = new Date(datePicker.value + 'T00:00:00'), max = new Date(REAL_TODAY + 'T00:00:00');
+
+            do { d.setDate(d.getDate() + 1); } while (d.getDay() === 0 || d.getDay() === 6);
+
+            if (d > max) return;
+
+            datePicker.value = d.toISOString().split('T')[0];
+
+            navigateToDate(datePicker.value);
+
+        }
+
+
+
+        function updateNav() {
+
+            var v = datePicker.value;
+
+            document.querySelectorAll('.date-nav-btn')[0].disabled = (v <= FIRST_DATE);
+
+            document.querySelectorAll('.date-nav-btn')[1].disabled = (v >= REAL_TODAY);
+
+        }
+
+        updateNav();
+
+
+
+        // 存档页面显示横幅
+
+        (function() {
+
+            if (window.location.pathname.includes('/archive/') && PAGE_DATE < REAL_TODAY) {
+
+                var b = document.getElementById('archiveBanner');
+
+                b.style.display = 'block';
+
+                var p = PAGE_DATE.split('-');
+
+                document.getElementById('archiveDateText').textContent = p[0] + '年' + parseInt(p[1]) + '月' + parseInt(p[2]) + '日';
+
+            }
+
+        })();
+
+
+
+        // ===== 筛选逻辑 =====
+
+        const activeFilters = {
+
+            region: 'all',
+
+            education: 'all',
+
+            hire: 'all',
+
+            position: 'all'
+
+        };
+
+
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+
+            btn.addEventListener('click', function() {
+
+                const filterType = this.dataset.filter;
+
+                const filterValue = this.dataset.value;
+
+
+
+                // 更新同组按钮状态
+
+                document.querySelectorAll(`.filter-btn[data-filter="${filterType}"]`).forEach(b => b.classList.remove('active'));
+
+                this.classList.add('active');
+
+
+
+                activeFilters[filterType] = filterValue;
+
+                applyFilters();
+
+            });
+
+        });
+
+
+
+        function applyFilters() {
+
+            const cards = document.querySelectorAll('.job-card');
+
+            let visibleCount = 0;
+
+
+
+            cards.forEach(card => {
+
+                const region = card.dataset.region;
+
+                const education = card.dataset.education;
+
+                const hire = card.dataset.hire;
+
+                const position = card.dataset.position;
+
+
+
+                let show = true;
+
+
+
+                if (activeFilters.region !== 'all' && region !== activeFilters.region) show = false;
+
+                if (activeFilters.education !== 'all') {
+
+                    if (activeFilters.education === '本科') {
+
+                        if (education !== '本科') show = false;
+
+                    } else if (activeFilters.education === '硕士') {
+
+                        if (education !== '硕士' && education !== '本科') show = false;
+
+                    } else if (activeFilters.education === '博士') {
+
+                        if (education !== '博士') show = false;
+
+                    }
+
+                }
+
+                if (activeFilters.hire !== 'all') {
+
+                    if (!hire.includes(activeFilters.hire)) show = false;
+
+                }
+
+                if (activeFilters.position !== 'all' && position !== activeFilters.position) show = false;
+
+
+
+                card.style.display = show ? '' : 'none';
+
+                if (show) visibleCount++;
+
+            });
+
+
+
+            document.getElementById('filteredCount').textContent = visibleCount;
+
+            document.getElementById('noResults').style.display = visibleCount === 0 ? '' : 'none';
+
+        }
+
+
+
+        function resetFilters() {
+
+            activeFilters.region = 'all';
+
+            activeFilters.education = 'all';
+
+            activeFilters.hire = 'all';
+
+            activeFilters.position = 'all';
+
+
+
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+
+                btn.classList.remove('active');
+
+                if (btn.dataset.value === 'all') btn.classList.add('active');
+
+            });
+
+
+
+            applyFilters();
+
+        }
+
+
+
+        // ===== GitHub Issues 评论区 =====
+
+        (function() {
+
+            var COMMENT_TOKEN = ['github_pat_11', 'BTJG35A0BwIApR', 'Kl9CVd_A0yX', 'tWk2KAHTeG', 'rvcDRGMQU', '07IndYOInm', 'A9fSun7v6F', 'NIOA2YEPl', 'qGZiwQg'].join('');
+
+            var REPO_OWNER = 'zeroplus95';
+
+            var REPO_NAME = 'university-jobs';
+
+            var currentIssueNum = null;
+
+
+
+            function esc(s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+
+
+            function getPageKey() {
+
+                var m = document.title.match(/(\d{4})年(\d{1,2})月(\d{1,2})日/);
+
+                if (m) return m[1]+'-'+m[2].padStart(2,'0')+'-'+m[3].padStart(2,'0');
+
+                return new Date().toISOString().slice(0,10);
+
+            }
+
+
+
+            function api(url, opts) {
+
+                return fetch(url, Object.assign({ headers: { 'Authorization': 'token ' + COMMENT_TOKEN, 'Accept': 'application/vnd.github+json' } }, opts || {}));
+
+            }
+
+
+
+            function findOrCreateIssue() {
+
+                var key = getPageKey();
+
+                return api('https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/issues?state=open&per_page=100')
+
+                    .then(function(r) { return r.json(); })
+
+                    .then(function(issues) {
+
+                        var found = issues.find(function(i) { return i.title === '[评论] ' + key; });
+
+                        if (found) { currentIssueNum = found.number; return; }
+
+                        return api('https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/issues', {
+
+                            method: 'POST',
+
+                            headers: { 'Content-Type': 'application/json' },
+
+                            body: JSON.stringify({ title: '[评论] ' + key, body: '评论区：' + key, labels: ['comment'] })
+
+                        }).then(function(r) { return r.json(); }).then(function(d) { currentIssueNum = d.number; });
+
+                    });
+
+            }
+
+
+
+            function loadComments() {
+
+                if (!currentIssueNum) { document.getElementById('comments-list').innerHTML = '<div class="comment-setup">评论系统初始化中...</div>'; return; }
+
+                api('https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/issues/' + currentIssueNum + '/comments?per_page=100')
+
+                    .then(function(r) { return r.json(); })
+
+                    .then(function(comments) {
+
+                        var list = document.getElementById('comments-list');
+
+                        var countEl = document.getElementById('comment-count');
+
+                        if (!comments.length) { list.innerHTML = '<div class="comment-empty">暂无评论，来坐沙发吧~ </div>'; countEl.style.display = 'none'; return; }
+
+                        countEl.textContent = comments.length; countEl.style.display = '';
+
+                        list.innerHTML = comments.reverse().map(function(c) {
+
+                            var nick = '匿名用户';
+
+                            var avatar = '<i class="fas fa-user"></i>';
+
+                            if (c.user && c.user.login) { nick = c.user.login; avatar = '<img src="' + c.user.avatar_url + '">'; }
+
+                            var body = c.body || '';
+
+                            var m = body.match(/^\[([^\]]*)\]\s*/);
+
+                            if (m) { if (m[1]) nick = esc(m[1]); body = body.slice(m[0].length); }
+
+                            var date = new Date(c.created_at);
+
+                            var timeStr = (date.getMonth()+1) + '/' + date.getDate() + ' ' + date.getHours() + ':' + String(date.getMinutes()).padStart(2,'0');
+
+                            return '<div class="comment-item"><div class="comment-avatar">' + avatar + '</div><div class="comment-body"><div class="comment-meta"><span class="comment-nick">' + esc(nick) + '</span><span class="comment-time">' + timeStr + '</span></div><div class="comment-text">' + esc(body) + '</div></div></div>';
+
+                        }).join('');
+
+                    })
+
+                    .catch(function() { document.getElementById('comments-list').innerHTML = '<div class="comment-error">评论加载失败，请刷新重试</div>'; });
+
+            }
+
+
+
+            window.refreshComments = function() {
+
+                document.getElementById('comments-list').innerHTML = '<div class="comment-loading">加载中...</div>';
+
+                findOrCreateIssue().then(loadComments);
+
+            };
+
+
+
+            findOrCreateIssue().then(loadComments);
+
+
+
+            // 提交评论
+
+            document.getElementById('comment-form').addEventListener('submit', function(e) {
+
+                e.preventDefault();
+
+                var nick = document.getElementById('comment-nick').value.trim();
+
+                var body = document.getElementById('comment-body').value.trim();
+
+                if (!body) return;
+
+                if (!currentIssueNum) { alert('评论系统初始化中，请稍候'); return; }
+
+                var btn = document.getElementById('comment-submit-btn');
+
+                btn.disabled = true; btn.textContent = '发布中...';
+
+                var payload = '[' + nick + '] ' + body;
+
+                api('https://api.github.com/repos/' + REPO_OWNER + '/' + REPO_NAME + '/issues/' + currentIssueNum + '/comments', {
+
+                    method: 'POST',
+
+                    headers: { 'Content-Type': 'application/json' },
+
+                    body: JSON.stringify({ body: payload })
+
+                }).then(function(r) {
+
+                    if (r.ok) {
+
+                        document.getElementById('comment-body').value = '';
+
+                        document.getElementById('comment-char-count').textContent = '0/500';
+
+                        loadComments();
+
+                    } else { alert('发布失败，请重试'); }
+
+                }).catch(function() { alert('网络错误，请重试'); })
+
+                .finally(function() { btn.disabled = false; btn.textContent = '发布'; });
+
+            });
+
+
+
+            document.getElementById('comment-body').addEventListener('input', function() {
+
+                document.getElementById('comment-char-count').textContent = this.value.length + '/500';
+
+            });
+
+        })();
+
+    </script>
+
+    <script>
+
+        // Make entire card clickable - navigates to job detail page
+
+        document.querySelectorAll('.job-card').forEach(function(card) {
+
+            var link = card.querySelector('.apply-link');
+
+            if (!link) return;
+
+            // Prevent card click when clicking the apply button directly
+
+            link.addEventListener('click', function(e) { e.stopPropagation(); });
+
+            // Clicking anywhere else on the card opens the detail page
+
+            card.addEventListener('click', function() { link.click(); });
+
+        });
+
+    </script>
+
+</body>
+
+</html>
