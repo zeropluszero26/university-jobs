@@ -1,0 +1,64 @@
+name: daily-update
+
+on:
+  schedule:
+    # UTC 00:30 = 北京时间周一至五 08:30
+    - cron: '30 0 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install deps
+        run: pip install reportlab
+
+      - name: Pull latest (avoid racing manual pushes)
+        run: git pull --rebase origin main
+
+      - name: Build page (drop expired + refresh date/stats)
+        env:
+          UJ_BASE_DIR: ${{ github.workspace }}
+        run: python scripts/build_page.py
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html archive
+          git add stats_*.json 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "每日更新 - $(TZ=Asia/Shanghai date +'%Y年%-m月%-d日')（云端）"
+            git push
+          fi
+
+      - name: Generate PDF package
+        if: always()
+        env:
+          UJ_BASE_DIR: ${{ github.workspace }}
+        run: python scripts/make_pdf.py
+
+      - name: Upload PDF artifact (owner-only download)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: job-package-${{ github.run_id }}
+          path: 高校行政岗求职资料包-*.pdf
+          retention-days: 30
+          if-no-files-found: warn
