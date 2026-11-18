@@ -912,6 +912,195 @@
 
         }
 
+        /* 密码获取入口 */
+        .login-card .login-help { margin-top: 4px; }
+
+        .login-card .login-help a {
+            display: inline-block; font-size: 0.82em; color: #764ba2;
+            text-decoration: none; padding: 6px 2px; border-bottom: 1px dashed rgba(118,75,162,0.45);
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .login-card .login-help a:hover { color: #667eea; border-color: #667eea; }
+
+        .login-card .login-help a.attention {
+            color: #e0674a; border-color: #e0674a;
+            animation: pwPulse 0.85s ease 3;
+        }
+
+        @keyframes pwPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.07); }
+        }
+
+        /* 品牌水印 */
+        .brand-wm {
+            display: inline-flex; align-items: center; gap: 7px;
+            padding: 6px 13px 6px 9px; border-radius: 999px;
+            background: rgba(255, 255, 255, 0.72);
+            -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+            border: 1px solid rgba(118, 75, 162, 0.16);
+            box-shadow: 0 4px 14px rgba(80, 60, 120, 0.10);
+            pointer-events: none; -webkit-user-select: none; user-select: none;
+        }
+
+        .brand-wm .bw-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            flex: 0 0 8px;
+        }
+
+        .brand-wm .bw-text {
+            font-size: 12px; font-weight: 600; letter-spacing: 0.05em;
+            color: #6b5b8a; white-space: nowrap;
+        }
+
+        /* 内容区悬浮水印 */
+        .brand-wm.brand-wm-fixed {
+            position: fixed; left: 12px; bottom: 10px; z-index: 9997;
+            padding: 4px 9px 4px 7px;
+            background: rgba(255, 255, 255, 0.42);
+            border-color: rgba(118, 75, 162, 0.09);
+            box-shadow: none;
+            opacity: 0.62;
+        }
+
+        .brand-wm.brand-wm-fixed .bw-text { font-size: 10px; letter-spacing: 0.08em; color: #7a6a99; }
+
+        .brand-wm.brand-wm-fixed .bw-dot { width: 6px; height: 6px; flex: 0 0 6px; opacity: 0.85; }
+
+        /* 页头品牌署名（随页面滚动，不遮挡内容） */
+        .brand-inline {
+            display: inline-flex; align-items: center; gap: 6px;
+            margin-top: 7px; padding: 3px 11px;
+            border-radius: 999px; background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            font-size: 0.72em; font-weight: 600; letter-spacing: 0.12em;
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        .brand-inline .bw-dot {
+            width: 5px; height: 5px; border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        /* 密码门上的水印（随遮罩一起淡出） */
+        .login-overlay .brand-wm {
+            position: absolute; left: 16px; bottom: 16px; z-index: 1;
+            background: rgba(255, 255, 255, 0.14);
+            border-color: rgba(255, 255, 255, 0.26);
+            box-shadow: none;
+        }
+
+        .login-overlay .brand-wm .bw-dot { background: rgba(255, 255, 255, 0.9); }
+
+        .login-overlay .brand-wm .bw-text { color: rgba(255, 255, 255, 0.92); }
+
+        @media (max-width: 480px) {
+            .brand-wm.brand-wm-fixed { left: 12px; bottom: 12px; }
+            .brand-wm { padding: 5px 11px 5px 8px; }
+            .brand-wm .bw-text { font-size: 11px; }
+        }
+
+        /* 获取密码弹层 */
+        .pw-help-mask {
+            position: fixed; inset: 0; z-index: 10001;
+            background: rgba(38, 28, 58, 0.55);
+            -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px);
+            display: none; align-items: center; justify-content: center;
+            padding: 20px; box-sizing: border-box;
+        }
+
+        .pw-help-mask.show { display: flex; animation: pwFade 0.22s ease; }
+
+        @keyframes pwFade { from { opacity: 0; } to { opacity: 1; } }
+
+        .pw-help-card {
+            position: relative; background: #fff; border-radius: 20px;
+            width: 400px; max-width: 100%; max-height: 88vh; overflow-y: auto;
+            padding: 34px 28px 26px; box-sizing: border-box;
+            box-shadow: 0 24px 70px rgba(0,0,0,0.3);
+            animation: pwRise 0.26s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+        }
+
+        @keyframes pwRise { from { transform: translateY(16px) scale(0.98); opacity: 0; } to { transform: none; opacity: 1; } }
+
+        .pw-help-close {
+            position: absolute; top: 12px; right: 14px; width: 30px; height: 30px;
+            border: none; background: transparent; color: #b3a9c4; font-size: 1.5em;
+            line-height: 1; cursor: pointer; border-radius: 50%;
+        }
+
+        .pw-help-close:hover { background: #f4f1fa; color: #764ba2; }
+
+        .pw-help-icon {
+            width: 54px; height: 54px; margin: 0 auto 14px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+        }
+
+        .pw-help-icon i { color: #fff; font-size: 1.3em; }
+
+        .pw-help-card h4 {
+            margin: 0 0 8px; text-align: center; color: #2d2440;
+            font-size: 1.15em; font-weight: 700;
+        }
+
+        .pw-help-sub {
+            margin: 0 0 20px; text-align: center; color: #8d84a0; font-size: 0.82em; line-height: 1.7;
+        }
+
+        .pw-help-sub strong { color: #764ba2; }
+
+        .pw-help-steps { list-style: none; margin: 0 0 20px; padding: 0; }
+
+        .pw-help-steps li {
+            display: flex; gap: 12px; align-items: flex-start;
+            padding: 11px 0; border-top: 1px solid #f2eef9;
+        }
+
+        .pw-help-steps li:first-child { border-top: none; }
+
+        .step-n {
+            flex: 0 0 22px; width: 22px; height: 22px; margin-top: 1px;
+            background: #f0ebfa; color: #764ba2; border-radius: 50%;
+            font-size: 0.74em; font-weight: 700;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .pw-help-steps b { display: block; color: #2d2440; font-size: 0.9em; margin-bottom: 2px; }
+
+        .pw-help-steps p { margin: 0; color: #8d84a0; font-size: 0.8em; line-height: 1.65; }
+
+        .pw-help-actions { display: flex; flex-direction: column; gap: 10px; }
+
+        .pw-help-actions button {
+            width: 100%; padding: 13px; border: none; border-radius: 12px;
+            font-size: 0.95em; font-weight: 600; cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+
+        .pw-help-actions .primary {
+            background: linear-gradient(135deg, #667eea, #764ba2); color: #fff;
+        }
+
+        .pw-help-actions .primary:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(118,75,162,0.38); }
+
+        .pw-help-actions .ghost {
+            background: #f6f3fc; color: #6b5b8a; border: 1px solid #e8e1f6;
+        }
+
+        .pw-help-actions .ghost:hover { background: #efe9fa; }
+
+        .pw-help-note {
+            margin: 18px 0 0; color: #a9a0ba; font-size: 0.72em; line-height: 1.7; text-align: center;
+        }
+
+        .pw-help-tip {
+            margin: 12px 0 0; color: #764ba2; font-size: 0.8em; text-align: center;
+            min-height: 1.2em; font-weight: 600;
+        }
+
 
 
         /* 微信订阅 */
@@ -1230,11 +1419,69 @@
 
             <div class="login-error" id="loginError" data-page-node-id="ldzpBJkJ8LPuAuM6P9A0MX"></div>
 
+            <div class="login-help">
+                <a href="javascript:void(0)" onclick="openPwHelp()" id="pwHelpLink">还没有密码？查看获取方式 →</a>
+            </div>
+
+        </div>
+
+        <div class="brand-wm" aria-hidden="true">
+            <i class="bw-dot"></i><span class="bw-text">BBBe special</span>
         </div>
 
     </div>
 
+    <!-- 获取访问密码 引导弹层 -->
+    <div class="pw-help-mask" id="pwHelpMask">
+        <div class="pw-help-card" role="dialog" aria-modal="true" aria-labelledby="pwHelpTitle">
+            <button class="pw-help-close" onclick="closePwHelp()" aria-label="关闭">&times;</button>
+            <div class="pw-help-icon"><i class="fas fa-key"></i></div>
+            <h4 id="pwHelpTitle">如何获取访问密码</h4>
+            <p class="pw-help-sub">
+                密码为付费获取 · <strong id="pwPriceText">9.9 元</strong> 一次性 · 长期有效<br>
+                不订阅、不自动续费
+            </p>
+            <ul class="pw-help-steps">
+                <li>
+                    <span class="step-n">1</span>
+                    <div>
+                        <b>找到我</b>
+                        <p id="pwStepFind">在小红书评论区回复关键词，或直接私信我</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="step-n">2</span>
+                    <div>
+                        <b>下单获取</b>
+                        <p id="pwStepBuy">通过下单页完成支付后，密码会自动发送给你</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="step-n">3</span>
+                    <div>
+                        <b>输入进入</b>
+                        <p>回到本页面，输入密码即可查看当日全部在招岗位</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="pw-help-actions">
+                <button class="primary" onclick="pwGoBuy()" id="pwBuyBtn">去获取密码</button>
+                <button class="ghost" onclick="pwCopyKeyword()" id="pwCopyBtn">复制关键词「岗位」</button>
+            </div>
+            <p class="pw-help-tip" id="pwHelpTip"></p>
+            <p class="pw-help-note">
+                本站为招聘信息聚合工具，非官方发布，岗位条件与截止日期以各高校官方公告为准；<br>
+                不提供内推、不代投简历、不承诺录用结果。虚拟内容，下单后不支持退款。
+            </p>
+        </div>
+    </div>
 
+
+
+    <!-- 品牌水印（内容区，不遮挡操作） -->
+    <div class="brand-wm brand-wm-fixed" aria-hidden="true">
+        <i class="bw-dot"></i><span class="bw-text">BBBe special</span>
+    </div>
 
     <div class="container" data-page-node-id="ihbppg1VO60IhXIkphNyOE">
 
@@ -1247,6 +1494,8 @@
             <p data-page-node-id="ZLLvK5AWEV0mQRKh9PpUL9">每日更新 · 只展示仍在报名中的岗位</p>
 
             <div class="update-time">更新时间：2026年11月18日</div>
+
+            <div class="brand-inline" title="本站由 BBBe special 运营"><i class="bw-dot"></i>BBBe special</div>
 
 
 
@@ -1304,7 +1553,7 @@
 
             <div class="stat-item" data-page-node-id="y6FewomlChBZUaHDdyAi79">
 
-                <span class="stat-num" id="newCount">10</span>
+                <span class="stat-num" id="newCount">0</span>
 
                 <span class="stat-label" data-page-node-id="XTNlOsei89rUeCsG7kTEKF">本期新增</span>
 
@@ -1699,7 +1948,7 @@
             </div>
 
             <div class="job-card" data-region="华北" data-education="本科" data-hire="合同制" data-hire-type="合同制" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://hrzp.cup.edu.cn/zp.html#/notice/Fpt6cNRPAATTP2HJBPAATTPPIgPAATTP3HJDPAATTP','_blank')">
-                <div class="new-badge">NEW</div><div class="card-header">
+                <div class="card-header">
                     <div>
                         <div class="school-name">中国石油大学（北京）</div>
                         <div class="school-tags">
@@ -1749,7 +1998,7 @@
             </div>
 
             <div class="job-card" data-region="华北" data-education="硕士" data-hire="劳务派遣" data-hire-type="劳务派遣" data-position="科研管理" style="cursor:pointer" onclick="window.open('http://www.bjrc.com.cn:8088/gaoxiao/zpview_E6A073555113C06A.shtml','_blank')">
-                <div class="new-badge">NEW</div><div class="card-header">
+                <div class="card-header">
                     <div>
                         <div class="school-name">首都师范大学</div>
                         <div class="school-tags">
@@ -1774,7 +2023,7 @@
             </div>
 
             <div class="job-card" data-region="华北" data-education="硕士" data-hire="劳务派遣" data-hire-type="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('http://www.bjrc.com.cn:8088/gaoxiao/zpview_E6A073555113C06A.shtml','_blank')">
-                <div class="new-badge">NEW</div><div class="card-header">
+                <div class="card-header">
                     <div>
                         <div class="school-name">首都师范大学</div>
                         <div class="school-tags">
@@ -1799,7 +2048,7 @@
             </div>
 
             <div class="job-card" data-region="华北" data-education="硕士" data-hire="劳务派遣" data-hire-type="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('http://www.bjrc.com.cn:8088/gaoxiao/zpview_E6A073555113C06A.shtml','_blank')">
-                <div class="new-badge">NEW</div><div class="card-header">
+                <div class="card-header">
                     <div>
                         <div class="school-name">首都师范大学</div>
                         <div class="school-tags">
@@ -2074,7 +2323,7 @@
             </div>
 
             <div class="job-card" data-region="华东" data-education="硕士" data-hire="项目聘用" data-hire-type="项目聘用" data-position="外事管理" style="cursor:pointer" onclick="window.open('https://m.gaoxiaojob.com/announcement/detail/445298.html','_blank')">
-                <div class="new-badge">NEW</div><div class="card-header">
+                <div class="card-header">
                     <div>
                         <div class="school-name">上海海洋大学</div>
                         <div class="school-tags">
@@ -2174,7 +2423,7 @@
             </div>
 
             <div class="job-card" data-region="华北" data-education="本科" data-hire="劳务派遣" data-hire-type="劳务派遣" data-position="外事管理" style="cursor:pointer" onclick="window.open('https://bs.nankai.edu.cn/tzgg/list.htm','_blank')">
-                <div class="new-badge">NEW</div><div class="card-header">
+                <div class="card-header">
                     <div>
                         <div class="school-name">南开大学</div>
                         <div class="school-tags">
@@ -2199,7 +2448,7 @@
             </div>
 
             <div class="job-card" data-region="华中" data-education="硕士" data-hire="劳务派遣" data-hire-type="劳务派遣" data-position="人事管理" style="cursor:pointer" onclick="window.open('https://rsc.hzau.edu.cn/info/1028/6974.htm','_blank')">
-                <div class="new-badge">NEW</div><div class="card-header">
+                <div class="card-header">
                     <div>
                         <div class="school-name">华中农业大学</div>
                         <div class="school-tags">
@@ -2299,7 +2548,7 @@
             </div>
 
             <div class="job-card" data-region="华东" data-education="本科" data-hire="劳务派遣" data-hire-type="劳务派遣" data-position="行政管理" style="cursor:pointer" onclick="window.open('https://ehr.zju.edu.cn/vuejs/recruitment/position-detail.htm?id=N1881973804918376369','_blank')">
-                <div class="new-badge">NEW</div><div class="card-header">
+                <div class="card-header">
                     <div>
                         <div class="school-name">浙江大学</div>
                         <div class="school-tags">
@@ -2349,7 +2598,7 @@
             </div>
 
             <div class="job-card" data-region="华北" data-education="硕士" data-hire="合同制" data-hire-type="合同制" data-position="教学管理" style="cursor:pointer" onclick="window.open('https://cohd.cau.edu.cn/art/2026/11/10/art_22198_1144990.html','_blank')">
-                <div class="new-badge">NEW</div><div class="card-header">
+                <div class="card-header">
                     <div>
                         <div class="school-name">中国农业大学</div>
                         <div class="school-tags">
@@ -2649,7 +2898,7 @@
             </div>
 
             <div class="job-card" data-region="华东" data-education="硕士" data-hire="劳务派遣" data-hire-type="劳务派遣" data-position="科研管理" style="cursor:pointer" onclick="window.open('https://hr.fudan.edu.cn/33/04/c15370a799492/page.htm','_blank')">
-                <div class="new-badge">NEW</div><div class="card-header">
+                <div class="card-header">
                     <div>
                         <div class="school-name">复旦大学</div>
                         <div class="school-tags">
@@ -3459,7 +3708,9 @@
 
             <p data-page-node-id="5u3R9pyFuNzXW00H851KjG">截止日期以各校官方公告为准，建议尽早报名</p>
 
-            <p style="margin-top:8px;" data-page-node-id="S8HuzA1LRoC7xbyMeCY0mA"><a href="https://zeroplus95.github.io/university-jobs/" target="_blank" data-page-node-id="JcSTEUoCZpYQO6piYF2BWb">GitHub Pages</a> · 每个工作日9:00自动更新 · 本站总浏览 <span id="busuanzi_value_site_pv" data-page-node-id="yEOZH25UVYGXdwXvzE2Zpo">-</span> 次</p>
+            <p style="margin-top:8px;" data-page-node-id="S8HuzA1LRoC7xbyMeCY0mA"><a href="https://zeropluszero26.github.io/university-jobs/" target="_blank" data-page-node-id="JcSTEUoCZpYQO6piYF2BWb">GitHub Pages</a> · 每个工作日9:00自动更新 · 本站总浏览 <span id="busuanzi_value_site_pv" data-page-node-id="yEOZH25UVYGXdwXvzE2Zpo">-</span> 次</p>
+
+            <p style="margin-top:12px; font-size:0.92em; letter-spacing:0.04em; opacity:0.9;" data-page-node-id="wmFooterBrand">© BBBe special · 高校行政岗招聘信息</p>
 
         </div>
 
@@ -4157,6 +4408,129 @@
 
         });
 
+    </script>
+
+    <!-- ================= 访问密码获取引导 ================= -->
+    <script>
+    /* ------------------------------------------------------------------
+       配置区：只需要改下面这几行
+       ------------------------------------------------------------------ */
+    var PW_HELP = {
+        price:    '9.9 元',   // 显示价格
+        keyword:  '岗位',      // 小红书互动关键词
+        xhsName:  'BBBe special',   // 小红书昵称
+        buyUrl:   '',          // 下单页链接（微信小商店 / 发卡平台）。留空则引导用户去小红书私信
+        wechatId: ''           // 售后微信，留空则不显示
+    };
+    /* ------------------------------------------------------------------ */
+
+    function openPwHelp() {
+        var m = document.getElementById('pwHelpMask');
+        if (!m) return;
+        m.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePwHelp() {
+        var m = document.getElementById('pwHelpMask');
+        if (!m) return;
+        m.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+
+    function pwGoBuy() {
+        var tip = document.getElementById('pwHelpTip');
+        if (PW_HELP.buyUrl) {
+            window.open(PW_HELP.buyUrl, '_blank');
+            if (tip) tip.textContent = '已打开下单页，付款后密码会自动发送';
+            return;
+        }
+        var who = PW_HELP.xhsName ? '小红书「' + PW_HELP.xhsName + '」' : '小红书';
+        if (tip) {
+            tip.textContent = PW_HELP.wechatId
+                ? '请在' + who + '私信我，或加微信 ' + PW_HELP.wechatId + ' 获取下单链接'
+                : '请在' + who + '私信我，我会把下单链接发给你';
+        }
+    }
+
+    function pwCopyKeyword() {
+        var txt = PW_HELP.keyword;
+        var tip = document.getElementById('pwHelpTip');
+        var done = function () {
+            if (tip) {
+                tip.textContent = '已复制「' + txt + '」，去小红书评论区粘贴即可';
+                setTimeout(function () { tip.textContent = ''; }, 3500);
+            }
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(txt).then(done, function () { pwFallbackCopy(txt, done); });
+        } else {
+            pwFallbackCopy(txt, done);
+        }
+    }
+
+    function pwFallbackCopy(txt, cb) {
+        var ta = document.createElement('textarea');
+        ta.value = txt;
+        ta.style.cssText = 'position:fixed;left:-9999px;top:0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); cb(); } catch (e) {}
+        document.body.removeChild(ta);
+    }
+
+    (function () {
+        // 填充配置文案
+        var priceEl = document.getElementById('pwPriceText');
+        if (priceEl) priceEl.textContent = PW_HELP.price;
+
+        var findEl = document.getElementById('pwStepFind');
+        if (findEl && PW_HELP.xhsName) {
+            findEl.textContent = '在小红书搜索「' + PW_HELP.xhsName + '」，评论区回复「' + PW_HELP.keyword + '」或直接私信';
+        }
+
+        var buyEl = document.getElementById('pwStepBuy');
+        if (buyEl) {
+            buyEl.textContent = PW_HELP.buyUrl
+                ? '点击下方按钮打开下单页，付款后密码自动发送'
+                : '私信我获取下单页，付款后密码自动发送';
+        }
+
+        var buyBtn = document.getElementById('pwBuyBtn');
+        if (buyBtn && !PW_HELP.buyUrl) buyBtn.textContent = '获取下单链接';
+
+        var copyBtn = document.getElementById('pwCopyBtn');
+        if (copyBtn) copyBtn.textContent = '复制关键词「' + PW_HELP.keyword + '」';
+
+        // 点遮罩空白处关闭
+        var mask = document.getElementById('pwHelpMask');
+        if (mask) {
+            mask.addEventListener('click', function (e) {
+                if (e.target === mask) closePwHelp();
+            });
+        }
+
+        // ESC 关闭
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closePwHelp();
+        });
+
+        // 密码输错时，突出"怎么获取密码"的入口（仅在门还开着时）
+        var errEl = document.getElementById('loginError');
+        var linkEl = document.getElementById('pwHelpLink');
+        var overlay = document.getElementById('loginOverlay');
+        if (errEl && linkEl && window.MutationObserver) {
+            var obs = new MutationObserver(function () {
+                if (overlay && overlay.classList.contains('hidden')) return;
+                if (errEl.textContent.trim()) {
+                    linkEl.classList.remove('attention');
+                    void linkEl.offsetWidth;
+                    linkEl.classList.add('attention');
+                }
+            });
+            obs.observe(errEl, { childList: true, characterData: true, subtree: true });
+        }
+    })();
     </script>
 
 </body>
